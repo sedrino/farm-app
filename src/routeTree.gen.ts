@@ -12,9 +12,12 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as SignupImport } from './routes/signup'
+import { Route as DashboardImport } from './routes/dashboard'
 import { Route as AuthImport } from './routes/_auth'
 import { Route as IndexImport } from './routes/index'
+import { Route as DashboardInfoImport } from './routes/dashboard.info'
 import { Route as AuthHomeImport } from './routes/_auth/home'
+import { Route as AuthDevIndexImport } from './routes/_auth/dev/index'
 import { Route as AuthAdminDatabaseImport } from './routes/_auth/admin.database'
 import { Route as AuthAdminDatatableTableViewImport } from './routes/_auth/admin.datatable.$table.view'
 import { Route as AuthAdminDatatableTableEditImport } from './routes/_auth/admin.datatable.$table.edit'
@@ -24,6 +27,11 @@ import { Route as AuthAdminDatatableTableAddImport } from './routes/_auth/admin.
 
 const SignupRoute = SignupImport.update({
   path: '/signup',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DashboardRoute = DashboardImport.update({
+  path: '/dashboard',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -37,8 +45,18 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const DashboardInfoRoute = DashboardInfoImport.update({
+  path: '/info',
+  getParentRoute: () => DashboardRoute,
+} as any)
+
 const AuthHomeRoute = AuthHomeImport.update({
   path: '/home',
+  getParentRoute: () => AuthRoute,
+} as any)
+
+const AuthDevIndexRoute = AuthDevIndexImport.update({
+  path: '/dev/',
   getParentRoute: () => AuthRoute,
 } as any)
 
@@ -78,6 +96,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthImport
       parentRoute: typeof rootRoute
     }
+    '/dashboard': {
+      preLoaderRoute: typeof DashboardImport
+      parentRoute: typeof rootRoute
+    }
     '/signup': {
       preLoaderRoute: typeof SignupImport
       parentRoute: typeof rootRoute
@@ -86,8 +108,16 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthHomeImport
       parentRoute: typeof AuthImport
     }
+    '/dashboard/info': {
+      preLoaderRoute: typeof DashboardInfoImport
+      parentRoute: typeof DashboardImport
+    }
     '/_auth/admin/database': {
       preLoaderRoute: typeof AuthAdminDatabaseImport
+      parentRoute: typeof AuthImport
+    }
+    '/_auth/dev/': {
+      preLoaderRoute: typeof AuthDevIndexImport
       parentRoute: typeof AuthImport
     }
     '/_auth/admin/datatable/$table/add': {
@@ -112,10 +142,12 @@ export const routeTree = rootRoute.addChildren([
   AuthRoute.addChildren([
     AuthHomeRoute,
     AuthAdminDatabaseRoute,
+    AuthDevIndexRoute,
     AuthAdminDatatableTableAddRoute,
     AuthAdminDatatableTableEditRoute,
     AuthAdminDatatableTableViewRoute,
   ]),
+  DashboardRoute.addChildren([DashboardInfoRoute]),
   SignupRoute,
 ])
 

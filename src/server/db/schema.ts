@@ -1,79 +1,118 @@
-import {
-  integer,
-  text,
-  real,
-  blob,
-  sqliteTable,
-} from "drizzle-orm/sqlite-core";
-import { sql } from "drizzle-orm";
+import { sqliteTable, integer, text, real } from "drizzle-orm/sqlite-core";
 
-// Players Table
+export const users = sqliteTable("users", {
+  id: integer("id").notNull().primaryKey(),
+  email: text("email").notNull().default(""),
+  first_name: text("first_name").notNull().default(""),
+  last_name: text("last_name").notNull().default(""),
+});
+
+export const user_roles = sqliteTable("user_roles", {
+  user_id: integer("user_id")
+    .notNull()
+    .references(() => users.id),
+  role: text("role").notNull(),
+});
+
+export const leagues = sqliteTable("leagues", {
+  id: integer("id").primaryKey(),
+  name: text("name").notNull(),
+  description: text("description"),
+  startDate: integer("start_date", { mode: "timestamp" }).notNull(),
+  endDate: integer("end_date", { mode: "timestamp" }).notNull(),
+});
+
+export const teams = sqliteTable("teams", {
+  id: integer("id").primaryKey(),
+  leagueId: integer("league_id")
+    .notNull()
+    .references(() => leagues.id),
+  name: text("name").notNull(),
+  captainId: integer("captain_id"),
+});
+
 export const players = sqliteTable("players", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  name: text("name").notNull(),
+  id: integer("id").primaryKey(),
+  teamId: integer("team_id").references(() => teams.id),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
   email: text("email").notNull(),
-  age: integer("age"),
-  gender: text("gender"),
-  experienceLevel: text("experience_level"),
-  photo: blob("photo"),
-  waiverSigned: integer("waiver_signed", { mode: "boolean" }).default(0), // 0 for false, 1 for true
+  phoneNumber: text("phone_number"),
 });
 
-// Teams Table
-const teams = sqliteTable("teams", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  name: text("name").notNull(),
-  captainId: integer("captain_id").notNull(),
+export const games = sqliteTable("games", {
+  id: integer("id").primaryKey(),
+  leagueId: integer("league_id")
+    .notNull()
+    .references(() => leagues.id),
+  homeTeamId: integer("home_team_id")
+    .notNull()
+    .references(() => teams.id),
+  awayTeamId: integer("away_team_id")
+    .notNull()
+    .references(() => teams.id),
+  startTime: integer("start_time", { mode: "timestamp" }).notNull(),
+  location: text("location"),
 });
 
-// Team Members (Rosters) Table
-const teamMembers = sqliteTable("team_members", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  playerId: integer("player_id").notNull(),
-  teamId: integer("team_id").notNull(),
+export const referees = sqliteTable("referees", {
+  id: integer("id").primaryKey(),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
+  email: text("email").notNull(),
+  phoneNumber: text("phone_number"),
 });
 
-// Games Table
-const games = sqliteTable("games", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  date: integer("date", { mode: "timestamp" }).notNull(), // Using text to store ISO8601 dates
-  location: text("location").notNull(),
-  teamAId: integer("team_a_id").notNull(),
-  teamBId: integer("team_b_id").notNull(),
-  refereeId: integer("referee_id"),
+export const playerStats = sqliteTable("player_stats", {
+  id: integer("id").primaryKey(),
+  playerId: integer("player_id")
+    .notNull()
+    .references(() => players.id),
+  gameId: integer("game_id")
+    .notNull()
+    .references(() => games.id),
+  goals: integer("goals").notNull().default(0),
+  assists: integer("assists").notNull().default(0),
+  blocks: integer("blocks").notNull().default(0),
+  turnovers: integer("turnovers").notNull().default(0),
 });
 
-// Scores Table
-const scores = sqliteTable("scores", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  gameId: integer("game_id").notNull(),
-  teamId: integer("team_id").notNull(),
+export const teamStats = sqliteTable("team_stats", {
+  id: integer("id").primaryKey(),
+  teamId: integer("team_id")
+    .notNull()
+    .references(() => teams.id),
+  gameId: integer("game_id")
+    .notNull()
+    .references(() => games.id),
   score: integer("score").notNull(),
   spiritScore: real("spirit_score"),
 });
 
-// Player Stats Table
-const playerStats = sqliteTable("player_stats", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  playerId: integer("player_id").notNull(),
-  gameId: integer("game_id").notNull(),
-  goals: integer("goals").default(0),
-  assists: integer("assists").default(0),
-  blocks: integer("blocks").default(0),
-});
+export type LeagueInsert = typeof leagues.$inferInsert;
+export type LeagueUpdate = Partial<typeof leagues.$inferSelect>;
+export type League = typeof leagues.$inferSelect;
 
-// Communication Table (for league-wide messaging, team communication, alerts, and reminders)
-const communications = sqliteTable("communications", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  messageType: text("message_type").notNull(), // "league-wide", "team", "alert"
-  message: text("message").notNull(),
-  targetId: integer("target_id"), // Can be null for league-wide messages
-  sentAt: integer("sent_at", { mode: "timestamp" }).notNull(),
-});
+export type TeamInsert = typeof teams.$inferInsert;
+export type TeamUpdate = Partial<typeof teams.$inferSelect>;
+export type Team = typeof teams.$inferSelect;
 
-// Settings Table (for league rules, scoring rules, playoff structure, notification preferences)
-const settings = sqliteTable("settings", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  settingType: text("setting_type").notNull(), // "league_rules", "scoring_rules", "playoff_structure", "notifications"
-  value: text("value", { mode: "json" }).$type<{}>(), // Storing JSON data
-});
+export type PlayerInsert = typeof players.$inferInsert;
+export type PlayerUpdate = Partial<typeof players.$inferSelect>;
+export type Player = typeof players.$inferSelect;
+
+export type GameInsert = typeof games.$inferInsert;
+export type GameUpdate = Partial<typeof games.$inferSelect>;
+export type Game = typeof games.$inferSelect;
+
+export type RefereeInsert = typeof referees.$inferInsert;
+export type RefereeUpdate = Partial<typeof referees.$inferSelect>;
+export type Referee = typeof referees.$inferSelect;
+
+export type PlayerStatInsert = typeof playerStats.$inferInsert;
+export type PlayerStatUpdate = Partial<typeof playerStats.$inferSelect>;
+export type PlayerStat = typeof playerStats.$inferSelect;
+
+export type TeamStatInsert = typeof teamStats.$inferInsert;
+export type TeamStatUpdate = Partial<typeof teamStats.$inferSelect>;
+export type TeamStat = typeof teamStats.$inferSelect;
