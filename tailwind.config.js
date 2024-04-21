@@ -52,6 +52,17 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        surface: {
+          100: "var(--surface-100)",
+          200: "var(--surface-200)",
+          300: "var(--surface-300)",
+          400: "var(--surface-400)",
+          500: "var(--surface-500)",
+          600: "var(--surface-600)",
+          700: "var(--surface-700)",
+          800: "var(--surface-800)",
+          900: "var(--surface-900)",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

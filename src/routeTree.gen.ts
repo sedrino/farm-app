@@ -12,13 +12,14 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as SignupImport } from './routes/signup'
-import { Route as DashboardImport } from './routes/dashboard'
 import { Route as AuthImport } from './routes/_auth'
 import { Route as IndexImport } from './routes/index'
-import { Route as DashboardInfoImport } from './routes/dashboard.info'
+import { Route as LayoutsAppImport } from './routes/layouts.app'
 import { Route as AuthHomeImport } from './routes/_auth/home'
 import { Route as AuthDevIndexImport } from './routes/_auth/dev/index'
+import { Route as LayoutsAppBasicImport } from './routes/layouts.app.basic'
 import { Route as AuthAdminDatabaseImport } from './routes/_auth/admin.database'
+import { Route as LayoutsAppBasicTabsImport } from './routes/layouts.app.basic.tabs'
 import { Route as AuthAdminDatatableTableViewImport } from './routes/_auth/admin.datatable.$table.view'
 import { Route as AuthAdminDatatableTableEditImport } from './routes/_auth/admin.datatable.$table.edit'
 import { Route as AuthAdminDatatableTableAddImport } from './routes/_auth/admin.datatable.$table.add'
@@ -27,11 +28,6 @@ import { Route as AuthAdminDatatableTableAddImport } from './routes/_auth/admin.
 
 const SignupRoute = SignupImport.update({
   path: '/signup',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const DashboardRoute = DashboardImport.update({
-  path: '/dashboard',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -45,9 +41,9 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const DashboardInfoRoute = DashboardInfoImport.update({
-  path: '/info',
-  getParentRoute: () => DashboardRoute,
+const LayoutsAppRoute = LayoutsAppImport.update({
+  path: '/layouts/app',
+  getParentRoute: () => rootRoute,
 } as any)
 
 const AuthHomeRoute = AuthHomeImport.update({
@@ -60,9 +56,19 @@ const AuthDevIndexRoute = AuthDevIndexImport.update({
   getParentRoute: () => AuthRoute,
 } as any)
 
+const LayoutsAppBasicRoute = LayoutsAppBasicImport.update({
+  path: '/basic',
+  getParentRoute: () => LayoutsAppRoute,
+} as any)
+
 const AuthAdminDatabaseRoute = AuthAdminDatabaseImport.update({
   path: '/admin/database',
   getParentRoute: () => AuthRoute,
+} as any)
+
+const LayoutsAppBasicTabsRoute = LayoutsAppBasicTabsImport.update({
+  path: '/tabs',
+  getParentRoute: () => LayoutsAppBasicRoute,
 } as any)
 
 const AuthAdminDatatableTableViewRoute =
@@ -96,10 +102,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthImport
       parentRoute: typeof rootRoute
     }
-    '/dashboard': {
-      preLoaderRoute: typeof DashboardImport
-      parentRoute: typeof rootRoute
-    }
     '/signup': {
       preLoaderRoute: typeof SignupImport
       parentRoute: typeof rootRoute
@@ -108,17 +110,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthHomeImport
       parentRoute: typeof AuthImport
     }
-    '/dashboard/info': {
-      preLoaderRoute: typeof DashboardInfoImport
-      parentRoute: typeof DashboardImport
+    '/layouts/app': {
+      preLoaderRoute: typeof LayoutsAppImport
+      parentRoute: typeof rootRoute
     }
     '/_auth/admin/database': {
       preLoaderRoute: typeof AuthAdminDatabaseImport
       parentRoute: typeof AuthImport
     }
+    '/layouts/app/basic': {
+      preLoaderRoute: typeof LayoutsAppBasicImport
+      parentRoute: typeof LayoutsAppImport
+    }
     '/_auth/dev/': {
       preLoaderRoute: typeof AuthDevIndexImport
       parentRoute: typeof AuthImport
+    }
+    '/layouts/app/basic/tabs': {
+      preLoaderRoute: typeof LayoutsAppBasicTabsImport
+      parentRoute: typeof LayoutsAppBasicImport
     }
     '/_auth/admin/datatable/$table/add': {
       preLoaderRoute: typeof AuthAdminDatatableTableAddImport
@@ -147,8 +157,10 @@ export const routeTree = rootRoute.addChildren([
     AuthAdminDatatableTableEditRoute,
     AuthAdminDatatableTableViewRoute,
   ]),
-  DashboardRoute.addChildren([DashboardInfoRoute]),
   SignupRoute,
+  LayoutsAppRoute.addChildren([
+    LayoutsAppBasicRoute.addChildren([LayoutsAppBasicTabsRoute]),
+  ]),
 ])
 
 /* prettier-ignore-end */

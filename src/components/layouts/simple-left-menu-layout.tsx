@@ -5,49 +5,28 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
+import {
+  AnyRoute,
+  Link,
+  LinkProps,
+  RegisteredRouter,
+  RoutePaths,
+} from "@tanstack/react-router";
 
 export function SimpleLeftMenuLayout(props: {
-  children?: React.ReactNode;
+  content?: React.ReactNode;
   sideNav?: React.ReactNode;
 }) {
   return (
     <ResizablePanelGroup direction="horizontal" className="w-full flex h-full">
       <ResizablePanel minSize={20} maxSize={30} className="min-w-64">
         <div className="hide-scrollbar flex flex-col w-full h-full bg-studio border-default">
-          <SimpleLeftMenuLayout.Header>
-            <h4 className="text-lg">Database</h4>
-          </SimpleLeftMenuLayout.Header>
-          <ScrollArea>
-            <div className="flex-grow overflow-y-auto">
-              <div className="flex flex-col space-y-8 overflow-y-auto">
-                <nav
-                  role="menu"
-                  aria-label="Sidebar"
-                  aira-orientation="vertical"
-                  aria-labelledby="options-menu
-                "
-                >
-                  <ul>
-                    <SimpleVerticalNavSection title="Database Management" />
-                    <Separator />
-                    <SimpleVerticalNavSection title="Database Management" />
-                    <Separator />
-                    <SimpleVerticalNavSection title="Database Management" />
-                    <Separator />
-                    <SimpleVerticalNavSection title="Database Management" />
-                    <Separator />
-                    <SimpleVerticalNavSection title="Database Management" />
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </ScrollArea>
+          {props.sideNav}
         </div>
       </ResizablePanel>
       <ResizableHandle />
       <ResizablePanel className="" defaultSize={80}>
-        <SimpleLeftMenuLayout.Header></SimpleLeftMenuLayout.Header>
+        {props.content}
       </ResizablePanel>
     </ResizablePanelGroup>
   );
@@ -58,6 +37,26 @@ SimpleLeftMenuLayout.Header = (props: { children?: React.ReactNode }) => {
     <div className="border-default flex max-h-12 items-center border-b px-6 h-12 min-h-12">
       {props.children}
     </div>
+  );
+};
+
+SimpleLeftMenuLayout.ScrollArea = (props: { children?: React.ReactNode }) => {
+  return (
+    <ScrollArea>
+      <div className="flex-grow overflow-y-auto">
+        <div className="flex flex-col space-y-8 overflow-y-auto">
+          <nav
+            role="menu"
+            aria-label="Sidebar"
+            aira-orientation="vertical"
+            aria-labelledby="options-menu
+                "
+          >
+            <ul>{props.children}</ul>
+          </nav>
+        </div>
+      </div>
+    </ScrollArea>
   );
 };
 
@@ -76,159 +75,49 @@ export function SimpleVerticalNavSection(props: {
               </div>
             </span>
           </div>
-          <div>
-            <a
-              className="block"
-              target="_self"
-              href="/dashboard/project/igonjjtlmgaappcalbps/database/tables"
-            >
-              <li
-                role="menuitem"
-                className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-semibold bg-surface-200 text-foreground-lighter z-10 rounded-md"
-                aria-current="page"
-              >
-                <span className="transition truncate text-sm w-full text-foreground font-semibold">
-                  <div className="flex w-full items-center justify-between gap-1">
-                    <div
-                      title="Tables"
-                      className="flex items-center gap-2 truncate w-full "
-                    >
-                      <span className="truncate">Tables </span>
-                    </div>
-                  </div>
-                </span>
-              </li>
-            </a>
-            <a
-              className="block"
-              target="_self"
-              href="/dashboard/project/igonjjtlmgaappcalbps/database/functions"
-            >
-              <li
-                role="menuitem"
-                className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-normal border-default group-hover:border-foreground-muted"
-              >
-                <span className="transition truncate text-sm w-full text-foreground-light group-hover:text-foreground">
-                  <div className="flex w-full items-center justify-between gap-1">
-                    <div
-                      title="Functions"
-                      className="flex items-center gap-2 truncate w-full "
-                    >
-                      <span className="truncate">Functions </span>
-                    </div>
-                  </div>
-                </span>
-              </li>
-            </a>
-            <a
-              className="block"
-              target="_self"
-              href="/dashboard/project/igonjjtlmgaappcalbps/database/triggers"
-            >
-              <li
-                role="menuitem"
-                className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-normal border-default group-hover:border-foreground-muted"
-              >
-                <span className="transition truncate text-sm w-full text-foreground-light group-hover:text-foreground">
-                  <div className="flex w-full items-center justify-between gap-1">
-                    <div
-                      title="Triggers"
-                      className="flex items-center gap-2 truncate w-full "
-                    >
-                      <span className="truncate">Triggers </span>
-                    </div>
-                  </div>
-                </span>
-              </li>
-            </a>
-            <a
-              className="block"
-              target="_self"
-              href="/dashboard/project/igonjjtlmgaappcalbps/database/types"
-            >
-              <li
-                role="menuitem"
-                className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-normal border-default group-hover:border-foreground-muted"
-              >
-                <span className="transition truncate text-sm w-full text-foreground-light group-hover:text-foreground">
-                  <div className="flex w-full items-center justify-between gap-1">
-                    <div
-                      title="Enumerated Types"
-                      className="flex items-center gap-2 truncate w-full "
-                    >
-                      <span className="truncate">Enumerated Types </span>
-                    </div>
-                  </div>
-                </span>
-              </li>
-            </a>
-            <a
-              className="block"
-              target="_self"
-              href="/dashboard/project/igonjjtlmgaappcalbps/database/extensions"
-            >
-              <li
-                role="menuitem"
-                className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-normal border-default group-hover:border-foreground-muted"
-              >
-                <span className="transition truncate text-sm w-full text-foreground-light group-hover:text-foreground">
-                  <div className="flex w-full items-center justify-between gap-1">
-                    <div
-                      title="Extensions"
-                      className="flex items-center gap-2 truncate w-full "
-                    >
-                      <span className="truncate">Extensions </span>
-                    </div>
-                  </div>
-                </span>
-              </li>
-            </a>
-            <a
-              className="block"
-              target="_self"
-              href="/dashboard/project/igonjjtlmgaappcalbps/database/indexes"
-            >
-              <li
-                role="menuitem"
-                className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-normal border-default group-hover:border-foreground-muted"
-              >
-                <span className="transition truncate text-sm w-full text-foreground-light group-hover:text-foreground">
-                  <div className="flex w-full items-center justify-between gap-1">
-                    <div
-                      title="Indexes"
-                      className="flex items-center gap-2 truncate w-full "
-                    >
-                      <span className="truncate">Indexes </span>
-                    </div>
-                  </div>
-                </span>
-              </li>
-            </a>
-            <a
-              className="block"
-              target="_self"
-              href="/dashboard/project/igonjjtlmgaappcalbps/database/publications"
-            >
-              <li
-                role="menuitem"
-                className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-normal border-default group-hover:border-foreground-muted"
-              >
-                <span className="transition truncate text-sm w-full text-foreground-light group-hover:text-foreground">
-                  <div className="flex w-full items-center justify-between gap-1">
-                    <div
-                      title="Publications"
-                      className="flex items-center gap-2 truncate w-full "
-                    >
-                      <span className="truncate">Publications </span>
-                    </div>
-                  </div>
-                </span>
-              </li>
-            </a>
-          </div>
+          <div>{props.children}</div>
         </div>
       </div>
       <div className="h-px w-full bg-border-overlay"></div>
     </div>
   );
 }
+
+export const SimpleNavLink = <
+  TRouteTree extends AnyRoute = RegisteredRouter["routeTree"],
+  TFrom extends RoutePaths<TRouteTree> | string = string,
+  TTo extends string = "",
+  TMaskFrom extends RoutePaths<TRouteTree> | string = TFrom,
+  TMaskTo extends string = "",
+>(props: {
+  children: React.ReactNode;
+  icon?: React.ReactNode;
+  linkProps: Omit<
+    React.PropsWithoutRef<
+      LinkProps<TRouteTree, TFrom, TTo, TMaskFrom, TMaskTo> &
+        Omit<React.ComponentPropsWithoutRef<"a">, "preload">
+    >,
+    "children" | "className" | "activeProps" | "inactiveProps"
+  >;
+}) => {
+  const { children, icon, linkProps } = props;
+  return (
+    <Link {...linkProps}>
+      <li
+        role="menuitem"
+        className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-normal border-default group-hover:border-foreground-muted"
+      >
+        <span className="transition truncate text-sm w-full text-foreground-light group-hover:text-foreground">
+          <div className="flex w-full items-center justify-between gap-1">
+            <div
+              title="Publications"
+              className="flex items-center gap-2 truncate w-full "
+            >
+              <span className="truncate">{children}</span>
+            </div>
+          </div>
+        </span>
+      </li>
+    </Link>
+  );
+};

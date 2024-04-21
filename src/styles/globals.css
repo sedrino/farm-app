@@ -35,6 +35,17 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
+    --surface-100: #eff7ff;
+    --surface-200: #dbedfe;
+    --surface-300: #bfe0fe;
+    --surface-400: #92cdfe;
+    --surface-500: #5fb0fb;
+    --surface-600: #2371ed;
+    --surface-700: #1c5bd9;
+    --surface-800: #1d4ab0;
+    --surface-900: #1d428b;
+    --surface-950: #0c162d;
   }
 
   .dark {
@@ -68,6 +79,17 @@
     --ring: 216 34% 17%;
 
     --radius: 0.5rem;
+
+    --surface-100: #0c162d;
+    --surface-200: #1d428b;
+    --surface-300: #1d4ab0;
+    --surface-400: #1c5bd9;
+    --surface-500: #2371ed;
+    --surface-600: #5fb0fb;
+    --surface-700: #92cdfe;
+    --surface-800: #bfe0fe;
+    --surface-900: #dbedfe;
+    --surface-950: #eff7ff;
   }
 }
 

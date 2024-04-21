@@ -37,9 +37,9 @@ export function DashbordLayout1(props: {
 export function LeftCollapsableSideNav(props: { topNav: React.ReactNode }) {
   const [navOpen, setNavOpen] = React.useState(false);
   return (
-    <div className="w-14 h-full flex flex-col md:w-[13rem]">
+    <div className="w-14 h-full flex flex-col lg:w-[13rem]">
       <nav
-        className="group py-2 z-10 h-full w-14 data-[state=expanded]:w-[13rem] border-r bg-background border-default data-[state=expanded]:shadow-xl transition-width duration-200 hide-scrollbar flex flex-col justify-between overflow-y-auto md:w-[13rem] overflow-x-hidden"
+        className="group py-2 z-10 h-full w-14 data-[state=expanded]:w-[13rem] border-r bg-background border-default data-[state=expanded]:shadow-xl transition-width duration-200 hide-scrollbar flex flex-col justify-between overflow-y-auto lg:w-[13rem] overflow-x-hidden"
         data-state={navOpen ? "expanded" : "collapsed"}
         onMouseEnter={() => setNavOpen(true)}
         onMouseLeave={() => setNavOpen(false)}
@@ -75,7 +75,7 @@ export function LeftCollapsableSideNav(props: { topNav: React.ReactNode }) {
 DashbordLayout1.LeftSideNav = LeftCollapsableSideNav;
 
 const navItemClasses =
-  "relative h-10 w-10 group-data-[state=expanded]:w-full md:w-full transition-all duration-200 flex items-center rounded group-data-[state=collapsed]:justify-center md:group-data-[state=expanded]:space-x-0 group-data-[state=expanded]:-space-x-2 text-foreground-lighter hover:text-foreground hover:bg-surface-200 !bg-selection !text-foreground shadow-sm group/item hover:bg-selected data-[status=active]:bg-selected";
+  "relative h-10 w-10 group-data-[state=expanded]:w-full lg:w-full transition-all duration-200 flex items-center rounded group-data-[state=collapsed]:justify-center lg:group-data-[state=expanded]:space-x-0 group-data-[state=expanded]:-space-x-2 text-foreground-lighter hover:text-foreground hover:bg-surface-200 !bg-selection !text-foreground shadow-sm group/item hover:bg-selected data-[status=active]:bg-selected";
 
 const NavLink = <
   TRouteTree extends AnyRoute = RegisteredRouter["routeTree"],
@@ -103,7 +103,7 @@ const NavLink = <
       >
         {icon}
       </span>
-      <span className="min-w-[128px] text-sm text-foreground-light group-hover/item:text-foreground group-aria-current/item:text-foreground absolute left-7 group-data-[state=expanded]:left-12 opacity-0 group-data-[state=expanded]:opacity-100 transition-all md:left-12 md:opacity-100 md:transition-none">
+      <span className="min-w-[128px] text-sm text-foreground-light group-hover/item:text-foreground group-aria-current/item:text-foreground absolute left-7 group-data-[state=expanded]:left-12 opacity-0 group-data-[state=expanded]:opacity-100 transition-all lg:left-12 lg:opacity-100 lg:transition-none">
         {children}
       </span>
     </Link>
@@ -125,7 +125,7 @@ const NavButton = React.forwardRef<
       <span className="absolute left-0 top-0 flex rounded h-10 w-10 items-center justify-center">
         {icon}
       </span>
-      <span className="min-w-[128px] text-sm text-foreground-light group-hover/item:text-foreground group-aria-current/item:text-foreground absolute left-7 group-data-[state=expanded]:left-12 opacity-0 group-data-[state=expanded]:opacity-100 transition-all md:left-12 md:opacity-100 md:transition-none overflow-hidden max-w-[128px]">
+      <span className="min-w-[128px] text-sm text-foreground-light group-hover/item:text-foreground group-aria-current/item:text-foreground absolute left-7 group-data-[state=expanded]:left-12 opacity-0 group-data-[state=expanded]:opacity-100 transition-all lg:left-12 lg:opacity-100 lg:transition-none overflow-hidden max-w-[128px]">
         {props.children}
       </span>
     </button>
