@@ -20,6 +20,8 @@ import { Route as AuthDevIndexImport } from './routes/_auth/dev/index'
 import { Route as LayoutsAppBasicImport } from './routes/layouts.app.basic'
 import { Route as AuthAdminDatabaseImport } from './routes/_auth/admin.database'
 import { Route as LayoutsAppBasicTabsImport } from './routes/layouts.app.basic.tabs'
+import { Route as LayoutsAppBasicTabsPasswordImport } from './routes/layouts.app.basic.tabs.password'
+import { Route as LayoutsAppBasicTabsAccountImport } from './routes/layouts.app.basic.tabs.account'
 import { Route as AuthAdminDatatableTableViewImport } from './routes/_auth/admin.datatable.$table.view'
 import { Route as AuthAdminDatatableTableEditImport } from './routes/_auth/admin.datatable.$table.edit'
 import { Route as AuthAdminDatatableTableAddImport } from './routes/_auth/admin.datatable.$table.add'
@@ -70,6 +72,19 @@ const LayoutsAppBasicTabsRoute = LayoutsAppBasicTabsImport.update({
   path: '/tabs',
   getParentRoute: () => LayoutsAppBasicRoute,
 } as any)
+
+const LayoutsAppBasicTabsPasswordRoute =
+  LayoutsAppBasicTabsPasswordImport.update({
+    path: '/password',
+    getParentRoute: () => LayoutsAppBasicTabsRoute,
+  } as any)
+
+const LayoutsAppBasicTabsAccountRoute = LayoutsAppBasicTabsAccountImport.update(
+  {
+    path: '/account',
+    getParentRoute: () => LayoutsAppBasicTabsRoute,
+  } as any,
+)
 
 const AuthAdminDatatableTableViewRoute =
   AuthAdminDatatableTableViewImport.update({
@@ -142,6 +157,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthAdminDatatableTableViewImport
       parentRoute: typeof AuthImport
     }
+    '/layouts/app/basic/tabs/account': {
+      preLoaderRoute: typeof LayoutsAppBasicTabsAccountImport
+      parentRoute: typeof LayoutsAppBasicTabsImport
+    }
+    '/layouts/app/basic/tabs/password': {
+      preLoaderRoute: typeof LayoutsAppBasicTabsPasswordImport
+      parentRoute: typeof LayoutsAppBasicTabsImport
+    }
   }
 }
 
@@ -159,7 +182,12 @@ export const routeTree = rootRoute.addChildren([
   ]),
   SignupRoute,
   LayoutsAppRoute.addChildren([
-    LayoutsAppBasicRoute.addChildren([LayoutsAppBasicTabsRoute]),
+    LayoutsAppBasicRoute.addChildren([
+      LayoutsAppBasicTabsRoute.addChildren([
+        LayoutsAppBasicTabsAccountRoute,
+        LayoutsAppBasicTabsPasswordRoute,
+      ]),
+    ]),
   ]),
 ])
 

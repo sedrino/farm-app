@@ -25,7 +25,7 @@ export function SimpleLeftMenuLayout(props: {
         </div>
       </ResizablePanel>
       <ResizableHandle />
-      <ResizablePanel className="" defaultSize={80}>
+      <ResizablePanel className="h-full" defaultSize={80}>
         {props.content}
       </ResizablePanel>
     </ResizablePanelGroup>
