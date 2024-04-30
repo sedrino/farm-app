@@ -72,41 +72,37 @@ function Home() {
         </div>
       </div>
       <div className="flex mt-2">
-        <form.Provider>
-          <form
-            className="max-w-lg space-y-2"
-            onSubmit={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              void form.handleSubmit();
+        <form
+          className="max-w-lg space-y-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            void form.handleSubmit();
+          }}
+        >
+          <form.Field
+            name="name"
+            validators={{
+              onChange: z.string().min(3, "Name must be at least 3 characters"),
             }}
-          >
-            <form.Field
-              name="name"
-              validators={{
-                onChange: z
-                  .string()
-                  .min(3, "Name must be at least 3 characters"),
-              }}
-              children={(field) => {
-                // Avoid hasty abstractions. Render props are great!
-                return (
-                  <>
-                    <Label htmlFor={field.name}>Name:</Label>
-                    <Input
-                      id={field.name}
-                      name={field.name}
-                      value={field.state.value}
-                      onBlur={field.handleBlur}
-                      onChange={(e: any) => field.handleChange(e.target?.value)}
-                    />
-                  </>
-                );
-              }}
-            />
-            <Button type="submit">Click me</Button>
-          </form>
-        </form.Provider>
+            children={(field) => {
+              // Avoid hasty abstractions. Render props are great!
+              return (
+                <>
+                  <Label htmlFor={field.name}>Name:</Label>
+                  <Input
+                    id={field.name}
+                    name={field.name}
+                    value={field.state.value}
+                    onBlur={field.handleBlur}
+                    onChange={(e: any) => field.handleChange(e.target?.value)}
+                  />
+                </>
+              );
+            }}
+          />
+          <Button type="submit">Click me</Button>
+        </form>
       </div>
     </div>
   );

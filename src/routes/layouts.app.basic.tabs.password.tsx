@@ -3,7 +3,7 @@ import {
   SimpleNavLink,
   SimpleVerticalNavSection,
 } from "@/components/layouts/simple-left-menu-layout";
-import { Center } from "@/components/ui/layouts/center";
+import { Content } from "@/components/ui/layouts/content";
 import { PageHeader } from "@/components/ui/layouts/page-header";
 import { Separator } from "@/components/ui/separator";
 import { pageBreadcrumb, pageTitle, title } from "@/components/ui/typography";
