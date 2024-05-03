@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function DashbordLayout1(props: {
+export function DashboardLayout1(props: {
   children: React.ReactNode;
   sideNav: React.ReactNode;
 }) {
@@ -27,7 +27,7 @@ export function DashbordLayout1(props: {
       <div className="h-screen min-h-[0px] basis-0 flex-1">
         <div className="flex h-full">
           {props.sideNav}
-          {props.children}
+          <div className="w-full lg:ml-[13rem] ml-14">{props.children}</div>
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@ export function DashbordLayout1(props: {
 export function LeftCollapsableSideNav(props: { topNav: React.ReactNode }) {
   const [navOpen, setNavOpen] = React.useState(false);
   return (
-    <div className="w-14 h-full flex flex-col lg:w-[13rem]">
+    <div className="w-14 h-full flex flex-col lg:w-[13rem] fixed">
       <nav
         className="group py-2 z-10 h-full w-14 data-[state=expanded]:w-[13rem] border-r bg-background border-default data-[state=expanded]:shadow-xl transition-width duration-200 hide-scrollbar flex flex-col justify-between overflow-y-auto lg:w-[13rem] overflow-x-hidden"
         data-state={navOpen ? "expanded" : "collapsed"}
@@ -72,7 +72,7 @@ export function LeftCollapsableSideNav(props: { topNav: React.ReactNode }) {
   );
 }
 
-DashbordLayout1.LeftSideNav = LeftCollapsableSideNav;
+DashboardLayout1.LeftSideNav = LeftCollapsableSideNav;
 
 const navItemClasses =
   "relative h-10 w-10 group-data-[state=expanded]:w-full lg:w-full transition-all duration-200 flex items-center rounded group-data-[state=collapsed]:justify-center lg:group-data-[state=expanded]:space-x-0 group-data-[state=expanded]:-space-x-2 text-foreground-lighter hover:text-foreground hover:bg-surface-200 !bg-selection !text-foreground shadow-sm group/item hover:bg-selected data-[status=active]:bg-selected";
@@ -110,7 +110,7 @@ const NavLink = <
   );
 };
 
-DashbordLayout1.NavLink = NavLink;
+DashboardLayout1.NavLink = NavLink;
 
 const NavButton = React.forwardRef<
   React.ElementRef<"button">,
@@ -132,4 +132,4 @@ const NavButton = React.forwardRef<
   );
 });
 
-DashbordLayout1.NavButton = NavButton;
+DashboardLayout1.NavButton = NavButton;

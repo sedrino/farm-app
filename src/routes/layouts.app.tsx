@@ -1,4 +1,4 @@
-import { DashbordLayout1 as Layout } from "@/components/layouts/dashboard-layout-1";
+import { DashboardLayout1 as Layout } from "@/components/layouts/dashboard-layout-1";
 import { Outlet, createFileRoute } from "@tanstack/react-router";
 import { Table } from "lucide-react";
 
