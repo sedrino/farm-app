@@ -17,7 +17,11 @@ export function PageListComponent() {
         {pageDescriptions.map((page) => (
           <Panel key={page.path} className="flex flex-col gap-2 p-4">
             <p className={prose()}>
-              <Link to={page.path}>{page.path}</Link>
+              {page.path.includes("$") ? (
+                page.path
+              ) : (
+                <Link to={page.path}>{page.path}</Link>
+              )}
             </p>
             <p className={prose()}>{page.description}</p>
           </Panel>

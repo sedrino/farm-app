@@ -4,7 +4,6 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   AnyRoute,
   Link,
@@ -42,21 +41,19 @@ SimpleLeftMenuLayout.Header = (props: { children?: React.ReactNode }) => {
 
 SimpleLeftMenuLayout.ScrollArea = (props: { children?: React.ReactNode }) => {
   return (
-    <ScrollArea>
-      <div className="flex-grow overflow-y-auto">
-        <div className="flex flex-col space-y-8 overflow-y-auto">
-          <nav
-            role="menu"
-            aria-label="Sidebar"
-            aira-orientation="vertical"
-            aria-labelledby="options-menu
+    <div className="flex-grow overflow-y-auto">
+      <div className="flex flex-col space-y-8 overflow-y-auto">
+        <nav
+          role="menu"
+          aria-label="Sidebar"
+          aira-orientation="vertical"
+          aria-labelledby="options-menu
                 "
-          >
-            <ul>{props.children}</ul>
-          </nav>
-        </div>
+        >
+          <ul>{props.children}</ul>
+        </nav>
       </div>
-    </ScrollArea>
+    </div>
   );
 };
 

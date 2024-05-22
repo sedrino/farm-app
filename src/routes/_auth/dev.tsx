@@ -16,6 +16,12 @@ export function DevLayout() {
               <Layout.NavLink icon={<Table />} linkProps={{ to: "/dev/pages" }}>
                 Page List
               </Layout.NavLink>
+              <Layout.NavLink
+                icon={<Table />}
+                linkProps={{ to: "/dev/examples" }}
+              >
+                Examples
+              </Layout.NavLink>
             </>
           }
         />

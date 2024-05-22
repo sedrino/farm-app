@@ -5,11 +5,14 @@ import { routeTree } from "./routeTree.gen";
 import { ThemeProvider } from "@/components/theme-provider";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./query/client";
-import { Devtools } from "sedrino-devtools";
+// import { Devtools } from "sedrino-devtools";
 // Set up a Router instance
 const router = createRouter({
   routeTree,
   defaultPreload: "intent",
+  context: {
+    queryClient,
+  },
 });
 
 // Register things for typesafety
@@ -27,7 +30,7 @@ if (!rootElement.innerHTML) {
       <QueryClientProvider client={queryClient}>
         {" "}
         <RouterProvider router={router} />
-        <Devtools.ElementInspector />
+        {/* <Devtools.ElementInspector /> */}
       </QueryClientProvider>
     </ThemeProvider>
   );
