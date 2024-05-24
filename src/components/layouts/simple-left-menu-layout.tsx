@@ -4,13 +4,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import {
-  AnyRoute,
-  Link,
-  LinkProps,
-  RegisteredRouter,
-  RoutePaths,
-} from "@tanstack/react-router";
+import { Link, LinkProps } from "@tanstack/react-router";
 
 export function SimpleLeftMenuLayout(props: {
   content?: React.ReactNode;
@@ -80,24 +74,14 @@ export function SimpleVerticalNavSection(props: {
   );
 }
 
-export const SimpleNavLink = <
-  TRouteTree extends AnyRoute = RegisteredRouter["routeTree"],
-  TFrom extends RoutePaths<TRouteTree> | string = string,
-  TTo extends string = "",
-  TMaskFrom extends RoutePaths<TRouteTree> | string = TFrom,
-  TMaskTo extends string = "",
->(props: {
+export const SimpleNavLink = ({
+  children,
+  icon,
+  ...linkProps
+}: {
   children: React.ReactNode;
   icon?: React.ReactNode;
-  linkProps: Omit<
-    React.PropsWithoutRef<
-      LinkProps<TRouteTree, TFrom, TTo, TMaskFrom, TMaskTo> &
-        Omit<React.ComponentPropsWithoutRef<"a">, "preload">
-    >,
-    "children" | "className" | "activeProps" | "inactiveProps"
-  >;
-}) => {
-  const { children, icon, linkProps } = props;
+} & LinkProps) => {
   return (
     <Link {...linkProps}>
       <li

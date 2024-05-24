@@ -46,3 +46,11 @@ export const temperatureSensorsQuery = queryOptions({
     return result;
   },
 });
+
+export const orgNameQueryOptions = () =>
+  queryOptions({
+    queryKey: ["org-name"],
+    queryFn: () => {
+      return { name: "Org 1", slug: `org-1` };
+    },
+  });

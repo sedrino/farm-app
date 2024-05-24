@@ -20,11 +20,17 @@ export function PageListComponent() {
           </SimpleLeftMenuLayout.Header>
           <SimpleLeftMenuLayout.ScrollArea>
             <SimpleVerticalNavSection title="Tables">
-              <SimpleNavLink linkProps={{ to: "/dev/examples/basic-table" }}>
+              <SimpleNavLink to={"/dev/examples/basic-table"}>
                 Basic
               </SimpleNavLink>
-              <SimpleNavLink linkProps={{ to: "/dev/examples/data-table" }}>
+              <SimpleNavLink to={"/dev/examples/data-table"}>
                 Data Table
+              </SimpleNavLink>
+            </SimpleVerticalNavSection>
+            <Separator />
+            <SimpleVerticalNavSection title="Settings">
+              <SimpleNavLink to={"/dev/examples/settings/account"}>
+                Account
               </SimpleNavLink>
             </SimpleVerticalNavSection>
             <Separator />

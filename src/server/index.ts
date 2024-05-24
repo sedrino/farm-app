@@ -3,7 +3,6 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { userRoute } from "./routes/user";
 import { authRoute } from "./routes/auth";
-import { devToolsRoute } from "./routes/devtools";
 import { examplesRoute } from "./routes/examples";
 
 const app = new Hono();
@@ -20,8 +19,7 @@ console.log(`Server is running on port http://localhost:${port}`);
 const routes = app
   // .route("/auth", authRoute)
   // .route("/users", userRoute)
-  .route("/examples", examplesRoute)
-  .route("/api/devtools", devToolsRoute);
+  .route("/examples", examplesRoute);
 
 serve({
   fetch: app.fetch,
