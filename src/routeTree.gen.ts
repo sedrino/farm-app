@@ -16,12 +16,22 @@ import { Route as AuthImport } from './routes/_auth'
 import { Route as IndexImport } from './routes/index'
 import { Route as LayoutsAppImport } from './routes/layouts.app'
 import { Route as AuthHomeImport } from './routes/_auth/home'
+import { Route as AuthDevImport } from './routes/_auth/dev'
 import { Route as AuthDevIndexImport } from './routes/_auth/dev/index'
 import { Route as LayoutsAppBasicImport } from './routes/layouts.app.basic'
+import { Route as AuthDevPagesImport } from './routes/_auth/dev/pages'
+import { Route as AuthDevExamplesImport } from './routes/_auth/dev/examples'
 import { Route as AuthAdminDatabaseImport } from './routes/_auth/admin.database'
 import { Route as LayoutsAppBasicTabsImport } from './routes/layouts.app.basic.tabs'
+import { Route as AuthDevExamplesSettingsImport } from './routes/_auth/dev/examples.settings'
+import { Route as AuthDevExamplesDataTableImport } from './routes/_auth/dev/examples.data-table'
+import { Route as AuthDevExamplesBasicTableImport } from './routes/_auth/dev/examples.basic-table'
+import { Route as AuthDevExamplesBasicFormImport } from './routes/_auth/dev/examples.basic-form'
+import { Route as AuthDevExamplesBasicDialogFormImport } from './routes/_auth/dev/examples.basic-dialog-form'
 import { Route as LayoutsAppBasicTabsPasswordImport } from './routes/layouts.app.basic.tabs.password'
 import { Route as LayoutsAppBasicTabsAccountImport } from './routes/layouts.app.basic.tabs.account'
+import { Route as AuthDevExamplesSettingsPasswordImport } from './routes/_auth/dev/examples.settings.password'
+import { Route as AuthDevExamplesSettingsAccountImport } from './routes/_auth/dev/examples.settings.account'
 import { Route as AuthAdminDatatableTableViewImport } from './routes/_auth/admin.datatable.$table.view'
 import { Route as AuthAdminDatatableTableEditImport } from './routes/_auth/admin.datatable.$table.edit'
 import { Route as AuthAdminDatatableTableAddImport } from './routes/_auth/admin.datatable.$table.add'
@@ -53,14 +63,29 @@ const AuthHomeRoute = AuthHomeImport.update({
   getParentRoute: () => AuthRoute,
 } as any)
 
-const AuthDevIndexRoute = AuthDevIndexImport.update({
-  path: '/dev/',
+const AuthDevRoute = AuthDevImport.update({
+  path: '/dev',
   getParentRoute: () => AuthRoute,
+} as any)
+
+const AuthDevIndexRoute = AuthDevIndexImport.update({
+  path: '/',
+  getParentRoute: () => AuthDevRoute,
 } as any)
 
 const LayoutsAppBasicRoute = LayoutsAppBasicImport.update({
   path: '/basic',
   getParentRoute: () => LayoutsAppRoute,
+} as any)
+
+const AuthDevPagesRoute = AuthDevPagesImport.update({
+  path: '/pages',
+  getParentRoute: () => AuthDevRoute,
+} as any)
+
+const AuthDevExamplesRoute = AuthDevExamplesImport.update({
+  path: '/examples',
+  getParentRoute: () => AuthDevRoute,
 } as any)
 
 const AuthAdminDatabaseRoute = AuthAdminDatabaseImport.update({
@@ -72,6 +97,32 @@ const LayoutsAppBasicTabsRoute = LayoutsAppBasicTabsImport.update({
   path: '/tabs',
   getParentRoute: () => LayoutsAppBasicRoute,
 } as any)
+
+const AuthDevExamplesSettingsRoute = AuthDevExamplesSettingsImport.update({
+  path: '/settings',
+  getParentRoute: () => AuthDevExamplesRoute,
+} as any)
+
+const AuthDevExamplesDataTableRoute = AuthDevExamplesDataTableImport.update({
+  path: '/data-table',
+  getParentRoute: () => AuthDevExamplesRoute,
+} as any)
+
+const AuthDevExamplesBasicTableRoute = AuthDevExamplesBasicTableImport.update({
+  path: '/basic-table',
+  getParentRoute: () => AuthDevExamplesRoute,
+} as any)
+
+const AuthDevExamplesBasicFormRoute = AuthDevExamplesBasicFormImport.update({
+  path: '/basic-form',
+  getParentRoute: () => AuthDevExamplesRoute,
+} as any)
+
+const AuthDevExamplesBasicDialogFormRoute =
+  AuthDevExamplesBasicDialogFormImport.update({
+    path: '/basic-dialog-form',
+    getParentRoute: () => AuthDevExamplesRoute,
+  } as any)
 
 const LayoutsAppBasicTabsPasswordRoute =
   LayoutsAppBasicTabsPasswordImport.update({
@@ -85,6 +136,18 @@ const LayoutsAppBasicTabsAccountRoute = LayoutsAppBasicTabsAccountImport.update(
     getParentRoute: () => LayoutsAppBasicTabsRoute,
   } as any,
 )
+
+const AuthDevExamplesSettingsPasswordRoute =
+  AuthDevExamplesSettingsPasswordImport.update({
+    path: '/password',
+    getParentRoute: () => AuthDevExamplesSettingsRoute,
+  } as any)
+
+const AuthDevExamplesSettingsAccountRoute =
+  AuthDevExamplesSettingsAccountImport.update({
+    path: '/account',
+    getParentRoute: () => AuthDevExamplesSettingsRoute,
+  } as any)
 
 const AuthAdminDatatableTableViewRoute =
   AuthAdminDatatableTableViewImport.update({
@@ -110,58 +173,170 @@ const AuthAdminDatatableTableAddRoute = AuthAdminDatatableTableAddImport.update(
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
     '/_auth': {
+      id: '/_auth'
+      path: ''
+      fullPath: ''
       preLoaderRoute: typeof AuthImport
       parentRoute: typeof rootRoute
     }
     '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
       preLoaderRoute: typeof SignupImport
       parentRoute: typeof rootRoute
     }
+    '/_auth/dev': {
+      id: '/_auth/dev'
+      path: '/dev'
+      fullPath: '/dev'
+      preLoaderRoute: typeof AuthDevImport
+      parentRoute: typeof AuthImport
+    }
     '/_auth/home': {
+      id: '/_auth/home'
+      path: '/home'
+      fullPath: '/home'
       preLoaderRoute: typeof AuthHomeImport
       parentRoute: typeof AuthImport
     }
     '/layouts/app': {
+      id: '/layouts/app'
+      path: '/layouts/app'
+      fullPath: '/layouts/app'
       preLoaderRoute: typeof LayoutsAppImport
       parentRoute: typeof rootRoute
     }
     '/_auth/admin/database': {
+      id: '/_auth/admin/database'
+      path: '/admin/database'
+      fullPath: '/admin/database'
       preLoaderRoute: typeof AuthAdminDatabaseImport
       parentRoute: typeof AuthImport
     }
+    '/_auth/dev/examples': {
+      id: '/_auth/dev/examples'
+      path: '/examples'
+      fullPath: '/dev/examples'
+      preLoaderRoute: typeof AuthDevExamplesImport
+      parentRoute: typeof AuthDevImport
+    }
+    '/_auth/dev/pages': {
+      id: '/_auth/dev/pages'
+      path: '/pages'
+      fullPath: '/dev/pages'
+      preLoaderRoute: typeof AuthDevPagesImport
+      parentRoute: typeof AuthDevImport
+    }
     '/layouts/app/basic': {
+      id: '/layouts/app/basic'
+      path: '/basic'
+      fullPath: '/layouts/app/basic'
       preLoaderRoute: typeof LayoutsAppBasicImport
       parentRoute: typeof LayoutsAppImport
     }
     '/_auth/dev/': {
+      id: '/_auth/dev/'
+      path: '/'
+      fullPath: '/dev/'
       preLoaderRoute: typeof AuthDevIndexImport
-      parentRoute: typeof AuthImport
+      parentRoute: typeof AuthDevImport
+    }
+    '/_auth/dev/examples/basic-dialog-form': {
+      id: '/_auth/dev/examples/basic-dialog-form'
+      path: '/basic-dialog-form'
+      fullPath: '/dev/examples/basic-dialog-form'
+      preLoaderRoute: typeof AuthDevExamplesBasicDialogFormImport
+      parentRoute: typeof AuthDevExamplesImport
+    }
+    '/_auth/dev/examples/basic-form': {
+      id: '/_auth/dev/examples/basic-form'
+      path: '/basic-form'
+      fullPath: '/dev/examples/basic-form'
+      preLoaderRoute: typeof AuthDevExamplesBasicFormImport
+      parentRoute: typeof AuthDevExamplesImport
+    }
+    '/_auth/dev/examples/basic-table': {
+      id: '/_auth/dev/examples/basic-table'
+      path: '/basic-table'
+      fullPath: '/dev/examples/basic-table'
+      preLoaderRoute: typeof AuthDevExamplesBasicTableImport
+      parentRoute: typeof AuthDevExamplesImport
+    }
+    '/_auth/dev/examples/data-table': {
+      id: '/_auth/dev/examples/data-table'
+      path: '/data-table'
+      fullPath: '/dev/examples/data-table'
+      preLoaderRoute: typeof AuthDevExamplesDataTableImport
+      parentRoute: typeof AuthDevExamplesImport
+    }
+    '/_auth/dev/examples/settings': {
+      id: '/_auth/dev/examples/settings'
+      path: '/settings'
+      fullPath: '/dev/examples/settings'
+      preLoaderRoute: typeof AuthDevExamplesSettingsImport
+      parentRoute: typeof AuthDevExamplesImport
     }
     '/layouts/app/basic/tabs': {
+      id: '/layouts/app/basic/tabs'
+      path: '/tabs'
+      fullPath: '/layouts/app/basic/tabs'
       preLoaderRoute: typeof LayoutsAppBasicTabsImport
       parentRoute: typeof LayoutsAppBasicImport
     }
     '/_auth/admin/datatable/$table/add': {
+      id: '/_auth/admin/datatable/$table/add'
+      path: '/admin/datatable/$table/add'
+      fullPath: '/admin/datatable/$table/add'
       preLoaderRoute: typeof AuthAdminDatatableTableAddImport
       parentRoute: typeof AuthImport
     }
     '/_auth/admin/datatable/$table/edit': {
+      id: '/_auth/admin/datatable/$table/edit'
+      path: '/admin/datatable/$table/edit'
+      fullPath: '/admin/datatable/$table/edit'
       preLoaderRoute: typeof AuthAdminDatatableTableEditImport
       parentRoute: typeof AuthImport
     }
     '/_auth/admin/datatable/$table/view': {
+      id: '/_auth/admin/datatable/$table/view'
+      path: '/admin/datatable/$table/view'
+      fullPath: '/admin/datatable/$table/view'
       preLoaderRoute: typeof AuthAdminDatatableTableViewImport
       parentRoute: typeof AuthImport
     }
+    '/_auth/dev/examples/settings/account': {
+      id: '/_auth/dev/examples/settings/account'
+      path: '/account'
+      fullPath: '/dev/examples/settings/account'
+      preLoaderRoute: typeof AuthDevExamplesSettingsAccountImport
+      parentRoute: typeof AuthDevExamplesSettingsImport
+    }
+    '/_auth/dev/examples/settings/password': {
+      id: '/_auth/dev/examples/settings/password'
+      path: '/password'
+      fullPath: '/dev/examples/settings/password'
+      preLoaderRoute: typeof AuthDevExamplesSettingsPasswordImport
+      parentRoute: typeof AuthDevExamplesSettingsImport
+    }
     '/layouts/app/basic/tabs/account': {
+      id: '/layouts/app/basic/tabs/account'
+      path: '/account'
+      fullPath: '/layouts/app/basic/tabs/account'
       preLoaderRoute: typeof LayoutsAppBasicTabsAccountImport
       parentRoute: typeof LayoutsAppBasicTabsImport
     }
     '/layouts/app/basic/tabs/password': {
+      id: '/layouts/app/basic/tabs/password'
+      path: '/password'
+      fullPath: '/layouts/app/basic/tabs/password'
       preLoaderRoute: typeof LayoutsAppBasicTabsPasswordImport
       parentRoute: typeof LayoutsAppBasicTabsImport
     }
@@ -170,25 +345,180 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([
+export const routeTree = rootRoute.addChildren({
   IndexRoute,
-  AuthRoute.addChildren([
+  AuthRoute: AuthRoute.addChildren({
+    AuthDevRoute: AuthDevRoute.addChildren({
+      AuthDevExamplesRoute: AuthDevExamplesRoute.addChildren({
+        AuthDevExamplesBasicDialogFormRoute,
+        AuthDevExamplesBasicFormRoute,
+        AuthDevExamplesBasicTableRoute,
+        AuthDevExamplesDataTableRoute,
+        AuthDevExamplesSettingsRoute: AuthDevExamplesSettingsRoute.addChildren({
+          AuthDevExamplesSettingsAccountRoute,
+          AuthDevExamplesSettingsPasswordRoute,
+        }),
+      }),
+      AuthDevPagesRoute,
+      AuthDevIndexRoute,
+    }),
     AuthHomeRoute,
     AuthAdminDatabaseRoute,
-    AuthDevIndexRoute,
     AuthAdminDatatableTableAddRoute,
     AuthAdminDatatableTableEditRoute,
     AuthAdminDatatableTableViewRoute,
-  ]),
+  }),
   SignupRoute,
-  LayoutsAppRoute.addChildren([
-    LayoutsAppBasicRoute.addChildren([
-      LayoutsAppBasicTabsRoute.addChildren([
+  LayoutsAppRoute: LayoutsAppRoute.addChildren({
+    LayoutsAppBasicRoute: LayoutsAppBasicRoute.addChildren({
+      LayoutsAppBasicTabsRoute: LayoutsAppBasicTabsRoute.addChildren({
         LayoutsAppBasicTabsAccountRoute,
         LayoutsAppBasicTabsPasswordRoute,
-      ]),
-    ]),
-  ]),
-])
+      }),
+    }),
+  }),
+})
 
 /* prettier-ignore-end */
+
+/* ROUTE_MANIFEST_START
+{
+  "routes": {
+    "__root__": {
+      "filePath": "__root.tsx",
+      "children": [
+        "/",
+        "/_auth",
+        "/signup",
+        "/layouts/app"
+      ]
+    },
+    "/": {
+      "filePath": "index.tsx"
+    },
+    "/_auth": {
+      "filePath": "_auth.tsx",
+      "children": [
+        "/_auth/dev",
+        "/_auth/home",
+        "/_auth/admin/database",
+        "/_auth/admin/datatable/$table/add",
+        "/_auth/admin/datatable/$table/edit",
+        "/_auth/admin/datatable/$table/view"
+      ]
+    },
+    "/signup": {
+      "filePath": "signup.tsx"
+    },
+    "/_auth/dev": {
+      "filePath": "_auth/dev.tsx",
+      "parent": "/_auth",
+      "children": [
+        "/_auth/dev/examples",
+        "/_auth/dev/pages",
+        "/_auth/dev/"
+      ]
+    },
+    "/_auth/home": {
+      "filePath": "_auth/home.tsx",
+      "parent": "/_auth"
+    },
+    "/layouts/app": {
+      "filePath": "layouts.app.tsx",
+      "children": [
+        "/layouts/app/basic"
+      ]
+    },
+    "/_auth/admin/database": {
+      "filePath": "_auth/admin.database.tsx",
+      "parent": "/_auth"
+    },
+    "/_auth/dev/examples": {
+      "filePath": "_auth/dev/examples.tsx",
+      "parent": "/_auth/dev",
+      "children": [
+        "/_auth/dev/examples/basic-dialog-form",
+        "/_auth/dev/examples/basic-form",
+        "/_auth/dev/examples/basic-table",
+        "/_auth/dev/examples/data-table",
+        "/_auth/dev/examples/settings"
+      ]
+    },
+    "/_auth/dev/pages": {
+      "filePath": "_auth/dev/pages.tsx",
+      "parent": "/_auth/dev"
+    },
+    "/layouts/app/basic": {
+      "filePath": "layouts.app.basic.tsx",
+      "parent": "/layouts/app",
+      "children": [
+        "/layouts/app/basic/tabs"
+      ]
+    },
+    "/_auth/dev/": {
+      "filePath": "_auth/dev/index.tsx",
+      "parent": "/_auth/dev"
+    },
+    "/_auth/dev/examples/basic-dialog-form": {
+      "filePath": "_auth/dev/examples.basic-dialog-form.tsx",
+      "parent": "/_auth/dev/examples"
+    },
+    "/_auth/dev/examples/basic-form": {
+      "filePath": "_auth/dev/examples.basic-form.tsx",
+      "parent": "/_auth/dev/examples"
+    },
+    "/_auth/dev/examples/basic-table": {
+      "filePath": "_auth/dev/examples.basic-table.tsx",
+      "parent": "/_auth/dev/examples"
+    },
+    "/_auth/dev/examples/data-table": {
+      "filePath": "_auth/dev/examples.data-table.tsx",
+      "parent": "/_auth/dev/examples"
+    },
+    "/_auth/dev/examples/settings": {
+      "filePath": "_auth/dev/examples.settings.tsx",
+      "parent": "/_auth/dev/examples",
+      "children": [
+        "/_auth/dev/examples/settings/account",
+        "/_auth/dev/examples/settings/password"
+      ]
+    },
+    "/layouts/app/basic/tabs": {
+      "filePath": "layouts.app.basic.tabs.tsx",
+      "parent": "/layouts/app/basic",
+      "children": [
+        "/layouts/app/basic/tabs/account",
+        "/layouts/app/basic/tabs/password"
+      ]
+    },
+    "/_auth/admin/datatable/$table/add": {
+      "filePath": "_auth/admin.datatable.$table.add.tsx",
+      "parent": "/_auth"
+    },
+    "/_auth/admin/datatable/$table/edit": {
+      "filePath": "_auth/admin.datatable.$table.edit.tsx",
+      "parent": "/_auth"
+    },
+    "/_auth/admin/datatable/$table/view": {
+      "filePath": "_auth/admin.datatable.$table.view.tsx",
+      "parent": "/_auth"
+    },
+    "/_auth/dev/examples/settings/account": {
+      "filePath": "_auth/dev/examples.settings.account.tsx",
+      "parent": "/_auth/dev/examples/settings"
+    },
+    "/_auth/dev/examples/settings/password": {
+      "filePath": "_auth/dev/examples.settings.password.tsx",
+      "parent": "/_auth/dev/examples/settings"
+    },
+    "/layouts/app/basic/tabs/account": {
+      "filePath": "layouts.app.basic.tabs.account.tsx",
+      "parent": "/layouts/app/basic/tabs"
+    },
+    "/layouts/app/basic/tabs/password": {
+      "filePath": "layouts.app.basic.tabs.password.tsx",
+      "parent": "/layouts/app/basic/tabs"
+    }
+  }
+}
+ROUTE_MANIFEST_END */
