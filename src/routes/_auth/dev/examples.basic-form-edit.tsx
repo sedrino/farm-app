@@ -1,12 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Panel } from "@/components/ui/panel";
+import { personQuery } from "@/examples/query-options";
 import BasicForm from "@/components/form/basic-form";
 import { z } from "zod";
 import { useCreatePersonMutation } from "@/examples/mutations";
 import { toast } from "sonner";
 import { useCallback } from "react";
-export const Route = createFileRoute("/_auth/dev/examples/basic-form")({
+import { useSuspenseQuery } from "@tanstack/react-query";
+export const Route = createFileRoute("/_auth/dev/examples/basic-form-edit")({
   component: () => <BasicFormComponent />,
+  loader: (opts) => {
+    return opts.context.queryClient.ensureQueryData(personQuery);
+  },
 });
 
 // AI generated code
@@ -15,7 +20,7 @@ const schema = z.object({
   age: z.number(),
   visits: z.number(),
   status: z.string().min(1, "Status is required"),
-  isPublic: z.boolean(),
+  isPublic: z.boolean().default(false),
 });
 const fieldSelectArrayMap = {
   status: ["Single", "Complicated", "In Relationship"],
@@ -30,14 +35,10 @@ function BasicFormComponent() {
   }, []);
 
   const createPersonMutation = useCreatePersonMutation();
+  const { data } = useSuspenseQuery(personQuery);
 
-  const data = {
-    firstName: "",
-    age: undefined,
-    visits: undefined,
-    status: "",
-    isPublic: false,
-  };
+  const formDefaults = schema.parse(data);
+
   //
 
   return (
@@ -45,7 +46,7 @@ function BasicFormComponent() {
       <Panel className="p-4">
         <BasicForm
           //data could come from query etc but this is setting defaults
-          data={data}
+          data={formDefaults}
           schema={schema}
           title={"Basic Form"}
           fieldSelectArrayMap={fieldSelectArrayMap}

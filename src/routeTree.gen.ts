@@ -26,6 +26,7 @@ import { Route as LayoutsAppBasicTabsImport } from './routes/layouts.app.basic.t
 import { Route as AuthDevExamplesSettingsImport } from './routes/_auth/dev/examples.settings'
 import { Route as AuthDevExamplesDataTableImport } from './routes/_auth/dev/examples.data-table'
 import { Route as AuthDevExamplesBasicTableImport } from './routes/_auth/dev/examples.basic-table'
+import { Route as AuthDevExamplesBasicFormEditImport } from './routes/_auth/dev/examples.basic-form-edit'
 import { Route as AuthDevExamplesBasicFormImport } from './routes/_auth/dev/examples.basic-form'
 import { Route as AuthDevExamplesBasicDialogFormImport } from './routes/_auth/dev/examples.basic-dialog-form'
 import { Route as LayoutsAppBasicTabsPasswordImport } from './routes/layouts.app.basic.tabs.password'
@@ -112,6 +113,12 @@ const AuthDevExamplesBasicTableRoute = AuthDevExamplesBasicTableImport.update({
   path: '/basic-table',
   getParentRoute: () => AuthDevExamplesRoute,
 } as any)
+
+const AuthDevExamplesBasicFormEditRoute =
+  AuthDevExamplesBasicFormEditImport.update({
+    path: '/basic-form-edit',
+    getParentRoute: () => AuthDevExamplesRoute,
+  } as any)
 
 const AuthDevExamplesBasicFormRoute = AuthDevExamplesBasicFormImport.update({
   path: '/basic-form',
@@ -263,6 +270,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthDevExamplesBasicFormImport
       parentRoute: typeof AuthDevExamplesImport
     }
+    '/_auth/dev/examples/basic-form-edit': {
+      id: '/_auth/dev/examples/basic-form-edit'
+      path: '/basic-form-edit'
+      fullPath: '/dev/examples/basic-form-edit'
+      preLoaderRoute: typeof AuthDevExamplesBasicFormEditImport
+      parentRoute: typeof AuthDevExamplesImport
+    }
     '/_auth/dev/examples/basic-table': {
       id: '/_auth/dev/examples/basic-table'
       path: '/basic-table'
@@ -352,6 +366,7 @@ export const routeTree = rootRoute.addChildren({
       AuthDevExamplesRoute: AuthDevExamplesRoute.addChildren({
         AuthDevExamplesBasicDialogFormRoute,
         AuthDevExamplesBasicFormRoute,
+        AuthDevExamplesBasicFormEditRoute,
         AuthDevExamplesBasicTableRoute,
         AuthDevExamplesDataTableRoute,
         AuthDevExamplesSettingsRoute: AuthDevExamplesSettingsRoute.addChildren({
@@ -439,6 +454,7 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/_auth/dev/examples/basic-dialog-form",
         "/_auth/dev/examples/basic-form",
+        "/_auth/dev/examples/basic-form-edit",
         "/_auth/dev/examples/basic-table",
         "/_auth/dev/examples/data-table",
         "/_auth/dev/examples/settings"
@@ -465,6 +481,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/_auth/dev/examples/basic-form": {
       "filePath": "_auth/dev/examples.basic-form.tsx",
+      "parent": "/_auth/dev/examples"
+    },
+    "/_auth/dev/examples/basic-form-edit": {
+      "filePath": "_auth/dev/examples.basic-form-edit.tsx",
       "parent": "/_auth/dev/examples"
     },
     "/_auth/dev/examples/basic-table": {
