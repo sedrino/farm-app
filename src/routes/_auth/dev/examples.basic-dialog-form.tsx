@@ -56,7 +56,7 @@ function BasicFormComponent() {
                 isPublic: false,
               }}
               schema={schema}
-              title={"Basic Form"}
+              title={"Basic Form in Dialog"}
               fieldSelectArrayMap={fieldSelectArrayMap}
               mutation={createPersonMutation()}
               successFunction={successFunction}
