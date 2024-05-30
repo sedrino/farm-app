@@ -1,8 +1,8 @@
-import { Outlet, createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 import {
   SimpleLeftMenuLayout,
-  SimpleVerticalNavSection,
   SimpleNavLink,
+  SimpleVerticalNavSection,
 } from "@/components/layouts/simple-left-menu-layout";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 export const Route = createFileRoute("/_auth/dev/examples")({
@@ -31,6 +31,9 @@ export function PageListComponent() {
               </SimpleNavLink>
               <SimpleNavLink to={"/dev/examples/basic-dialog-form"}>
                 Basic Dialog
+              </SimpleNavLink>
+              <SimpleNavLink to={"/dev/examples/basic-form-edit"}>
+                Basic Form Edit
               </SimpleNavLink>
             </SimpleVerticalNavSection>
             <Separator />

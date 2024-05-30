@@ -8,7 +8,7 @@ export type Person = {
   isPublic: boolean;
 };
 
-export function createPersonMutation() {
+export function useCreatePersonMutation() {
   return useMutation({
     mutationFn: async (data: Person) => {
       console.log("data", data);

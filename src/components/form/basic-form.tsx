@@ -47,7 +47,7 @@ export default function BasicForm<TFormData>(props: {
       >
         <div className="flex flex-col space-y-2">
           {Object.keys(schemaShape).map((key, index) => {
-            let fieldType = schemaShape[key]._def.typeName;
+            let fieldType = schemaShape[key]._def.innerType ? schemaShape[key]._def.innerType._def.typeName : schemaShape[key]._def.typeName;
             const selectOptions = props.fieldSelectArrayMap[key];
             if(selectOptions){
                 fieldType = "Select";
