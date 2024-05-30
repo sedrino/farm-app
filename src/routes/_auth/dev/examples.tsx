@@ -5,11 +5,9 @@ import {
   SimpleNavLink,
 } from "@/components/layouts/simple-left-menu-layout";
 import { Separator } from "@radix-ui/react-dropdown-menu";
-
 export const Route = createFileRoute("/_auth/dev/examples")({
   component: () => <PageListComponent />,
 });
-
 export function PageListComponent() {
   return (
     <SimpleLeftMenuLayout
@@ -25,6 +23,11 @@ export function PageListComponent() {
               </SimpleNavLink>
               <SimpleNavLink to={"/dev/examples/data-table"}>
                 Data Table
+              </SimpleNavLink>
+            </SimpleVerticalNavSection>
+            <SimpleVerticalNavSection title="Forms">
+              <SimpleNavLink to={"/dev/examples/basic-form"}>
+                Basic
               </SimpleNavLink>
             </SimpleVerticalNavSection>
             <Separator />
