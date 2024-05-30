@@ -57,12 +57,12 @@ export function BasicInput(
         <>
           <label htmlFor={props.field.name}>{props.label}:</label>
           <Select
-            value={props.field.state.value}
+            value={props.field.state.value || ""}
             onValueChange={(v) => {
               props.field.handleChange(v);
             }}
           >
-            <SelectTrigger>
+            <SelectTrigger onBlur={props.field.handleBlur}>
               <SelectValue>
                 {props.field.state.value}
               </SelectValue>

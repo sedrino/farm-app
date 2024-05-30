@@ -6,14 +6,13 @@ import { z } from "zod";
 import { createPersonMutation } from "@/examples/mutations";
 import { toast } from "sonner";
 export const Route = createFileRoute("/_auth/dev/examples/basic-form")({
-  component: () => <BasicTableComponent />,
+  component: () => <BasicFormComponent />,
   loader: (opts) => {
     return opts.context.queryClient.ensureQueryData(peopleQuery);
   },
 });
 
-function BasicTableComponent() {
-
+function BasicFormComponent() {
   const schema = z.object({
     firstName: z.string().min(1, "First Name is required"),
     age: z.number(),
@@ -26,20 +25,21 @@ function BasicTableComponent() {
     status: ["Single", "Complicated", "In Relationship"],
   };
 
-  function successFunction(){
+  function successFunction() {
     console.log("success");
     toast.success("Success");
-  } 
+  }
   return (
     <div className="flex flex-col gap-4 p-8">
       <Panel className="p-4">
         <BasicForm
+        //data could come from query etc but this is setting defaults
           data={{
-            firstName: "John",
-            age: 20,
-            visits: 10,
-            status: "Single",
-            isPublic: true,
+            firstName: "",
+            age: undefined,
+            visits: undefined,
+            status: "",
+            isPublic: false,
           }}
           schema={schema}
           title={"Basic Form"}

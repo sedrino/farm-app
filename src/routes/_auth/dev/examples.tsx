@@ -29,6 +29,9 @@ export function PageListComponent() {
               <SimpleNavLink to={"/dev/examples/basic-form"}>
                 Basic
               </SimpleNavLink>
+              <SimpleNavLink to={"/dev/examples/basic-dialog-form"}>
+                Basic Dialog
+              </SimpleNavLink>
             </SimpleVerticalNavSection>
             <Separator />
             <SimpleVerticalNavSection title="Settings">

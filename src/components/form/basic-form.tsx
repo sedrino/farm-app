@@ -20,6 +20,7 @@ export default function BasicForm<TFormData>(props: {
     defaultValues: props.data,
     onSubmit: async ({ value }) => {
         try{
+          console.log("submitting")
             await props.mutation.mutateAsync(value);
             if(props.successFunction){
                 props.successFunction();
