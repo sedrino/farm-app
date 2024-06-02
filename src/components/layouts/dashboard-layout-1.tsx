@@ -16,7 +16,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
 export function DashboardLayout1(props: {
   children: React.ReactNode;
   sideNav: React.ReactNode;
@@ -33,7 +32,6 @@ export function DashboardLayout1(props: {
     </div>
   );
 }
-
 export function LeftCollapsableSideNav(props: { topNav: React.ReactNode }) {
   const [navOpen, setNavOpen] = React.useState(false);
   return (
@@ -71,12 +69,9 @@ export function LeftCollapsableSideNav(props: { topNav: React.ReactNode }) {
     </div>
   );
 }
-
 DashboardLayout1.LeftSideNav = LeftCollapsableSideNav;
-
 const navItemClasses =
   "relative h-10 w-10 group-data-[state=expanded]:w-full lg:w-full transition-all duration-200 flex items-center rounded group-data-[state=collapsed]:justify-center lg:group-data-[state=expanded]:space-x-0 group-data-[state=expanded]:-space-x-2 text-foreground-lighter hover:text-foreground hover:bg-surface-200 !bg-selection !text-foreground shadow-sm group/item hover:bg-selected data-[status=active]:bg-selected";
-
 const NavLink = <
   TRouteTree extends AnyRoute = RegisteredRouter["routeTree"],
   TFrom extends RoutePaths<TRouteTree> | string = string,
@@ -109,12 +104,12 @@ const NavLink = <
     </Link>
   );
 };
-
 DashboardLayout1.NavLink = NavLink;
-
 const NavButton = React.forwardRef<
   React.ElementRef<"button">,
-  React.ComponentPropsWithoutRef<"button"> & { icon: React.ReactNode }
+  React.ComponentPropsWithoutRef<"button"> & {
+    icon: React.ReactNode;
+  }
 >(({ className, icon, ...props }, ref) => {
   return (
     <button
@@ -131,5 +126,4 @@ const NavButton = React.forwardRef<
     </button>
   );
 });
-
 DashboardLayout1.NavButton = NavButton;

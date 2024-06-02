@@ -1,6 +1,5 @@
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-
 const contentVariants = cva("flex flex-col justify-center", {
   variants: {
     position: {
@@ -19,13 +18,11 @@ const contentVariants = cva("flex flex-col justify-center", {
     size: "lg",
   },
 });
-
 export interface ContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof contentVariants> {
   children?: React.ReactNode;
 }
-
 export const Content = ({
   children,
   position,

@@ -1,11 +1,9 @@
 // import { useForm } from "@/lib/form";
 import { FormApi } from "@tanstack/react-form";
 import { Button, ButtonProps } from "@/components/ui/button";
-
 interface FormSubmitButtonProps<TFormData> extends Omit<ButtonProps, "form"> {
   form: FormApi<TFormData, any>;
 }
-
 export function FormSubmitButton<TFormData>({
   form,
   ...props

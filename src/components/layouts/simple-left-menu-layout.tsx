@@ -5,7 +5,6 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { Link, LinkProps } from "@tanstack/react-router";
-
 export function SimpleLeftMenuLayout(props: {
   content?: React.ReactNode;
   sideNav?: React.ReactNode;
@@ -24,7 +23,6 @@ export function SimpleLeftMenuLayout(props: {
     </ResizablePanelGroup>
   );
 }
-
 SimpleLeftMenuLayout.Header = (props: { children?: React.ReactNode }) => {
   return (
     <div className="border-default flex max-h-12 items-center border-b px-6 h-12 min-h-12">
@@ -32,7 +30,6 @@ SimpleLeftMenuLayout.Header = (props: { children?: React.ReactNode }) => {
     </div>
   );
 };
-
 SimpleLeftMenuLayout.ScrollArea = (props: { children?: React.ReactNode }) => {
   return (
     <div className="flex-grow overflow-y-auto">
@@ -50,7 +47,6 @@ SimpleLeftMenuLayout.ScrollArea = (props: { children?: React.ReactNode }) => {
     </div>
   );
 };
-
 export function SimpleVerticalNavSection(props: {
   title: string;
   children?: React.ReactNode;
@@ -73,7 +69,6 @@ export function SimpleVerticalNavSection(props: {
     </div>
   );
 }
-
 export const SimpleNavLink = ({
   children,
   icon,

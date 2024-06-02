@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
-
 export function Grid() {
   return (
     <div className="grid grid-cols-12 gap-6 px-8  py-8 opacity-100">
@@ -11,7 +10,6 @@ export function Grid() {
     </div>
   );
 }
-
 export function TwoColumn(props: {
   children: React.ReactNode;
   className?: string;
@@ -22,11 +20,9 @@ export function TwoColumn(props: {
     </div>
   );
 }
-
 TwoColumn.Left = function TwoColumnLeft(props: { children: React.ReactNode }) {
   return <div className="col-span-12 @lg:col-span-5">{props.children}</div>;
 };
-
 TwoColumn.Right = function TwoColumnRight(props: {
   children: React.ReactNode;
   className?: string;
@@ -38,14 +34,13 @@ TwoColumn.Right = function TwoColumnRight(props: {
     <Comp
       className={cn(
         "relative col-span-12 @lg:col-span-7 gap-6 flex flex-col",
-        props.className
+        props.className,
       )}
     >
       {props.children}
     </Comp>
   );
 };
-
 export function InputContainer(props: {
   label: React.ReactNode;
   children?: React.ReactNode;
@@ -73,7 +68,6 @@ export function InputContainer(props: {
     </div>
   );
 }
-
 InputContainer.Label = function InputContainerLabel(props: {
   children: React.ReactNode;
 }) {

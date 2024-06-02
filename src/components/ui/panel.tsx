@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-
 export function Panel(props: {
   children: React.ReactNode;
   className?: string;
@@ -8,14 +7,13 @@ export function Panel(props: {
     <div
       className={cn(
         "bg-surface-100 border-default overflow-hidden  rounded-md border shadow",
-        props.className
+        props.className,
       )}
     >
       {props.children}
     </div>
   );
 }
-
 Panel.Divider = function PanelDivider() {
   return <div className="border-b border-border" />;
 };
