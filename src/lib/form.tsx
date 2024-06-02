@@ -5,14 +5,12 @@ import {
   FormState,
 } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
-
 export function useForm<TData>(opts?: FormOptions<TData, typeof zodValidator>) {
   return useFormInternal<TData, typeof zodValidator>({
     ...opts,
     validatorAdapter: zodValidator,
   });
 }
-
 export function FormShowIf<TFormData>({
   children,
   form,
