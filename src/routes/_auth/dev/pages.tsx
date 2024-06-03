@@ -6,7 +6,7 @@ import { prose } from "@/components/ui/typography";
 import { DashboardLayout1 } from "@/components/layouts/dashboard-layout-1";
 
 export const Route = createFileRoute("/_auth/dev/pages")({
-  component: () => <PageListComponent />,
+  component: PageListComponent,
 });
 
 export function PageListComponent() {
