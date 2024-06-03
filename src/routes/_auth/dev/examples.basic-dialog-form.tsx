@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useCallback, useState } from "react";
 export const Route = createFileRoute("/_auth/dev/examples/basic-dialog-form")({
-  component: () => <BasicFormComponent />,
+  component: BasicFormComponent,
 });
 
 // AI generated code

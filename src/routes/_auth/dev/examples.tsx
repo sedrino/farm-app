@@ -6,7 +6,7 @@ import {
 } from "@/components/layouts/simple-left-menu-layout";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 export const Route = createFileRoute("/_auth/dev/examples")({
-  component: () => <PageListComponent />,
+  component: PageListComponent,
 });
 export function PageListComponent() {
   return (

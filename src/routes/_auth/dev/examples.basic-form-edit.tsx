@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { useCallback } from "react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 export const Route = createFileRoute("/_auth/dev/examples/basic-form-edit")({
-  component: () => <BasicFormComponent />,
+  component: BasicFormComponent,
   loader: (opts) => {
     return opts.context.queryClient.ensureQueryData(personQuery);
   },

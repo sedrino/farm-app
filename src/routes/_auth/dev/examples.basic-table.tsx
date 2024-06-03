@@ -7,7 +7,7 @@ import { Person, peopleQuery } from "@/examples/query-options";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_auth/dev/examples/basic-table")({
-  component: () => <BasicTableComponent />,
+  component: BasicTableComponent,
   loader: (opts) => {
     return opts.context.queryClient.ensureQueryData(peopleQuery);
   },

@@ -6,7 +6,7 @@ import { useCreatePersonMutation } from "@/examples/mutations";
 import { toast } from "sonner";
 import { useCallback } from "react";
 export const Route = createFileRoute("/_auth/dev/examples/basic-form")({
-  component: () => <BasicFormComponent />,
+  component: BasicFormComponent,
 });
 
 // AI generated code

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_auth/dev/examples/data-table")({
-  component: () => <DataTableComponent />,
+  component:DataTableComponent,
 });
 
 function DataTableComponent() {
