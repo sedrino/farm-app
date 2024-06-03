@@ -34,6 +34,14 @@ export const peopleQuery = queryOptions({
     ),
 });
 
+export const personQuery = queryOptions({
+  queryKey: ["person"],
+  queryFn: () => {
+    return defaultData[0];
+  },
+});
+
+
 export const temperatureSensorsQuery = queryOptions({
   queryKey: ["temperature-sensors"],
   queryFn: () => {
