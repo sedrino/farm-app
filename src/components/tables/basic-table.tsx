@@ -14,7 +14,6 @@ import {
   ColumnDef,
   getPaginationRowModel,
 } from "@tanstack/react-table";
-import React from "react";
 import {
   Pagination,
   PaginationContent,
@@ -24,17 +23,6 @@ import {
   PaginationEllipsis,
   PaginationNext,
 } from "@/components/ui/pagination";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { Link, useSearch } from "@tanstack/react-router";
-
 export function BasicTable<TData>(props: {
   data: TData[];
   columns: ColumnDef<TData, any>[];
@@ -87,7 +75,6 @@ export function BasicTable<TData>(props: {
     </Table>
   );
 }
-
 export function BasicTableWithPagination<TData>(props: {
   data: TData[];
   columns: ColumnDef<TData, any>[];
@@ -109,7 +96,6 @@ export function BasicTableWithPagination<TData>(props: {
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
-
   return (
     <div>
       <Table>
@@ -182,21 +168,6 @@ export function BasicTableWithPagination<TData>(props: {
             </PaginationItem>
           </PaginationContent>
         </Pagination>
-        {/* <Select onValueChange={(value) => setPageSize(Number(value))}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder={`Show ${pageSize}`} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Rows per page</SelectLabel>
-              {[10, 20, 30, 40, 50].map((size) => (
-                <SelectItem key={size} value={size.toString()}>
-                  Show {size}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select> */}
       </div>
     </div>
   );
