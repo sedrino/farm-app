@@ -8,7 +8,6 @@ import { useCallback } from "react";
 export const Route = createFileRoute("/_auth/dev/examples/basic-form")({
   component: BasicFormComponent,
 });
-
 // AI generated code
 const schema = z.object({
   firstName: z.string().min(1, "First Name is required"),
@@ -23,14 +22,11 @@ const fieldSelectArrayMap = {
 //
 function BasicFormComponent() {
   // AI generated code
-
   const successFunction = useCallback(() => {
     console.log("success");
     toast.success("Success");
   }, []);
-
   const createPersonMutation = useCreatePersonMutation();
-
   const data = {
     firstName: "",
     age: undefined,
@@ -39,7 +35,6 @@ function BasicFormComponent() {
     isPublic: false,
   };
   //
-
   return (
     <div className="flex flex-col gap-4 p-8">
       <Panel className="p-4">

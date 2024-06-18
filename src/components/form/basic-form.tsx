@@ -6,34 +6,36 @@ import { FormSubmitButton } from "./submit";
 import { BasicInput } from "./basic-input";
 import { toast } from "sonner";
 
-export default function BasicForm<TFormData>(props: {
+export default function BasicForm<
+  TFormData extends Record<string, unknown>,
+  TSchema extends z.ZodObject<{ [K in keyof TFormData]: z.ZodTypeAny }>,
+>(props: {
   data: TFormData;
   mutation: UseMutationResult<any, unknown, any, unknown>;
-  schema: z.ZodObject<any>;
+  schema: TSchema;
   title: string;
-  fieldSelectArrayMap: { [key: string]: string[] };
+  fieldSelectArrayMap?: {
+    [key: string]: string[];
+  };
   successFunction?: () => void;
 }) {
   const schemaShape = props.schema.shape;
-
   const form = useForm({
     defaultValues: props.data,
     onSubmit: async ({ value }) => {
-        try{
-          console.log("submitting")
-            await props.mutation.mutateAsync(value);
-            if(props.successFunction){
-                props.successFunction();
-            }
-        }catch(e){
-            console.log(e);
-            toast.error("An error occurred");
+      try {
+        console.log("submitting");
+        await props.mutation.mutateAsync(value);
+        if (props.successFunction) {
+          props.successFunction();
         }
-
+      } catch (e) {
+        console.log(e);
+        toast.error("An error occurred");
+      }
     },
     validatorAdapter: zodValidator,
   });
-
   return (
     <div>
       <h1>{props.title}</h1>
@@ -47,15 +49,18 @@ export default function BasicForm<TFormData>(props: {
       >
         <div className="flex flex-col space-y-2">
           {Object.keys(schemaShape).map((key, index) => {
-            let fieldType = schemaShape[key]._def.innerType ? schemaShape[key]._def.innerType._def.typeName : schemaShape[key]._def.typeName;
-            const selectOptions = props.fieldSelectArrayMap[key];
-            if(selectOptions){
-                fieldType = "Select";
+            let fieldType = schemaShape[key]._def.innerType
+              ? schemaShape[key]._def.innerType._def.typeName
+              : schemaShape[key]._def.typeName;
+            const selectOptions = props.fieldSelectArrayMap?.[key];
+            if (selectOptions) {
+              fieldType = "Select";
             }
             return (
               <form.Field
                 key={key + index}
-                name={key as keyof TFormData}
+                // @ts-ignore
+                name={key as keyof TSchema}
                 validators={{
                   onChange: schemaShape[key],
                   onChangeAsyncDebounceMs: 500,

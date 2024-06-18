@@ -1,16 +1,4 @@
-import {
-  SimpleLeftMenuLayout,
-  SimpleNavLink,
-  SimpleVerticalNavSection,
-} from "@/components/layouts/simple-left-menu-layout";
-import { Content } from "@/components/ui/layouts/content";
-import { PageHeader } from "@/components/ui/layouts/page-header";
-import { Separator } from "@/components/ui/separator";
-import { pageBreadcrumb, pageTitle, title } from "@/components/ui/typography";
-import { Outlet, createFileRoute } from "@tanstack/react-router";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { LinkTabs } from "@/components/ui/link-tabs";
-
+import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/layouts/app/basic/tabs/password")({
   component: () => (
     <div className="bg-surface-100 border-default overflow-hidden  rounded-md border shadow">
@@ -138,7 +126,7 @@ export const Route = createFileRoute("/layouts/app/basic/tabs/password")({
                 <div className="order-2 col-span-4 flex flex-col space-y-2">
                   <label
                     className="text-foreground-light block text-sm leading-4"
-                    for="isOptedIntoAi"
+                    htmlFor="isOptedIntoAi"
                   >
                     Opt-in to sending anonymous data to OpenAI
                   </label>
@@ -164,7 +152,6 @@ export const Route = createFileRoute("/layouts/app/basic/tabs/password")({
               <div data-state="closed">
                 <div
                   className="ml-16 flex cursor-pointer items-center space-x-2"
-                  type="button"
                   aria-controls="radix-:rkc:"
                   aria-expanded="false"
                   data-state="closed"

@@ -4,7 +4,6 @@ import { pageBreadcrumb, pageTitle } from "@/components/ui/typography";
 import { createFileRoute } from "@tanstack/react-router";
 import { LinkTabs } from "@/components/ui/link-tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
 export const Route = createFileRoute("/_auth/dev/examples/settings")({
   component: () => (
     <main className="h-full flex flex-col flex-1 w-full overflow-x-hidden">

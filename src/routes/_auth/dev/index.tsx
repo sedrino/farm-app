@@ -1,10 +1,8 @@
 import { meta } from "@/meta";
 import { createFileRoute } from "@tanstack/react-router";
-
 export const Route = createFileRoute("/_auth/dev/")({
   component: DevHomePage,
 });
-
 export function DevHomePage() {
   return (
     <div className="flex flex-col gap-2 justify-start items-start">

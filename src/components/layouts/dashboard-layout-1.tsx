@@ -72,24 +72,14 @@ export function LeftCollapsableSideNav(props: { topNav: React.ReactNode }) {
 DashboardLayout1.LeftSideNav = LeftCollapsableSideNav;
 const navItemClasses =
   "relative h-10 w-10 group-data-[state=expanded]:w-full lg:w-full transition-all duration-200 flex items-center rounded group-data-[state=collapsed]:justify-center lg:group-data-[state=expanded]:space-x-0 group-data-[state=expanded]:-space-x-2 text-foreground-lighter hover:text-foreground hover:bg-surface-200 !bg-selection !text-foreground shadow-sm group/item hover:bg-selected data-[status=active]:bg-selected";
-const NavLink = <
-  TRouteTree extends AnyRoute = RegisteredRouter["routeTree"],
-  TFrom extends RoutePaths<TRouteTree> | string = string,
-  TTo extends string = "",
-  TMaskFrom extends RoutePaths<TRouteTree> | string = TFrom,
-  TMaskTo extends string = "",
->(props: {
+const NavLink = ({
+  children,
+  icon,
+  ...linkProps
+}: {
   children: React.ReactNode;
   icon: React.ReactNode;
-  linkProps: Omit<
-    React.PropsWithoutRef<
-      LinkProps<TRouteTree, TFrom, TTo, TMaskFrom, TMaskTo> &
-        Omit<React.ComponentPropsWithoutRef<"a">, "preload">
-    >,
-    "children" | "className" | "activeProps" | "inactiveProps"
-  >;
-}) => {
-  const { children, icon, linkProps } = props;
+} & LinkProps) => {
   return (
     <Link className={navItemClasses} {...linkProps}>
       <span
@@ -104,6 +94,7 @@ const NavLink = <
     </Link>
   );
 };
+
 DashboardLayout1.NavLink = NavLink;
 const NavButton = React.forwardRef<
   React.ElementRef<"button">,

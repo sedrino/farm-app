@@ -1,9 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-
 export const Route = createFileRoute("/signup")({
-  component: Signup,
+  component: () => <div>Hello /signup!</div>,
 });
-
-function Signup() {
-  return <div className="flex flex-1 justify-center items-center"></div>;
-}

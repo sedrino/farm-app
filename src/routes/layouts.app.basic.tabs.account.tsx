@@ -4,14 +4,11 @@ import { Panel } from "@/components/ui/panel";
 import { createFileRoute } from "@tanstack/react-router";
 import { useForm } from "@/lib/form";
 import { z } from "zod";
-import { zodValidator } from "@tanstack/zod-form-adapter";
 import { Button } from "@/components/ui/button";
 import { FormSubmitButton } from "@/components/form/submit";
-
 export const Route = createFileRoute("/layouts/app/basic/tabs/account")({
   component: PageComponent,
 });
-
 export function PageComponent() {
   const form = useForm({
     defaultValues: {
@@ -89,7 +86,7 @@ export function PageComponent() {
           <Panel.Divider />
           {/* <Panel.Section>
 
-          </Panel.Section> */}
+</Panel.Section> */}
           <div className="flex px-8 py-4">
             <div className="flex w-full items-center justify-end gap-2">
               <div className="flex items-center gap-2">
@@ -167,7 +164,7 @@ export function PageComponent() {
           <Panel.Divider />
           {/* <Panel.Section>
 
-          </Panel.Section> */}
+</Panel.Section> */}
           <div className="flex px-8 py-4">
             <div className="flex w-full items-center justify-end gap-2">
               <div className="flex items-center gap-2">
@@ -246,7 +243,7 @@ export function PageComponent() {
           <Panel.Divider />
           {/* <Panel.Section>
 
-          </Panel.Section> */}
+</Panel.Section> */}
           <div className="flex px-8 py-4">
             <div className="flex w-full items-center justify-end gap-2">
               <div className="flex items-center gap-2">

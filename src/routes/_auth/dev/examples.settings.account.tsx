@@ -7,18 +7,15 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { FormSubmitButton } from "@/components/form/submit";
 import { orgNameQueryOptions } from "@/examples/query-options";
-
 export const Route = createFileRoute("/_auth/dev/examples/settings/account")({
   component: PageComponent,
   loader: async (opts) => {
     return opts.context.queryClient.ensureQueryData(orgNameQueryOptions());
   },
 });
-
 export function PageComponent() {
   const data = Route.useLoaderData();
   const {} = Route.useLoaderDeps();
-
   const form = useForm({
     defaultValues: {
       name: data?.name ?? "",
@@ -29,7 +26,6 @@ export function PageComponent() {
       Route.router?.invalidate();
     },
   });
-
   return (
     <>
       <Panel>
@@ -97,7 +93,7 @@ export function PageComponent() {
           <Panel.Divider />
           {/* <Panel.Section>
 
-          </Panel.Section> */}
+</Panel.Section> */}
           <div className="flex px-8 py-4">
             <div className="flex w-full items-center justify-end gap-2">
               <div className="flex items-center gap-2">

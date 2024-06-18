@@ -46,15 +46,15 @@ export function BasicTable<TData>(props: {
                   header.column.id === "amount"
                     ? "text-right"
                     : header.column.id === "invoice"
-                    ? "w-[100px]"
-                    : ""
+                      ? "w-[100px]"
+                      : ""
                 }
               >
                 {header.isPlaceholder
                   ? null
                   : flexRender(
                       header.column.columnDef.header,
-                      header.getContext()
+                      header.getContext(),
                     )}
               </TableHead>
             ))}
@@ -110,15 +110,15 @@ export function BasicTableWithPagination<TData>(props: {
                     header.column.id === "amount"
                       ? "text-right"
                       : header.column.id === "invoice"
-                      ? "w-[100px]"
-                      : ""
+                        ? "w-[100px]"
+                        : ""
                   }
                 >
                   {header.isPlaceholder
                     ? null
                     : flexRender(
                         header.column.columnDef.header,
-                        header.getContext()
+                        header.getContext(),
                       )}
                 </TableHead>
               ))}

@@ -9,14 +9,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function BasicInput(
-  props: {
-    field: FieldApi<any, any, any, any>;
-    label: string;
-    type: "ZodString" | "ZodNumber" | "ZodBoolean" | "Select";
-    selectOptions: string[];
-  },
-) {
+export function BasicInput(props: {
+  field: FieldApi<any, any, any, any>;
+  label: string;
+  type: "ZodString" | "ZodNumber" | "ZodBoolean" | "Select";
+  selectOptions?: string[];
+}) {
   switch (props.type) {
     case "ZodNumber":
       return (
@@ -40,9 +38,7 @@ export function BasicInput(
     case "ZodBoolean":
       return (
         <div className="flex flex-row items-center space-x-2">
-          <label htmlFor={props.field.name}>
-            {props.label}:
-          </label>
+          <label htmlFor={props.field.name}>{props.label}:</label>
           <Checkbox
             id={props.field.name}
             name={props.field.name}
@@ -63,12 +59,10 @@ export function BasicInput(
             }}
           >
             <SelectTrigger onBlur={props.field.handleBlur}>
-              <SelectValue>
-                {props.field.state.value}
-              </SelectValue>
+              <SelectValue>{props.field.state.value}</SelectValue>
             </SelectTrigger>
             <SelectContent>
-              {props.selectOptions.map((item: any, index: number) => (
+              {props.selectOptions?.map((item: any, index: number) => (
                 <SelectItem value={item} key={index}>
                   {item}
                 </SelectItem>
