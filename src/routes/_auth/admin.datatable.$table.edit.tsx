@@ -1,21 +1,15 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import * as db from "@/server/db/schema";
+import { getTableConfig } from "drizzle-orm/sqlite-core";
 import {
-  getTableConfig,
-  SQLiteTableWithColumns,
-} from "drizzle-orm/sqlite-core";
-import {
-  Column,
-  Table,
   ColumnDef,
   useReactTable,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   flexRender,
-  RowData,
 } from "@tanstack/react-table";
-import { useCallback, useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import {
   Select,
   SelectContent,
@@ -26,7 +20,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_auth/admin/datatable/$table/edit")({
   component: DatabaseTable,
