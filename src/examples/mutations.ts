@@ -1,5 +1,4 @@
 import { useMutation } from "@tanstack/react-query";
-
 export type Person = {
   firstName: string;
   age: number;
@@ -7,7 +6,6 @@ export type Person = {
   status: string;
   isPublic: boolean;
 };
-
 export function useCreatePersonMutation() {
   return useMutation({
     mutationFn: async (data: Person) => {
@@ -15,7 +13,7 @@ export function useCreatePersonMutation() {
       return true;
     },
     onSuccess: (data, variables) => {
-    console.log("invalidate queries", data);
+      console.log("invalidate queries", data);
     },
   });
 }

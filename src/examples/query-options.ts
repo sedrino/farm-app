@@ -1,7 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { faker } from "@faker-js/faker";
 import { client } from "@/query/client";
-
 const defaultData: Person[] = Array.from({ length: 10 }, () => ({
   id: faker.string.alphanumeric(),
   firstName: faker.person.firstName(),
@@ -15,7 +14,6 @@ const defaultData: Person[] = Array.from({ length: 10 }, () => ({
   ]),
   progress: faker.datatype.number({ min: 0, max: 100 }),
 }));
-
 export type Person = {
   id: string;
   firstName: string;
@@ -25,23 +23,19 @@ export type Person = {
   status: string;
   progress: number;
 };
-
 export const peopleQuery = queryOptions({
   queryKey: ["people"],
   queryFn: () =>
     new Promise<Person[]>((resolve) =>
-      setTimeout(() => resolve(defaultData), 300)
+      setTimeout(() => resolve(defaultData), 300),
     ),
 });
-
 export const personQuery = queryOptions({
   queryKey: ["person"],
   queryFn: () => {
     return defaultData[0];
   },
 });
-
-
 export const temperatureSensorsQuery = queryOptions({
   queryKey: ["temperature-sensors"],
   queryFn: () => {
@@ -54,7 +48,6 @@ export const temperatureSensorsQuery = queryOptions({
     return result;
   },
 });
-
 export const orgNameQueryOptions = () =>
   queryOptions({
     queryKey: ["org-name"],
