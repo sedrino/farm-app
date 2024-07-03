@@ -14,14 +14,12 @@ const router = createRouter({
     queryClient,
   },
 });
-
 // Register things for typesafety
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
   }
 }
-
 const rootElement = document.getElementById("root")!;
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
@@ -32,6 +30,6 @@ if (!rootElement.innerHTML) {
         <RouterProvider router={router} />
         {/* <Devtools.ElementInspector /> */}
       </QueryClientProvider>
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 }
