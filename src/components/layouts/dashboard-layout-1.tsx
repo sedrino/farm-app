@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  AnyRoute,
-  Link,
-  LinkProps,
-  RegisteredRouter,
-  RoutePaths,
-} from "@tanstack/react-router";
+import { Link, LinkProps } from "@tanstack/react-router";
 import { CircleUser } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -94,7 +88,6 @@ const NavLink = ({
     </Link>
   );
 };
-
 DashboardLayout1.NavLink = NavLink;
 const NavButton = React.forwardRef<
   React.ElementRef<"button">,

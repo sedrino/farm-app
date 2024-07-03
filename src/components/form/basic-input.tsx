@@ -8,7 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
 export function BasicInput(props: {
   field: FieldApi<any, any, any, any>;
   label: string;

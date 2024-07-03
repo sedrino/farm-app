@@ -5,10 +5,11 @@ import { UseMutationResult } from "@tanstack/react-query";
 import { FormSubmitButton } from "./submit";
 import { BasicInput } from "./basic-input";
 import { toast } from "sonner";
-
 export default function BasicForm<
   TFormData extends Record<string, unknown>,
-  TSchema extends z.ZodObject<{ [K in keyof TFormData]: z.ZodTypeAny }>,
+  TSchema extends z.ZodObject<{
+    [K in keyof TFormData]: z.ZodTypeAny;
+  }>,
 >(props: {
   data: TFormData;
   mutation: UseMutationResult<any, unknown, any, unknown>;
