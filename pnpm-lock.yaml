@@ -64,7 +64,7 @@ importers:
         version: 0.1.1(tailwindcss@3.4.10)
       '@tanstack/react-form':
         specifier: ^0.29.1
-        version: 0.29.2(@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+        version: 0.29.2(@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@tanstack/react-query':
         specifier: ^5.40.0
         version: 5.52.2(react@18.3.1)
@@ -88,10 +88,13 @@ importers:
         version: 1.51.0(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))
       '@tanstack/start':
         specifier: ^1.51.2
-        version: 1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))
+        version: 1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))
       '@tanstack/zod-form-adapter':
         specifier: ^0.28.0
         version: 0.28.0(zod@3.23.8)
+      '@types/better-sqlite3':
+        specifier: ^7.6.11
+        version: 7.6.11
       better-sqlite3:
         specifier: ^11.1.2
         version: 11.2.1
@@ -112,10 +115,10 @@ importers:
         version: 3.6.0
       drizzle-orm:
         specifier: ^0.33.0
-        version: 0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)
+        version: 0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)
       drizzle-zod:
         specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(zod@3.23.8)
+        version: 0.5.1(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(zod@3.23.8)
       hono:
         specifier: ^4.4.7
         version: 4.5.9
@@ -157,7 +160,7 @@ importers:
         version: 1.0.7(tailwindcss@3.4.10)
       vinxi:
         specifier: ^0.4.2
-        version: 0.4.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
+        version: 0.4.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
       vite-tsconfig-paths:
         specifier: ^5.0.1
         version: 5.0.1(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))
@@ -2369,6 +2372,9 @@ packages:
 
   '@types/babel__traverse@7.20.6':
     resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
+
+  '@types/better-sqlite3@7.6.11':
+    resolution: {integrity: sha512-i8KcD3PgGtGBLl3+mMYA8PdKkButvPyARxA7IQAd6qeslht13qxb1zzO8dRCtE7U3IoJS782zDBAeoKiM695kg==}
 
   '@types/braces@3.0.4':
     resolution: {integrity: sha512-0WR3b8eaISjEW7RpZnclONaLFDf7buaowRHdqLp4vLj54AsSAYWfh3DRbfiYJY9XDxMgx1B4sE1Afw2PGpuHOA==}
@@ -6766,7 +6772,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@tanstack/react-form@0.29.2(@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
+  '@tanstack/react-form@0.29.2(@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
     dependencies:
       '@remix-run/node': 2.11.2(typescript@5.5.4)
       '@tanstack/form-core': 0.29.2
@@ -6774,7 +6780,7 @@ snapshots:
       decode-formdata: 0.7.5
       react: 18.3.1
     optionalDependencies:
-      '@tanstack/start': 1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))
+      '@tanstack/start': 1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))
     transitivePeerDependencies:
       - react-dom
       - typescript
@@ -6884,7 +6890,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))':
+  '@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))':
     dependencies:
       '@tanstack/react-cross-context': 1.44.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router': 1.51.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6894,15 +6900,15 @@ snapshots:
       '@types/jsesc': 3.0.3
       '@vinxi/react': 0.2.3
       '@vinxi/react-server-dom': 0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))
-      '@vinxi/server-components': 0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))
-      '@vinxi/server-functions': 0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/server-components': 0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/server-functions': 0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))
       import-meta-resolve: 4.1.0
       isbot: 5.1.17
       jsesc: 3.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tiny-invariant: 1.3.3
-      vinxi: 0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
+      vinxi: 0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
       vite-tsconfig-paths: 4.3.2(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))
       zod: 3.23.8
     transitivePeerDependencies:
@@ -6975,6 +6981,10 @@ snapshots:
   '@types/babel__traverse@7.20.6':
     dependencies:
       '@babel/types': 7.25.4
+
+  '@types/better-sqlite3@7.6.11':
+    dependencies:
+      '@types/node': 20.16.1
 
   '@types/braces@3.0.4': {}
 
@@ -7156,7 +7166,7 @@ snapshots:
     transitivePeerDependencies:
       - uWebSockets.js
 
-  '@vinxi/plugin-directives@0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))':
+  '@vinxi/plugin-directives@0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))':
     dependencies:
       '@babel/parser': 7.25.4
       acorn: 8.12.1
@@ -7167,7 +7177,7 @@ snapshots:
       magicast: 0.2.11
       recast: 0.23.9
       tslib: 2.7.0
-      vinxi: 0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
+      vinxi: 0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
 
   '@vinxi/react-server-dom@0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))':
     dependencies:
@@ -7178,27 +7188,27 @@ snapshots:
 
   '@vinxi/react@0.2.3': {}
 
-  '@vinxi/server-components@0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))':
+  '@vinxi/server-components@0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/plugin-directives': 0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
       astring: 1.9.0
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
+      vinxi: 0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
 
-  '@vinxi/server-functions@0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))':
+  '@vinxi/server-functions@0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/plugin-directives': 0.4.2(vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
       astring: 1.9.0
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
+      vinxi: 0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6)
 
   '@vitejs/plugin-react@4.3.1(vite@5.4.2(@types/node@20.16.1)(terser@5.31.6))':
     dependencies:
@@ -7657,10 +7667,10 @@ snapshots:
       '@deno/shim-deno': 0.19.2
       undici-types: 5.28.4
 
-  db0@0.1.4(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)):
+  db0@0.1.4(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)):
     optionalDependencies:
       better-sqlite3: 11.2.1
-      drizzle-orm: 0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)
+      drizzle-orm: 0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)
 
   debug@2.6.9:
     dependencies:
@@ -7747,15 +7757,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1):
+  drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1):
     optionalDependencies:
+      '@types/better-sqlite3': 7.6.11
       '@types/react': 18.3.4
       better-sqlite3: 11.2.1
       react: 18.3.1
 
-  drizzle-zod@0.5.1(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(zod@3.23.8):
+  drizzle-zod@0.5.1(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(zod@3.23.8):
     dependencies:
-      drizzle-orm: 0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)
+      drizzle-orm: 0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)
       zod: 3.23.8
 
   duplexer@0.1.2: {}
@@ -8683,7 +8694,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  nitropack@2.9.7(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)):
+  nitropack@2.9.7(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1)):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.1
@@ -8706,7 +8717,7 @@ snapshots:
       cookie-es: 1.2.2
       croner: 8.1.1
       crossws: 0.2.4
-      db0: 0.1.4(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))
+      db0: 0.1.4(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))
       defu: 6.1.4
       destr: 2.0.3
       dot-prop: 8.0.2
@@ -9745,7 +9756,7 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6):
+  vinxi@0.4.1(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6):
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.2)
@@ -9767,7 +9778,7 @@ snapshots:
       hookable: 5.5.3
       http-proxy: 1.18.1
       micromatch: 4.0.8
-      nitropack: 2.9.7(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))
+      nitropack: 2.9.7(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))
       node-fetch-native: 1.6.4
       path-to-regexp: 6.2.2
       pathe: 1.1.2
@@ -9813,7 +9824,7 @@ snapshots:
       - uWebSockets.js
       - xml2js
 
-  vinxi@0.4.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6):
+  vinxi@0.4.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.6):
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.2)
@@ -9835,7 +9846,7 @@ snapshots:
       hookable: 5.5.3
       http-proxy: 1.18.1
       micromatch: 4.0.8
-      nitropack: 2.9.7(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))
+      nitropack: 2.9.7(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))
       node-fetch-native: 1.6.4
       path-to-regexp: 6.2.2
       pathe: 1.1.2

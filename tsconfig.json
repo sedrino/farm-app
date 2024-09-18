@@ -25,5 +25,6 @@
     "noFallthroughCasesInSwitch": true,
     "noErrorTruncation": true
   },
-  "include":  ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", "gen"]
 }
