@@ -4,7 +4,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatDate(unix: number) {
+export function formatDate(unix: number | undefined | null) {
+  if (!unix) {
+    return "";
+  }
   return new Date(unix * 1000).toLocaleDateString();
 }
 
