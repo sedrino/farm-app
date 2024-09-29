@@ -1,3 +1,4 @@
 {
-    "routesDirectory": "./app/routes"
-  }
+  "routesDirectory": "./app/routes",
+  "outputFile": "./app/routeTree.gen.ts"
+}
