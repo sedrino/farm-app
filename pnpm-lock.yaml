@@ -63,8 +63,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(tailwindcss@3.4.10)
       '@tanstack/react-form':
-        specifier: ^0.29.1
-        version: 0.29.2(@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.33.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.33.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+        specifier: ^0.33.0
+        version: 0.33.0(@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.33.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.33.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@tanstack/react-query':
         specifier: ^5.40.0
         version: 5.52.2(react@18.3.1)
@@ -93,8 +93,8 @@ importers:
         specifier: ^1.51.2
         version: 1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.33.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.33.0))
       '@tanstack/zod-form-adapter':
-        specifier: ^0.28.0
-        version: 0.28.0(zod@3.23.8)
+        specifier: ^0.33.0
+        version: 0.33.0(zod@3.23.8)
       '@types/better-sqlite3':
         specifier: ^7.6.11
         version: 7.6.11
@@ -2072,8 +2072,8 @@ packages:
   '@radix-ui/rect@1.1.0':
     resolution: {integrity: sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==}
 
-  '@remix-run/node@2.11.2':
-    resolution: {integrity: sha512-gRNFM61EOYWNmYgf+pvBt6MrirWlkDz1G6RQsJNowtRqbYoy05AdDe5HiHGF5w8ZMAZVeXnZiwbL0Nt7ykYBCA==}
+  '@remix-run/node@2.12.1':
+    resolution: {integrity: sha512-d+IHvEEU3qziporgpEyKFvKdmNaDu+a/9pIxBkNKVWdKx2JR0VRFIaUxxpxISWtkJcoNuERhW2xYa6YvtFp4ig==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: ^5.1.0
@@ -2081,12 +2081,12 @@ packages:
       typescript:
         optional: true
 
-  '@remix-run/router@1.19.1':
-    resolution: {integrity: sha512-S45oynt/WH19bHbIXjtli6QmwNYvaz+vtnubvNpNDvUOoA/OWh6j1OikIP3G+v5GHdxyC6EXoChG3HgYGEUfcg==}
+  '@remix-run/router@1.19.2':
+    resolution: {integrity: sha512-baiMx18+IMuD1yyvOGaHM9QrVUPGGG0jC+z+IPHnRJWUAUvaKuWKyE8gjDj2rzv3sz9zOGoRSPgeBVHRhZnBlA==}
     engines: {node: '>=14.0.0'}
 
-  '@remix-run/server-runtime@2.11.2':
-    resolution: {integrity: sha512-abG6ENj0X3eHqDxqO2thWM2NSEiPnqyt58z1BbiQCv+t8g0Zuqd5QHbB4wzdNvfS0vKhg+jJiigcJneAc4sZzw==}
+  '@remix-run/server-runtime@2.12.1':
+    resolution: {integrity: sha512-iuj9ju34f0LztPpd5dVuTXgt4x/MJeRsBiLuEx02nDSMGoNCAIx2LdeNYvE+XXdsf1Ht2NMlpRU+HBPCz3QLZg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: ^5.1.0
@@ -2275,11 +2275,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.2.0'
 
-  '@tanstack/form-core@0.28.0':
-    resolution: {integrity: sha512-HU1MDIZmhB635BJfL73fLAdTVOE1xseYrbMJKywbnwY2cEpIjKcu/5gC656bSI1jF//+NJEWRL68ZgrUevWc2A==}
-
-  '@tanstack/form-core@0.29.2':
-    resolution: {integrity: sha512-ElWBS4IwR9sJEFuW98RysAQf9DYDzqzq6Po9CFWTmND653FONnv6s+ERyt5EjshZUh26KYz6GO7QUcxfCVpXJg==}
+  '@tanstack/form-core@0.33.0':
+    resolution: {integrity: sha512-ouu1JVwLZgfPkIdIq3TWIZs++KpLOo8Bx4tXYOc/1KwA9qUQ0Iv/+Y6GfiC4wMcUzGCtLKOww84eZ8Qdge3ZmQ==}
 
   '@tanstack/history@1.57.6':
     resolution: {integrity: sha512-ppAJbnUaHdHmccVmplcd1ivX4GMPHxhStSquuuz0TSAEPEpz0iOVBur4iKfvIuMKm24c40nhvaEwZbKGVfbrGg==}
@@ -2294,8 +2291,8 @@ packages:
       react: '>=18'
       react-dom: '>=18'
 
-  '@tanstack/react-form@0.29.2':
-    resolution: {integrity: sha512-mjfRhFLMZgR4tBUw2xu41OrNoK+yyUdQ+2OZHIT3uNfwSkRUztB6Z71xGRpQFughKuuXUKQ9LvzrH89zqQe/JQ==}
+  '@tanstack/react-form@0.33.0':
+    resolution: {integrity: sha512-+292gWfP67uAu3zYeIQAQYEk6T7IvQUiuKwanCyATROG92FsxQrYeJdqDk4Bkh0MB8uy13CilrdxZOoEMdEKSQ==}
     peerDependencies:
       '@tanstack/start': ^1.43.13
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -2425,8 +2422,8 @@ packages:
     resolution: {integrity: sha512-fBUj+lbSaw+VxoBN4J/WFE7dTx8x4XCTRAQvbiIyPJ8MY1KRVkdZV6cbLvg7MeDP6CxUcj6XNvWU6h0ic1Ipyg==}
     engines: {node: '>=12'}
 
-  '@tanstack/zod-form-adapter@0.28.0':
-    resolution: {integrity: sha512-KbwVlgGu54ZF3wJbNbYPNen4OYbVe0nuwmPObm+v/BwiCdE7Yv3wA/iHzQqB2wY+DdjWIeHl6o4m/kyuiTVqwg==}
+  '@tanstack/zod-form-adapter@0.33.0':
+    resolution: {integrity: sha512-vttDPKRb647UdOR3qUSN8bscj8wZibdYE6DR1eUbTmGdDT4OiwA1rDKOEpzmLQSsDbY1vLDAAfANQ1nApHoUFw==}
     peerDependencies:
       zod: ^3.x
 
@@ -3094,8 +3091,8 @@ packages:
   decimal.js-light@2.5.1:
     resolution: {integrity: sha512-qIMFpTMZmny+MMIitAB6D7iVPEorVw6YQRWkvarTkT4tBeSLLiHzcwj6q0MmYSFCiVpiqPJTJEYIrpcPzVEIvg==}
 
-  decode-formdata@0.7.5:
-    resolution: {integrity: sha512-zwz+xh+Z2R1s2hk14pGiwgVnYiw1UnlsoxHZ5neSXnslgET1weO0dw0d9dLpf1rxAtcvNXo59IMKq5avdaOcvA==}
+  decode-formdata@0.8.0:
+    resolution: {integrity: sha512-iUzDgnWsw5ToSkFY7VPFA5Gfph6ROoOxOB7Ybna4miUSzLZ4KaSJk6IAB2AdW6+C9vCVWhjjNA4gjT6wF3eZHQ==}
 
   decompress-response@6.0.0:
     resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
@@ -4949,8 +4946,8 @@ packages:
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
 
-  turbo-stream@2.3.0:
-    resolution: {integrity: sha512-PhEr9mdexoVv+rJkQ3c8TjrN3DUghX37GNJkSMksoPR4KrXIPnM2MnqRt07sViIqX9IdlhrgtTSyjoVOASq6cg==}
+  turbo-stream@2.4.0:
+    resolution: {integrity: sha512-FHncC10WpBd2eOmGwpmQsWLDoK4cqsA/UT/GqNoaKOQnT8uzhtCbg3EoUDMvqpOSAI0S26mr0rkjzbOO6S3v1g==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -6755,9 +6752,9 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
-  '@remix-run/node@2.11.2(typescript@5.5.4)':
+  '@remix-run/node@2.12.1(typescript@5.5.4)':
     dependencies:
-      '@remix-run/server-runtime': 2.11.2(typescript@5.5.4)
+      '@remix-run/server-runtime': 2.12.1(typescript@5.5.4)
       '@remix-run/web-fetch': 4.4.2
       '@web3-storage/multipart-parser': 1.0.0
       cookie-signature: 1.2.1
@@ -6767,17 +6764,17 @@ snapshots:
     optionalDependencies:
       typescript: 5.5.4
 
-  '@remix-run/router@1.19.1': {}
+  '@remix-run/router@1.19.2': {}
 
-  '@remix-run/server-runtime@2.11.2(typescript@5.5.4)':
+  '@remix-run/server-runtime@2.12.1(typescript@5.5.4)':
     dependencies:
-      '@remix-run/router': 1.19.1
+      '@remix-run/router': 1.19.2
       '@types/cookie': 0.6.0
       '@web3-storage/multipart-parser': 1.0.0
       cookie: 0.6.0
       set-cookie-parser: 2.7.0
       source-map: 0.7.4
-      turbo-stream: 2.3.0
+      turbo-stream: 2.4.0
     optionalDependencies:
       typescript: 5.5.4
 
@@ -6933,11 +6930,7 @@ snapshots:
     dependencies:
       tailwindcss: 3.4.10
 
-  '@tanstack/form-core@0.28.0':
-    dependencies:
-      '@tanstack/store': 0.5.5
-
-  '@tanstack/form-core@0.29.2':
+  '@tanstack/form-core@0.33.0':
     dependencies:
       '@tanstack/store': 0.5.5
 
@@ -6950,12 +6943,12 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@tanstack/react-form@0.29.2(@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.33.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.33.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
+  '@tanstack/react-form@0.33.0(@tanstack/start@1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.33.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.33.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
     dependencies:
-      '@remix-run/node': 2.11.2(typescript@5.5.4)
-      '@tanstack/form-core': 0.29.2
+      '@remix-run/node': 2.12.1(typescript@5.5.4)
+      '@tanstack/form-core': 0.33.0
       '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      decode-formdata: 0.7.5
+      decode-formdata: 0.8.0
       react: 18.3.1
     optionalDependencies:
       '@tanstack/start': 1.51.2(@types/node@20.16.1)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.33.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.1)(terser@5.33.0))
@@ -7170,9 +7163,9 @@ snapshots:
 
   '@tanstack/virtual-file-routes@1.56.0': {}
 
-  '@tanstack/zod-form-adapter@0.28.0(zod@3.23.8)':
+  '@tanstack/zod-form-adapter@0.33.0(zod@3.23.8)':
     dependencies:
-      '@tanstack/form-core': 0.28.0
+      '@tanstack/form-core': 0.33.0
       zod: 3.23.8
 
   '@tybys/wasm-util@0.8.3':
@@ -7901,7 +7894,7 @@ snapshots:
 
   decimal.js-light@2.5.1: {}
 
-  decode-formdata@0.7.5: {}
+  decode-formdata@0.8.0: {}
 
   decompress-response@6.0.0:
     dependencies:
@@ -9832,7 +9825,7 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  turbo-stream@2.3.0: {}
+  turbo-stream@2.4.0: {}
 
   type-check@0.4.0:
     dependencies:
