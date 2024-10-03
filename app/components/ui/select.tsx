@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import {
   CaretSortIcon,
@@ -7,8 +8,29 @@ import {
   ChevronUpIcon,
 } from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
+
 import { cn } from "@/lib/utils";
-const Select = SelectPrimitive.Root;
+
+type Direction = "ltr" | "rtl";
+interface SelectProps<T extends string> {
+  children?: React.ReactNode;
+  value?: T;
+  defaultValue?: T;
+  onValueChange?(value: T): void;
+  open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?(open: boolean): void;
+  dir?: Direction;
+  name?: string;
+  autoComplete?: string;
+  disabled?: boolean;
+  required?: boolean;
+}
+
+function Select<T extends string>(props: SelectProps<T>) {
+  return <SelectPrimitive.Root {...props} />;
+}
+
 const SelectGroup = SelectPrimitive.Group;
 const SelectValue = SelectPrimitive.Value;
 const SelectTrigger = React.forwardRef<
