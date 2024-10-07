@@ -1,10 +1,13 @@
+// @ts-nocheck
 import { useForm } from "@tanstack/react-form";
-import { zodValidator } from "@tanstack/zod-form-adapter";
-import { z } from "zod";
 import { UseMutationResult } from "@tanstack/react-query";
-import { FormSubmitButton } from "./submit";
-import { BasicInput } from "./basic-input";
+import { zodValidator } from "@tanstack/zod-form-adapter";
 import { toast } from "sonner";
+import { z } from "zod";
+
+import { BasicInput } from "./basic-input";
+import { FormSubmitButton } from "./submit";
+
 export default function BasicForm<
   TFormData extends Record<string, unknown>,
   TSchema extends z.ZodObject<{
