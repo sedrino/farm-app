@@ -1,11 +1,13 @@
 import React from "react";
-import { BasicTable } from "@/components/tables/basic-table";
-import { Link, createFileRoute } from "@tanstack/react-router";
-import { createColumnHelper } from "@tanstack/react-table";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { createColumnHelper } from "@tanstack/react-table";
+
+import { BasicTable } from "@/components/tables/basic-table";
+import { Button } from "@/components/ui/button";
 import { Panel } from "@/components/ui/panel";
 import { peopleQuery } from "@/examples/query-options";
-import { Button } from "@/components/ui/button";
+
 export const Route = createFileRoute("/_auth/dev/examples/basic-table")({
   component: BasicTableComponent,
   loader: (opts) => {

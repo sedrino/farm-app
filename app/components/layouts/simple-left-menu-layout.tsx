@@ -1,18 +1,20 @@
 import React from "react";
+import { Link, LinkProps } from "@tanstack/react-router";
+
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { Link, LinkProps } from "@tanstack/react-router";
+
 export function SimpleLeftMenuLayout(props: {
   content?: React.ReactNode;
   sideNav?: React.ReactNode;
 }) {
   return (
-    <ResizablePanelGroup direction="horizontal" className="w-full flex h-full">
+    <ResizablePanelGroup direction="horizontal" className="flex h-full w-full">
       <ResizablePanel minSize={20} maxSize={30} className="min-w-64">
-        <div className="hide-scrollbar flex flex-col w-full h-full bg-studio border-default">
+        <div className="hide-scrollbar bg-studio border-default flex h-full w-full flex-col">
           {props.sideNav}
         </div>
       </ResizablePanel>
@@ -25,7 +27,7 @@ export function SimpleLeftMenuLayout(props: {
 }
 SimpleLeftMenuLayout.Header = (props: { children?: React.ReactNode }) => {
   return (
-    <div className="border-default flex max-h-12 items-center border-b px-6 h-12 min-h-12">
+    <div className="border-default flex h-12 max-h-12 min-h-12 items-center border-b px-6">
       {props.children}
     </div>
   );
@@ -55,9 +57,9 @@ export function SimpleVerticalNavSection(props: {
     <div>
       <div className="my-6 space-y-8">
         <div className="mx-3">
-          <div className=" flex space-x-3 mb-2 font-normal px-3">
-            <span className="text-sm text-foreground-lighter w-full">
-              <div className="flex flex-col space-y-2 uppercase font-mono">
+          <div className="mb-2 flex space-x-3 px-3 font-normal">
+            <span className="text-foreground-lighter w-full text-sm">
+              <div className="flex flex-col space-y-2 font-mono uppercase">
                 <span>{props.title}</span>
               </div>
             </span>
@@ -65,7 +67,7 @@ export function SimpleVerticalNavSection(props: {
           <div>{props.children}</div>
         </div>
       </div>
-      <div className="h-px w-full bg-border-overlay"></div>
+      <div className="bg-border-overlay h-px w-full"></div>
     </div>
   );
 }
@@ -81,13 +83,13 @@ export const SimpleNavLink = ({
     <Link {...linkProps}>
       <li
         role="menuitem"
-        className="cursor-pointer flex space-x-3 items-center outline-none focus-visible:ring-1 ring-foreground-muted focus-visible:z-10 group px-3 py-1 font-normal border-default group-hover:border-foreground-muted"
+        className="ring-foreground-muted border-default group-hover:border-foreground-muted group flex cursor-pointer items-center space-x-3 px-3 py-1 font-normal outline-none focus-visible:z-10 focus-visible:ring-1"
       >
-        <span className="transition truncate text-sm w-full text-foreground-light group-hover:text-foreground">
+        <span className="text-foreground-light w-full truncate text-sm transition group-hover:text-foreground">
           <div className="flex w-full items-center justify-between gap-1">
             <div
               title="Publications"
-              className="flex items-center gap-2 truncate w-full "
+              className="flex w-full items-center gap-2 truncate"
             >
               <span className="truncate">{children}</span>
             </div>

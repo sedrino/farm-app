@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { pageDescriptions } from "@/utils/page-list";
-import { Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+
 import { Panel } from "@/components/ui/panel";
 import { prose } from "@/components/ui/typography";
+import { pageDescriptions } from "@/utils/page-list";
+
 export const Route = createFileRoute("/_auth/dev/pages")({
   component: PageListComponent,
 });

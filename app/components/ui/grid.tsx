@@ -1,9 +1,11 @@
-import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
+
+import { cn } from "@/lib/utils";
+
 export function Grid() {
   return (
-    <div className="grid grid-cols-12 gap-6 px-8  py-8 opacity-100">
-      <div className="col-span-12 text-foreground text-sm lg:col-span-5">
+    <div className="grid grid-cols-12 gap-6 px-8 py-8 opacity-100">
+      <div className="col-span-12 text-sm text-foreground lg:col-span-5">
         <label>Label</label>
       </div>
       <div className="col-span-12 lg:col-span-7"></div>
@@ -15,7 +17,7 @@ export function TwoColumn(props: {
   className?: string;
 }) {
   return (
-    <div className={cn("@container grid grid-cols-12 gap-6", props.className)}>
+    <div className={cn("grid grid-cols-12 gap-6 @container", props.className)}>
       {props.children}
     </div>
   );
@@ -33,7 +35,7 @@ TwoColumn.Right = function TwoColumnRight(props: {
   return (
     <Comp
       className={cn(
-        "relative col-span-12 @lg:col-span-7 gap-6 flex flex-col",
+        "relative col-span-12 flex flex-col gap-6 @lg:col-span-7",
         props.className
       )}
     >
@@ -56,13 +58,7 @@ export function InputContainer(props: {
         </div>
         <p
           data-state="hide"
-          className="
-        data-show:mt-2
-        data-show:animate-slide-down-normal
-        data-hide:animate-slide-up-normal
-        text-sm
-        leading-4
-       text-red-900 transition-all"
+          className="data-show:mt-2 data-show:animate-slide-down-normal data-hide:animate-slide-up-normal text-sm leading-4 text-red-900 transition-all"
         ></p>
       </div>
     </div>

@@ -1,5 +1,7 @@
-import { cn } from "@/lib/utils";
 import { ClassValue } from "clsx";
+
+import { cn } from "@/lib/utils";
+
 export function headline(...inputs: ClassValue[]) {
   return cn("text-sm font-medium leading-none", ...inputs);
 }

@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -62,7 +62,7 @@ module.exports = {
           700: "var(--surface-700)",
           800: "var(--surface-800)",
           900: "var(--surface-900)",
-        }
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -85,6 +85,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/container-queries")],
-}
-
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/container-queries"),
+  ],
+};

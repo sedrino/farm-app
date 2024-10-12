@@ -1,12 +1,14 @@
+import { useCallback, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Panel } from "@/components/ui/panel";
-import BasicForm from "@/components/form/basic-form";
-import { z } from "zod";
-import { useCreatePersonMutation } from "@/examples/mutations";
 import { toast } from "sonner";
+import { z } from "zod";
+
+import BasicForm from "@/components/form/basic-form";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { useCallback, useState } from "react";
+import { Panel } from "@/components/ui/panel";
+import { useCreatePersonMutation } from "@/examples/mutations";
+
 export const Route = createFileRoute("/_auth/dev/examples/basic-dialog-form")({
   component: BasicFormComponent,
 });

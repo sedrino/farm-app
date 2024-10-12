@@ -13,22 +13,165 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as SignupImport } from './routes/signup'
 import { Route as IndexImport } from './routes/index'
+import { Route as VisitorsIndexImport } from './routes/visitors.index'
+import { Route as TransactionsIndexImport } from './routes/transactions.index'
+import { Route as StallsIndexImport } from './routes/stalls.index'
+import { Route as StaffScheduleIndexImport } from './routes/staff-schedule.index'
+import { Route as ReportsIndexImport } from './routes/reports.index'
+import { Route as PasturesIndexImport } from './routes/pastures.index'
+import { Route as PastureRotationIndexImport } from './routes/pasture-rotation.index'
+import { Route as MaintenanceIndexImport } from './routes/maintenance.index'
+import { Route as MaintenanceRequestsIndexImport } from './routes/maintenance-requests.index'
+import { Route as InventoryIndexImport } from './routes/inventory.index'
+import { Route as IncomeIndexImport } from './routes/income.index'
+import { Route as IncomeCategoriesIndexImport } from './routes/income-categories.index'
+import { Route as HorsesIndexImport } from './routes/horses.index'
+import { Route as FinancialReportsIndexImport } from './routes/financial-reports.index'
+import { Route as FinancialManagementIndexImport } from './routes/financial-management.index'
+import { Route as FinancialDashboardIndexImport } from './routes/financial-dashboard.index'
+import { Route as FinanceIndexImport } from './routes/finance.index'
+import { Route as FarmOperationsIndexImport } from './routes/farm-operations.index'
+import { Route as FacilitiesIndexImport } from './routes/facilities.index'
+import { Route as ExpensesIndexImport } from './routes/expenses.index'
+import { Route as EventsIndexImport } from './routes/events.index'
+import { Route as ContractsIndexImport } from './routes/contracts.index'
+import { Route as CommunicationIndexImport } from './routes/communication.index'
+import { Route as CommunicationPortalIndexImport } from './routes/communication-portal.index'
+import { Route as CategoriesIndexImport } from './routes/categories.index'
+import { Route as BudgetPlanningIndexImport } from './routes/budget-planning.index'
+import { Route as BoardersIndexImport } from './routes/boarders.index'
+import { Route as BoarderManagementIndexImport } from './routes/boarder-management.index'
+import { Route as BillingIndexImport } from './routes/billing.index'
+import { Route as VisitorsCreateImport } from './routes/visitors.create'
+import { Route as StallsListImport } from './routes/stalls.list'
+import { Route as StallsCreateImport } from './routes/stalls.create'
+import { Route as StaffScheduleCreateImport } from './routes/staff-schedule.create'
+import { Route as PasturesCreateImport } from './routes/pastures.create'
+import { Route as MaintenanceCreateImport } from './routes/maintenance.create'
+import { Route as MaintenanceRequestsCreateImport } from './routes/maintenance-requests.create'
 import { Route as LayoutsAppImport } from './routes/layouts.app'
+import { Route as InventoryCreateImport } from './routes/inventory.create'
+import { Route as IncomeCreateImport } from './routes/income.create'
+import { Route as HorsesListImport } from './routes/horses.list'
+import { Route as HorsesCreateImport } from './routes/horses.create'
+import { Route as FacilitiesCreateImport } from './routes/facilities.create'
+import { Route as ExpensesCreateImport } from './routes/expenses.create'
+import { Route as EventsCreateImport } from './routes/events.create'
+import { Route as ContractsCreateImport } from './routes/contracts.create'
+import { Route as BookingsCreateImport } from './routes/bookings.create'
+import { Route as BoardersListImport } from './routes/boarders.list'
+import { Route as BoardersCreateImport } from './routes/boarders.create'
 import { Route as AuthHomeImport } from './routes/_auth/home'
 import { Route as AuthDevImport } from './routes/_auth/dev'
+import { Route as VisitorsRegisterIndexImport } from './routes/visitors.register.index'
+import { Route as VisitorsVisitorIdIndexImport } from './routes/visitors.$visitorId.index'
+import { Route as StallsOccupancyIndexImport } from './routes/stalls.occupancy.index'
+import { Route as StallsMapIndexImport } from './routes/stalls.map.index'
+import { Route as StallsMaintenanceIndexImport } from './routes/stalls.maintenance.index'
+import { Route as StallsStallIdIndexImport } from './routes/stalls.$stallId.index'
+import { Route as ReportsEventsIndexImport } from './routes/reports.events.index'
+import { Route as PasturesPastureIdIndexImport } from './routes/pastures.$pastureId.index'
+import { Route as PastureRotationPlanIndexImport } from './routes/pasture-rotation.plan.index'
+import { Route as MaintenanceReportsIndexImport } from './routes/maintenance.reports.index'
+import { Route as MaintenanceCalendarIndexImport } from './routes/maintenance.calendar.index'
+import { Route as MaintenanceTaskIdIndexImport } from './routes/maintenance.$taskId.index'
+import { Route as MaintenanceRequestsRequestIdIndexImport } from './routes/maintenance-requests.$requestId.index'
+import { Route as InventoryItemIdIndexImport } from './routes/inventory.$itemId.index'
+import { Route as IncomeIncomeIdIndexImport } from './routes/income.$incomeId.index'
+import { Route as HorsesExerciseReportsIndexImport } from './routes/horses.exercise-reports.index'
+import { Route as HorsesExerciseCalendarIndexImport } from './routes/horses.exercise-calendar.index'
+import { Route as HorsesHorseIdIndexImport } from './routes/horses.$horseId.index'
+import { Route as FinancialManagementReportsIndexImport } from './routes/financial-management.reports.index'
+import { Route as FinancialManagementIncomeIndexImport } from './routes/financial-management.income.index'
+import { Route as FinancialManagementExpensesIndexImport } from './routes/financial-management.expenses.index'
+import { Route as FinancialManagementCategoriesIndexImport } from './routes/financial-management.categories.index'
+import { Route as FinancialManagementBudgetIndexImport } from './routes/financial-management.budget.index'
+import { Route as FinanceReportsIndexImport } from './routes/finance.reports.index'
+import { Route as FinanceIncomeIndexImport } from './routes/finance.income.index'
+import { Route as FinanceExpensesIndexImport } from './routes/finance.expenses.index'
+import { Route as FinanceBudgetsIndexImport } from './routes/finance.budgets.index'
+import { Route as FarmOperationsStaffIndexImport } from './routes/farm-operations.staff.index'
+import { Route as FarmOperationsStaffSchedulingIndexImport } from './routes/farm-operations.staff-scheduling.index'
+import { Route as FarmOperationsMyScheduleIndexImport } from './routes/farm-operations.my-schedule.index'
+import { Route as FarmOperationsInventoryIndexImport } from './routes/farm-operations.inventory.index'
+import { Route as FacilitiesBookingIndexImport } from './routes/facilities.booking.index'
+import { Route as FacilitiesFacilityIdIndexImport } from './routes/facilities.$facilityId.index'
+import { Route as ExpensesExpenseIdIndexImport } from './routes/expenses.$expenseId.index'
+import { Route as EventsReportsIndexImport } from './routes/events.reports.index'
+import { Route as EventsCalendarIndexImport } from './routes/events.calendar.index'
+import { Route as EventsEventIdIndexImport } from './routes/events.$eventId.index'
+import { Route as ContractsTemplatesIndexImport } from './routes/contracts.templates.index'
+import { Route as ContractsReportsIndexImport } from './routes/contracts.reports.index'
+import { Route as ContractsContractIdIndexImport } from './routes/contracts.$contractId.index'
+import { Route as CommunicationPortalAnnouncementsIndexImport } from './routes/communication-portal.announcements.index'
+import { Route as BookingsBookingIdIndexImport } from './routes/bookings.$bookingId.index'
+import { Route as BoardersBoarderIdIndexImport } from './routes/boarders.$boarderId.index'
+import { Route as BillingSettingsIndexImport } from './routes/billing.settings.index'
+import { Route as BillingReportsIndexImport } from './routes/billing.reports.index'
+import { Route as BillingPaymentsIndexImport } from './routes/billing.payments.index'
 import { Route as AuthDevIndexImport } from './routes/_auth/dev/index'
+import { Route as StallsStallIdEditImport } from './routes/stalls.$stallId.edit'
+import { Route as StaffScheduleShiftIdEditImport } from './routes/staff-schedule.$shiftId.edit'
+import { Route as PasturesPastureIdEditImport } from './routes/pastures.$pastureId.edit'
 import { Route as LayoutsAppBasicImport } from './routes/layouts.app.basic'
+import { Route as InventoryItemIdEditImport } from './routes/inventory.$itemId.edit'
+import { Route as IncomeIncomeIdEditImport } from './routes/income.$incomeId.edit'
+import { Route as HorsesHorseIdEditImport } from './routes/horses.$horseId.edit'
+import { Route as FinancialManagementIncomeCreateImport } from './routes/financial-management.income.create'
+import { Route as FinancialManagementExpensesCreateImport } from './routes/financial-management.expenses.create'
+import { Route as FinancialManagementBudgetCreateImport } from './routes/financial-management.budget.create'
+import { Route as FinanceReportsCreateImport } from './routes/finance.reports.create'
+import { Route as FinanceBudgetsCreateImport } from './routes/finance.budgets.create'
+import { Route as FarmOperationsStaffCreateImport } from './routes/farm-operations.staff.create'
+import { Route as FarmOperationsSchedulesCreateImport } from './routes/farm-operations.schedules.create'
+import { Route as ExpensesExpenseIdEditImport } from './routes/expenses.$expenseId.edit'
+import { Route as EventsFarmEventsCreateImport } from './routes/events.farm-events.create'
+import { Route as EventsBookingsCreateImport } from './routes/events.bookings.create'
+import { Route as EventsEventIdEditImport } from './routes/events.$eventId.edit'
+import { Route as ContractsContractIdEditImport } from './routes/contracts.$contractId.edit'
+import { Route as CommunicationPortalMessagesMessageIdImport } from './routes/communication-portal.messages.$messageId'
+import { Route as BookingsBookingIdEditImport } from './routes/bookings.$bookingId.edit'
+import { Route as BoardersBoarderIdEditImport } from './routes/boarders.$boarderId.edit'
+import { Route as BillingInvoicesCreateImport } from './routes/billing.invoices.create'
+import { Route as BillingInvoicesInvoiceIdImport } from './routes/billing.invoices.$invoiceId'
 import { Route as AuthDevPagesImport } from './routes/_auth/dev/pages'
 import { Route as AuthDevExamplesImport } from './routes/_auth/dev/examples'
+import { Route as StallsStallIdCustomizeIndexImport } from './routes/stalls.$stallId.customize.index'
+import { Route as StallsStallIdAssignIndexImport } from './routes/stalls.$stallId.assign.index'
+import { Route as HorsesHorseIdTrainingIndexImport } from './routes/horses.$horseId.training.index'
+import { Route as HorsesHorseIdHealthIndexImport } from './routes/horses.$horseId.health.index'
+import { Route as HorsesHorseIdFeedingIndexImport } from './routes/horses.$horseId.feeding.index'
+import { Route as HorsesHorseIdExerciseIndexImport } from './routes/horses.$horseId.exercise.index'
+import { Route as HorsesHorseIdExerciseLogsIndexImport } from './routes/horses.$horseId.exercise-logs.index'
+import { Route as FinancialManagementBudgetBudgetIdIndexImport } from './routes/financial-management.budget.$budgetId.index'
+import { Route as FinanceReportsReportIdIndexImport } from './routes/finance.reports.$reportId.index'
+import { Route as FinanceBudgetsBudgetIdIndexImport } from './routes/finance.budgets.$budgetId.index'
+import { Route as FarmOperationsStaffStaffIdIndexImport } from './routes/farm-operations.staff.$staffId.index'
+import { Route as FarmOperationsInventorySuppliersIndexImport } from './routes/farm-operations.inventory.suppliers.index'
+import { Route as FarmOperationsInventoryReportsIndexImport } from './routes/farm-operations.inventory.reports.index'
+import { Route as FarmOperationsInventoryItemsIndexImport } from './routes/farm-operations.inventory.items.index'
+import { Route as FarmOperationsInventoryCategoriesIndexImport } from './routes/farm-operations.inventory.categories.index'
+import { Route as EventsFarmEventsEventIdIndexImport } from './routes/events.farm-events.$eventId.index'
+import { Route as EventsBookingsBookingIdIndexImport } from './routes/events.bookings.$bookingId.index'
+import { Route as BoardersBoarderIdInvoicesIndexImport } from './routes/boarders.$boarderId.invoices.index'
+import { Route as BoardersBoarderIdContractIndexImport } from './routes/boarders.$boarderId.contract.index'
+import { Route as BoardersBoarderIdBillingIndexImport } from './routes/boarders.$boarderId.billing.index'
 import { Route as LayoutsAppBasicTabsImport } from './routes/layouts.app.basic.tabs'
+import { Route as HorsesHorseIdHealthCreateImport } from './routes/horses.$horseId.health.create'
+import { Route as HorsesHorseIdFeedingCreateImport } from './routes/horses.$horseId.feeding.create'
+import { Route as HorsesHorseIdExerciseLogsCreateImport } from './routes/horses.$horseId.exercise-logs.create'
+import { Route as FinancialManagementBudgetBudgetIdEditImport } from './routes/financial-management.budget.$budgetId.edit'
+import { Route as FarmOperationsStaffStaffIdEditImport } from './routes/farm-operations.staff.$staffId.edit'
+import { Route as FarmOperationsSchedulesScheduleIdEditImport } from './routes/farm-operations.schedules.$scheduleId.edit'
+import { Route as FarmOperationsInventoryItemsCreateImport } from './routes/farm-operations.inventory.items.create'
 import { Route as AuthDevExamplesSettingsImport } from './routes/_auth/dev/examples.settings'
 import { Route as AuthDevExamplesDataTableImport } from './routes/_auth/dev/examples.data-table'
 import { Route as AuthDevExamplesBasicTableImport } from './routes/_auth/dev/examples.basic-table'
 import { Route as AuthDevExamplesBasicFormEditImport } from './routes/_auth/dev/examples.basic-form-edit'
 import { Route as AuthDevExamplesBasicFormImport } from './routes/_auth/dev/examples.basic-form'
 import { Route as AuthDevExamplesBasicDialogFormImport } from './routes/_auth/dev/examples.basic-dialog-form'
-import { Route as LayoutsAppBasicTabsPasswordImport } from './routes/layouts.app.basic.tabs.password'
-import { Route as LayoutsAppBasicTabsAccountImport } from './routes/layouts.app.basic.tabs.account'
+import { Route as FarmOperationsInventoryItemsItemIdIndexImport } from './routes/farm-operations.inventory.items.$itemId.index'
+import { Route as FarmOperationsInventoryItemsItemIdEditImport } from './routes/farm-operations.inventory.items.$itemId.edit'
 import { Route as AuthDevExamplesSettingsPasswordImport } from './routes/_auth/dev/examples.settings.password'
 import { Route as AuthDevExamplesSettingsAccountImport } from './routes/_auth/dev/examples.settings.account'
 
@@ -44,8 +187,243 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const VisitorsIndexRoute = VisitorsIndexImport.update({
+  path: '/visitors/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TransactionsIndexRoute = TransactionsIndexImport.update({
+  path: '/transactions/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StallsIndexRoute = StallsIndexImport.update({
+  path: '/stalls/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StaffScheduleIndexRoute = StaffScheduleIndexImport.update({
+  path: '/staff-schedule/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ReportsIndexRoute = ReportsIndexImport.update({
+  path: '/reports/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PasturesIndexRoute = PasturesIndexImport.update({
+  path: '/pastures/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PastureRotationIndexRoute = PastureRotationIndexImport.update({
+  path: '/pasture-rotation/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MaintenanceIndexRoute = MaintenanceIndexImport.update({
+  path: '/maintenance/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MaintenanceRequestsIndexRoute = MaintenanceRequestsIndexImport.update({
+  path: '/maintenance-requests/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const InventoryIndexRoute = InventoryIndexImport.update({
+  path: '/inventory/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const IncomeIndexRoute = IncomeIndexImport.update({
+  path: '/income/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const IncomeCategoriesIndexRoute = IncomeCategoriesIndexImport.update({
+  path: '/income-categories/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesIndexRoute = HorsesIndexImport.update({
+  path: '/horses/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinancialReportsIndexRoute = FinancialReportsIndexImport.update({
+  path: '/financial-reports/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinancialManagementIndexRoute = FinancialManagementIndexImport.update({
+  path: '/financial-management/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinancialDashboardIndexRoute = FinancialDashboardIndexImport.update({
+  path: '/financial-dashboard/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinanceIndexRoute = FinanceIndexImport.update({
+  path: '/finance/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FarmOperationsIndexRoute = FarmOperationsIndexImport.update({
+  path: '/farm-operations/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FacilitiesIndexRoute = FacilitiesIndexImport.update({
+  path: '/facilities/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ExpensesIndexRoute = ExpensesIndexImport.update({
+  path: '/expenses/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsIndexRoute = EventsIndexImport.update({
+  path: '/events/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContractsIndexRoute = ContractsIndexImport.update({
+  path: '/contracts/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CommunicationIndexRoute = CommunicationIndexImport.update({
+  path: '/communication/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CommunicationPortalIndexRoute = CommunicationPortalIndexImport.update({
+  path: '/communication-portal/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CategoriesIndexRoute = CategoriesIndexImport.update({
+  path: '/categories/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BudgetPlanningIndexRoute = BudgetPlanningIndexImport.update({
+  path: '/budget-planning/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BoardersIndexRoute = BoardersIndexImport.update({
+  path: '/boarders/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BoarderManagementIndexRoute = BoarderManagementIndexImport.update({
+  path: '/boarder-management/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BillingIndexRoute = BillingIndexImport.update({
+  path: '/billing/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const VisitorsCreateRoute = VisitorsCreateImport.update({
+  path: '/visitors/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StallsListRoute = StallsListImport.update({
+  path: '/stalls/list',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StallsCreateRoute = StallsCreateImport.update({
+  path: '/stalls/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StaffScheduleCreateRoute = StaffScheduleCreateImport.update({
+  path: '/staff-schedule/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PasturesCreateRoute = PasturesCreateImport.update({
+  path: '/pastures/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MaintenanceCreateRoute = MaintenanceCreateImport.update({
+  path: '/maintenance/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MaintenanceRequestsCreateRoute = MaintenanceRequestsCreateImport.update({
+  path: '/maintenance-requests/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const LayoutsAppRoute = LayoutsAppImport.update({
   path: '/layouts/app',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const InventoryCreateRoute = InventoryCreateImport.update({
+  path: '/inventory/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const IncomeCreateRoute = IncomeCreateImport.update({
+  path: '/income/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesListRoute = HorsesListImport.update({
+  path: '/horses/list',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesCreateRoute = HorsesCreateImport.update({
+  path: '/horses/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FacilitiesCreateRoute = FacilitiesCreateImport.update({
+  path: '/facilities/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ExpensesCreateRoute = ExpensesCreateImport.update({
+  path: '/expenses/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsCreateRoute = EventsCreateImport.update({
+  path: '/events/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContractsCreateRoute = ContractsCreateImport.update({
+  path: '/contracts/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BookingsCreateRoute = BookingsCreateImport.update({
+  path: '/bookings/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BoardersListRoute = BoardersListImport.update({
+  path: '/boarders/list',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BoardersCreateRoute = BoardersCreateImport.update({
+  path: '/boarders/create',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -59,14 +437,377 @@ const AuthDevRoute = AuthDevImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const VisitorsRegisterIndexRoute = VisitorsRegisterIndexImport.update({
+  path: '/visitors/register/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const VisitorsVisitorIdIndexRoute = VisitorsVisitorIdIndexImport.update({
+  path: '/visitors/$visitorId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StallsOccupancyIndexRoute = StallsOccupancyIndexImport.update({
+  path: '/stalls/occupancy/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StallsMapIndexRoute = StallsMapIndexImport.update({
+  path: '/stalls/map/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StallsMaintenanceIndexRoute = StallsMaintenanceIndexImport.update({
+  path: '/stalls/maintenance/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StallsStallIdIndexRoute = StallsStallIdIndexImport.update({
+  path: '/stalls/$stallId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ReportsEventsIndexRoute = ReportsEventsIndexImport.update({
+  path: '/reports/events/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PasturesPastureIdIndexRoute = PasturesPastureIdIndexImport.update({
+  path: '/pastures/$pastureId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PastureRotationPlanIndexRoute = PastureRotationPlanIndexImport.update({
+  path: '/pasture-rotation/plan/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MaintenanceReportsIndexRoute = MaintenanceReportsIndexImport.update({
+  path: '/maintenance/reports/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MaintenanceCalendarIndexRoute = MaintenanceCalendarIndexImport.update({
+  path: '/maintenance/calendar/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MaintenanceTaskIdIndexRoute = MaintenanceTaskIdIndexImport.update({
+  path: '/maintenance/$taskId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MaintenanceRequestsRequestIdIndexRoute =
+  MaintenanceRequestsRequestIdIndexImport.update({
+    path: '/maintenance-requests/$requestId/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const InventoryItemIdIndexRoute = InventoryItemIdIndexImport.update({
+  path: '/inventory/$itemId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const IncomeIncomeIdIndexRoute = IncomeIncomeIdIndexImport.update({
+  path: '/income/$incomeId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesExerciseReportsIndexRoute = HorsesExerciseReportsIndexImport.update(
+  {
+    path: '/horses/exercise-reports/',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
+
+const HorsesExerciseCalendarIndexRoute =
+  HorsesExerciseCalendarIndexImport.update({
+    path: '/horses/exercise-calendar/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const HorsesHorseIdIndexRoute = HorsesHorseIdIndexImport.update({
+  path: '/horses/$horseId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinancialManagementReportsIndexRoute =
+  FinancialManagementReportsIndexImport.update({
+    path: '/financial-management/reports/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinancialManagementIncomeIndexRoute =
+  FinancialManagementIncomeIndexImport.update({
+    path: '/financial-management/income/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinancialManagementExpensesIndexRoute =
+  FinancialManagementExpensesIndexImport.update({
+    path: '/financial-management/expenses/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinancialManagementCategoriesIndexRoute =
+  FinancialManagementCategoriesIndexImport.update({
+    path: '/financial-management/categories/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinancialManagementBudgetIndexRoute =
+  FinancialManagementBudgetIndexImport.update({
+    path: '/financial-management/budget/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinanceReportsIndexRoute = FinanceReportsIndexImport.update({
+  path: '/finance/reports/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinanceIncomeIndexRoute = FinanceIncomeIndexImport.update({
+  path: '/finance/income/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinanceExpensesIndexRoute = FinanceExpensesIndexImport.update({
+  path: '/finance/expenses/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinanceBudgetsIndexRoute = FinanceBudgetsIndexImport.update({
+  path: '/finance/budgets/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FarmOperationsStaffIndexRoute = FarmOperationsStaffIndexImport.update({
+  path: '/farm-operations/staff/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FarmOperationsStaffSchedulingIndexRoute =
+  FarmOperationsStaffSchedulingIndexImport.update({
+    path: '/farm-operations/staff-scheduling/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsMyScheduleIndexRoute =
+  FarmOperationsMyScheduleIndexImport.update({
+    path: '/farm-operations/my-schedule/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsInventoryIndexRoute =
+  FarmOperationsInventoryIndexImport.update({
+    path: '/farm-operations/inventory/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FacilitiesBookingIndexRoute = FacilitiesBookingIndexImport.update({
+  path: '/facilities/booking/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FacilitiesFacilityIdIndexRoute = FacilitiesFacilityIdIndexImport.update({
+  path: '/facilities/$facilityId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ExpensesExpenseIdIndexRoute = ExpensesExpenseIdIndexImport.update({
+  path: '/expenses/$expenseId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsReportsIndexRoute = EventsReportsIndexImport.update({
+  path: '/events/reports/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsCalendarIndexRoute = EventsCalendarIndexImport.update({
+  path: '/events/calendar/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsEventIdIndexRoute = EventsEventIdIndexImport.update({
+  path: '/events/$eventId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContractsTemplatesIndexRoute = ContractsTemplatesIndexImport.update({
+  path: '/contracts/templates/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContractsReportsIndexRoute = ContractsReportsIndexImport.update({
+  path: '/contracts/reports/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContractsContractIdIndexRoute = ContractsContractIdIndexImport.update({
+  path: '/contracts/$contractId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CommunicationPortalAnnouncementsIndexRoute =
+  CommunicationPortalAnnouncementsIndexImport.update({
+    path: '/communication-portal/announcements/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const BookingsBookingIdIndexRoute = BookingsBookingIdIndexImport.update({
+  path: '/bookings/$bookingId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BoardersBoarderIdIndexRoute = BoardersBoarderIdIndexImport.update({
+  path: '/boarders/$boarderId/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BillingSettingsIndexRoute = BillingSettingsIndexImport.update({
+  path: '/billing/settings/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BillingReportsIndexRoute = BillingReportsIndexImport.update({
+  path: '/billing/reports/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BillingPaymentsIndexRoute = BillingPaymentsIndexImport.update({
+  path: '/billing/payments/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const AuthDevIndexRoute = AuthDevIndexImport.update({
   path: '/',
   getParentRoute: () => AuthDevRoute,
 } as any)
 
+const StallsStallIdEditRoute = StallsStallIdEditImport.update({
+  path: '/stalls/$stallId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const StaffScheduleShiftIdEditRoute = StaffScheduleShiftIdEditImport.update({
+  path: '/staff-schedule/$shiftId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PasturesPastureIdEditRoute = PasturesPastureIdEditImport.update({
+  path: '/pastures/$pastureId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const LayoutsAppBasicRoute = LayoutsAppBasicImport.update({
   path: '/basic',
   getParentRoute: () => LayoutsAppRoute,
+} as any)
+
+const InventoryItemIdEditRoute = InventoryItemIdEditImport.update({
+  path: '/inventory/$itemId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const IncomeIncomeIdEditRoute = IncomeIncomeIdEditImport.update({
+  path: '/income/$incomeId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesHorseIdEditRoute = HorsesHorseIdEditImport.update({
+  path: '/horses/$horseId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinancialManagementIncomeCreateRoute =
+  FinancialManagementIncomeCreateImport.update({
+    path: '/financial-management/income/create',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinancialManagementExpensesCreateRoute =
+  FinancialManagementExpensesCreateImport.update({
+    path: '/financial-management/expenses/create',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinancialManagementBudgetCreateRoute =
+  FinancialManagementBudgetCreateImport.update({
+    path: '/financial-management/budget/create',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinanceReportsCreateRoute = FinanceReportsCreateImport.update({
+  path: '/finance/reports/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FinanceBudgetsCreateRoute = FinanceBudgetsCreateImport.update({
+  path: '/finance/budgets/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FarmOperationsStaffCreateRoute = FarmOperationsStaffCreateImport.update({
+  path: '/farm-operations/staff/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FarmOperationsSchedulesCreateRoute =
+  FarmOperationsSchedulesCreateImport.update({
+    path: '/farm-operations/schedules/create',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const ExpensesExpenseIdEditRoute = ExpensesExpenseIdEditImport.update({
+  path: '/expenses/$expenseId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsFarmEventsCreateRoute = EventsFarmEventsCreateImport.update({
+  path: '/events/farm-events/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsBookingsCreateRoute = EventsBookingsCreateImport.update({
+  path: '/events/bookings/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsEventIdEditRoute = EventsEventIdEditImport.update({
+  path: '/events/$eventId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContractsContractIdEditRoute = ContractsContractIdEditImport.update({
+  path: '/contracts/$contractId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CommunicationPortalMessagesMessageIdRoute =
+  CommunicationPortalMessagesMessageIdImport.update({
+    path: '/communication-portal/messages/$messageId',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const BookingsBookingIdEditRoute = BookingsBookingIdEditImport.update({
+  path: '/bookings/$bookingId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BoardersBoarderIdEditRoute = BoardersBoarderIdEditImport.update({
+  path: '/boarders/$boarderId/edit',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BillingInvoicesCreateRoute = BillingInvoicesCreateImport.update({
+  path: '/billing/invoices/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BillingInvoicesInvoiceIdRoute = BillingInvoicesInvoiceIdImport.update({
+  path: '/billing/invoices/$invoiceId',
+  getParentRoute: () => rootRoute,
 } as any)
 
 const AuthDevPagesRoute = AuthDevPagesImport.update({
@@ -79,10 +820,171 @@ const AuthDevExamplesRoute = AuthDevExamplesImport.update({
   getParentRoute: () => AuthDevRoute,
 } as any)
 
+const StallsStallIdCustomizeIndexRoute =
+  StallsStallIdCustomizeIndexImport.update({
+    path: '/stalls/$stallId/customize/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const StallsStallIdAssignIndexRoute = StallsStallIdAssignIndexImport.update({
+  path: '/stalls/$stallId/assign/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesHorseIdTrainingIndexRoute = HorsesHorseIdTrainingIndexImport.update(
+  {
+    path: '/horses/$horseId/training/',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
+
+const HorsesHorseIdHealthIndexRoute = HorsesHorseIdHealthIndexImport.update({
+  path: '/horses/$horseId/health/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesHorseIdFeedingIndexRoute = HorsesHorseIdFeedingIndexImport.update({
+  path: '/horses/$horseId/feeding/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesHorseIdExerciseIndexRoute = HorsesHorseIdExerciseIndexImport.update(
+  {
+    path: '/horses/$horseId/exercise/',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
+
+const HorsesHorseIdExerciseLogsIndexRoute =
+  HorsesHorseIdExerciseLogsIndexImport.update({
+    path: '/horses/$horseId/exercise-logs/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinancialManagementBudgetBudgetIdIndexRoute =
+  FinancialManagementBudgetBudgetIdIndexImport.update({
+    path: '/financial-management/budget/$budgetId/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinanceReportsReportIdIndexRoute =
+  FinanceReportsReportIdIndexImport.update({
+    path: '/finance/reports/$reportId/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinanceBudgetsBudgetIdIndexRoute =
+  FinanceBudgetsBudgetIdIndexImport.update({
+    path: '/finance/budgets/$budgetId/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsStaffStaffIdIndexRoute =
+  FarmOperationsStaffStaffIdIndexImport.update({
+    path: '/farm-operations/staff/$staffId/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsInventorySuppliersIndexRoute =
+  FarmOperationsInventorySuppliersIndexImport.update({
+    path: '/farm-operations/inventory/suppliers/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsInventoryReportsIndexRoute =
+  FarmOperationsInventoryReportsIndexImport.update({
+    path: '/farm-operations/inventory/reports/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsInventoryItemsIndexRoute =
+  FarmOperationsInventoryItemsIndexImport.update({
+    path: '/farm-operations/inventory/items/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsInventoryCategoriesIndexRoute =
+  FarmOperationsInventoryCategoriesIndexImport.update({
+    path: '/farm-operations/inventory/categories/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const EventsFarmEventsEventIdIndexRoute =
+  EventsFarmEventsEventIdIndexImport.update({
+    path: '/events/farm-events/$eventId/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const EventsBookingsBookingIdIndexRoute =
+  EventsBookingsBookingIdIndexImport.update({
+    path: '/events/bookings/$bookingId/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const BoardersBoarderIdInvoicesIndexRoute =
+  BoardersBoarderIdInvoicesIndexImport.update({
+    path: '/boarders/$boarderId/invoices/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const BoardersBoarderIdContractIndexRoute =
+  BoardersBoarderIdContractIndexImport.update({
+    path: '/boarders/$boarderId/contract/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const BoardersBoarderIdBillingIndexRoute =
+  BoardersBoarderIdBillingIndexImport.update({
+    path: '/boarders/$boarderId/billing/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 const LayoutsAppBasicTabsRoute = LayoutsAppBasicTabsImport.update({
   path: '/tabs',
   getParentRoute: () => LayoutsAppBasicRoute,
 } as any)
+
+const HorsesHorseIdHealthCreateRoute = HorsesHorseIdHealthCreateImport.update({
+  path: '/horses/$horseId/health/create',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HorsesHorseIdFeedingCreateRoute = HorsesHorseIdFeedingCreateImport.update(
+  {
+    path: '/horses/$horseId/feeding/create',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
+
+const HorsesHorseIdExerciseLogsCreateRoute =
+  HorsesHorseIdExerciseLogsCreateImport.update({
+    path: '/horses/$horseId/exercise-logs/create',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FinancialManagementBudgetBudgetIdEditRoute =
+  FinancialManagementBudgetBudgetIdEditImport.update({
+    path: '/financial-management/budget/$budgetId/edit',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsStaffStaffIdEditRoute =
+  FarmOperationsStaffStaffIdEditImport.update({
+    path: '/farm-operations/staff/$staffId/edit',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsSchedulesScheduleIdEditRoute =
+  FarmOperationsSchedulesScheduleIdEditImport.update({
+    path: '/farm-operations/schedules/$scheduleId/edit',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const FarmOperationsInventoryItemsCreateRoute =
+  FarmOperationsInventoryItemsCreateImport.update({
+    path: '/farm-operations/inventory/items/create',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const AuthDevExamplesSettingsRoute = AuthDevExamplesSettingsImport.update({
   path: '/settings',
@@ -116,18 +1018,17 @@ const AuthDevExamplesBasicDialogFormRoute =
     getParentRoute: () => AuthDevExamplesRoute,
   } as any)
 
-const LayoutsAppBasicTabsPasswordRoute =
-  LayoutsAppBasicTabsPasswordImport.update({
-    path: '/password',
-    getParentRoute: () => LayoutsAppBasicTabsRoute,
+const FarmOperationsInventoryItemsItemIdIndexRoute =
+  FarmOperationsInventoryItemsItemIdIndexImport.update({
+    path: '/farm-operations/inventory/items/$itemId/',
+    getParentRoute: () => rootRoute,
   } as any)
 
-const LayoutsAppBasicTabsAccountRoute = LayoutsAppBasicTabsAccountImport.update(
-  {
-    path: '/account',
-    getParentRoute: () => LayoutsAppBasicTabsRoute,
-  } as any,
-)
+const FarmOperationsInventoryItemsItemIdEditRoute =
+  FarmOperationsInventoryItemsItemIdEditImport.update({
+    path: '/farm-operations/inventory/items/$itemId/edit',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const AuthDevExamplesSettingsPasswordRoute =
   AuthDevExamplesSettingsPasswordImport.update({
@@ -173,11 +1074,340 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthHomeImport
       parentRoute: typeof rootRoute
     }
+    '/boarders/create': {
+      id: '/boarders/create'
+      path: '/boarders/create'
+      fullPath: '/boarders/create'
+      preLoaderRoute: typeof BoardersCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/boarders/list': {
+      id: '/boarders/list'
+      path: '/boarders/list'
+      fullPath: '/boarders/list'
+      preLoaderRoute: typeof BoardersListImport
+      parentRoute: typeof rootRoute
+    }
+    '/bookings/create': {
+      id: '/bookings/create'
+      path: '/bookings/create'
+      fullPath: '/bookings/create'
+      preLoaderRoute: typeof BookingsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/contracts/create': {
+      id: '/contracts/create'
+      path: '/contracts/create'
+      fullPath: '/contracts/create'
+      preLoaderRoute: typeof ContractsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/create': {
+      id: '/events/create'
+      path: '/events/create'
+      fullPath: '/events/create'
+      preLoaderRoute: typeof EventsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/expenses/create': {
+      id: '/expenses/create'
+      path: '/expenses/create'
+      fullPath: '/expenses/create'
+      preLoaderRoute: typeof ExpensesCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/facilities/create': {
+      id: '/facilities/create'
+      path: '/facilities/create'
+      fullPath: '/facilities/create'
+      preLoaderRoute: typeof FacilitiesCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/create': {
+      id: '/horses/create'
+      path: '/horses/create'
+      fullPath: '/horses/create'
+      preLoaderRoute: typeof HorsesCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/list': {
+      id: '/horses/list'
+      path: '/horses/list'
+      fullPath: '/horses/list'
+      preLoaderRoute: typeof HorsesListImport
+      parentRoute: typeof rootRoute
+    }
+    '/income/create': {
+      id: '/income/create'
+      path: '/income/create'
+      fullPath: '/income/create'
+      preLoaderRoute: typeof IncomeCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/inventory/create': {
+      id: '/inventory/create'
+      path: '/inventory/create'
+      fullPath: '/inventory/create'
+      preLoaderRoute: typeof InventoryCreateImport
+      parentRoute: typeof rootRoute
+    }
     '/layouts/app': {
       id: '/layouts/app'
       path: '/layouts/app'
       fullPath: '/layouts/app'
       preLoaderRoute: typeof LayoutsAppImport
+      parentRoute: typeof rootRoute
+    }
+    '/maintenance-requests/create': {
+      id: '/maintenance-requests/create'
+      path: '/maintenance-requests/create'
+      fullPath: '/maintenance-requests/create'
+      preLoaderRoute: typeof MaintenanceRequestsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/maintenance/create': {
+      id: '/maintenance/create'
+      path: '/maintenance/create'
+      fullPath: '/maintenance/create'
+      preLoaderRoute: typeof MaintenanceCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/pastures/create': {
+      id: '/pastures/create'
+      path: '/pastures/create'
+      fullPath: '/pastures/create'
+      preLoaderRoute: typeof PasturesCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/staff-schedule/create': {
+      id: '/staff-schedule/create'
+      path: '/staff-schedule/create'
+      fullPath: '/staff-schedule/create'
+      preLoaderRoute: typeof StaffScheduleCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/create': {
+      id: '/stalls/create'
+      path: '/stalls/create'
+      fullPath: '/stalls/create'
+      preLoaderRoute: typeof StallsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/list': {
+      id: '/stalls/list'
+      path: '/stalls/list'
+      fullPath: '/stalls/list'
+      preLoaderRoute: typeof StallsListImport
+      parentRoute: typeof rootRoute
+    }
+    '/visitors/create': {
+      id: '/visitors/create'
+      path: '/visitors/create'
+      fullPath: '/visitors/create'
+      preLoaderRoute: typeof VisitorsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/billing/': {
+      id: '/billing/'
+      path: '/billing'
+      fullPath: '/billing'
+      preLoaderRoute: typeof BillingIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/boarder-management/': {
+      id: '/boarder-management/'
+      path: '/boarder-management'
+      fullPath: '/boarder-management'
+      preLoaderRoute: typeof BoarderManagementIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/boarders/': {
+      id: '/boarders/'
+      path: '/boarders'
+      fullPath: '/boarders'
+      preLoaderRoute: typeof BoardersIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/budget-planning/': {
+      id: '/budget-planning/'
+      path: '/budget-planning'
+      fullPath: '/budget-planning'
+      preLoaderRoute: typeof BudgetPlanningIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/categories/': {
+      id: '/categories/'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/communication-portal/': {
+      id: '/communication-portal/'
+      path: '/communication-portal'
+      fullPath: '/communication-portal'
+      preLoaderRoute: typeof CommunicationPortalIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/communication/': {
+      id: '/communication/'
+      path: '/communication'
+      fullPath: '/communication'
+      preLoaderRoute: typeof CommunicationIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/contracts/': {
+      id: '/contracts/'
+      path: '/contracts'
+      fullPath: '/contracts'
+      preLoaderRoute: typeof ContractsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/': {
+      id: '/events/'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/expenses/': {
+      id: '/expenses/'
+      path: '/expenses'
+      fullPath: '/expenses'
+      preLoaderRoute: typeof ExpensesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/facilities/': {
+      id: '/facilities/'
+      path: '/facilities'
+      fullPath: '/facilities'
+      preLoaderRoute: typeof FacilitiesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/': {
+      id: '/farm-operations/'
+      path: '/farm-operations'
+      fullPath: '/farm-operations'
+      preLoaderRoute: typeof FarmOperationsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/': {
+      id: '/finance/'
+      path: '/finance'
+      fullPath: '/finance'
+      preLoaderRoute: typeof FinanceIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-dashboard/': {
+      id: '/financial-dashboard/'
+      path: '/financial-dashboard'
+      fullPath: '/financial-dashboard'
+      preLoaderRoute: typeof FinancialDashboardIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/': {
+      id: '/financial-management/'
+      path: '/financial-management'
+      fullPath: '/financial-management'
+      preLoaderRoute: typeof FinancialManagementIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-reports/': {
+      id: '/financial-reports/'
+      path: '/financial-reports'
+      fullPath: '/financial-reports'
+      preLoaderRoute: typeof FinancialReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/': {
+      id: '/horses/'
+      path: '/horses'
+      fullPath: '/horses'
+      preLoaderRoute: typeof HorsesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/income-categories/': {
+      id: '/income-categories/'
+      path: '/income-categories'
+      fullPath: '/income-categories'
+      preLoaderRoute: typeof IncomeCategoriesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/income/': {
+      id: '/income/'
+      path: '/income'
+      fullPath: '/income'
+      preLoaderRoute: typeof IncomeIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/inventory/': {
+      id: '/inventory/'
+      path: '/inventory'
+      fullPath: '/inventory'
+      preLoaderRoute: typeof InventoryIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/maintenance-requests/': {
+      id: '/maintenance-requests/'
+      path: '/maintenance-requests'
+      fullPath: '/maintenance-requests'
+      preLoaderRoute: typeof MaintenanceRequestsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/maintenance/': {
+      id: '/maintenance/'
+      path: '/maintenance'
+      fullPath: '/maintenance'
+      preLoaderRoute: typeof MaintenanceIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/pasture-rotation/': {
+      id: '/pasture-rotation/'
+      path: '/pasture-rotation'
+      fullPath: '/pasture-rotation'
+      preLoaderRoute: typeof PastureRotationIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/pastures/': {
+      id: '/pastures/'
+      path: '/pastures'
+      fullPath: '/pastures'
+      preLoaderRoute: typeof PasturesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/reports/': {
+      id: '/reports/'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/staff-schedule/': {
+      id: '/staff-schedule/'
+      path: '/staff-schedule'
+      fullPath: '/staff-schedule'
+      preLoaderRoute: typeof StaffScheduleIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/': {
+      id: '/stalls/'
+      path: '/stalls'
+      fullPath: '/stalls'
+      preLoaderRoute: typeof StallsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/transactions/': {
+      id: '/transactions/'
+      path: '/transactions'
+      fullPath: '/transactions'
+      preLoaderRoute: typeof TransactionsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/visitors/': {
+      id: '/visitors/'
+      path: '/visitors'
+      fullPath: '/visitors'
+      preLoaderRoute: typeof VisitorsIndexImport
       parentRoute: typeof rootRoute
     }
     '/_auth/dev/examples': {
@@ -194,6 +1424,146 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthDevPagesImport
       parentRoute: typeof AuthDevImport
     }
+    '/billing/invoices/$invoiceId': {
+      id: '/billing/invoices/$invoiceId'
+      path: '/billing/invoices/$invoiceId'
+      fullPath: '/billing/invoices/$invoiceId'
+      preLoaderRoute: typeof BillingInvoicesInvoiceIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/billing/invoices/create': {
+      id: '/billing/invoices/create'
+      path: '/billing/invoices/create'
+      fullPath: '/billing/invoices/create'
+      preLoaderRoute: typeof BillingInvoicesCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/boarders/$boarderId/edit': {
+      id: '/boarders/$boarderId/edit'
+      path: '/boarders/$boarderId/edit'
+      fullPath: '/boarders/$boarderId/edit'
+      preLoaderRoute: typeof BoardersBoarderIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/bookings/$bookingId/edit': {
+      id: '/bookings/$bookingId/edit'
+      path: '/bookings/$bookingId/edit'
+      fullPath: '/bookings/$bookingId/edit'
+      preLoaderRoute: typeof BookingsBookingIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/communication-portal/messages/$messageId': {
+      id: '/communication-portal/messages/$messageId'
+      path: '/communication-portal/messages/$messageId'
+      fullPath: '/communication-portal/messages/$messageId'
+      preLoaderRoute: typeof CommunicationPortalMessagesMessageIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/contracts/$contractId/edit': {
+      id: '/contracts/$contractId/edit'
+      path: '/contracts/$contractId/edit'
+      fullPath: '/contracts/$contractId/edit'
+      preLoaderRoute: typeof ContractsContractIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/$eventId/edit': {
+      id: '/events/$eventId/edit'
+      path: '/events/$eventId/edit'
+      fullPath: '/events/$eventId/edit'
+      preLoaderRoute: typeof EventsEventIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/bookings/create': {
+      id: '/events/bookings/create'
+      path: '/events/bookings/create'
+      fullPath: '/events/bookings/create'
+      preLoaderRoute: typeof EventsBookingsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/farm-events/create': {
+      id: '/events/farm-events/create'
+      path: '/events/farm-events/create'
+      fullPath: '/events/farm-events/create'
+      preLoaderRoute: typeof EventsFarmEventsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/expenses/$expenseId/edit': {
+      id: '/expenses/$expenseId/edit'
+      path: '/expenses/$expenseId/edit'
+      fullPath: '/expenses/$expenseId/edit'
+      preLoaderRoute: typeof ExpensesExpenseIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/schedules/create': {
+      id: '/farm-operations/schedules/create'
+      path: '/farm-operations/schedules/create'
+      fullPath: '/farm-operations/schedules/create'
+      preLoaderRoute: typeof FarmOperationsSchedulesCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/staff/create': {
+      id: '/farm-operations/staff/create'
+      path: '/farm-operations/staff/create'
+      fullPath: '/farm-operations/staff/create'
+      preLoaderRoute: typeof FarmOperationsStaffCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/budgets/create': {
+      id: '/finance/budgets/create'
+      path: '/finance/budgets/create'
+      fullPath: '/finance/budgets/create'
+      preLoaderRoute: typeof FinanceBudgetsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/reports/create': {
+      id: '/finance/reports/create'
+      path: '/finance/reports/create'
+      fullPath: '/finance/reports/create'
+      preLoaderRoute: typeof FinanceReportsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/budget/create': {
+      id: '/financial-management/budget/create'
+      path: '/financial-management/budget/create'
+      fullPath: '/financial-management/budget/create'
+      preLoaderRoute: typeof FinancialManagementBudgetCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/expenses/create': {
+      id: '/financial-management/expenses/create'
+      path: '/financial-management/expenses/create'
+      fullPath: '/financial-management/expenses/create'
+      preLoaderRoute: typeof FinancialManagementExpensesCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/income/create': {
+      id: '/financial-management/income/create'
+      path: '/financial-management/income/create'
+      fullPath: '/financial-management/income/create'
+      preLoaderRoute: typeof FinancialManagementIncomeCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/edit': {
+      id: '/horses/$horseId/edit'
+      path: '/horses/$horseId/edit'
+      fullPath: '/horses/$horseId/edit'
+      preLoaderRoute: typeof HorsesHorseIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/income/$incomeId/edit': {
+      id: '/income/$incomeId/edit'
+      path: '/income/$incomeId/edit'
+      fullPath: '/income/$incomeId/edit'
+      preLoaderRoute: typeof IncomeIncomeIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/inventory/$itemId/edit': {
+      id: '/inventory/$itemId/edit'
+      path: '/inventory/$itemId/edit'
+      fullPath: '/inventory/$itemId/edit'
+      preLoaderRoute: typeof InventoryItemIdEditImport
+      parentRoute: typeof rootRoute
+    }
     '/layouts/app/basic': {
       id: '/layouts/app/basic'
       path: '/basic'
@@ -201,12 +1571,355 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutsAppBasicImport
       parentRoute: typeof LayoutsAppImport
     }
+    '/pastures/$pastureId/edit': {
+      id: '/pastures/$pastureId/edit'
+      path: '/pastures/$pastureId/edit'
+      fullPath: '/pastures/$pastureId/edit'
+      preLoaderRoute: typeof PasturesPastureIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/staff-schedule/$shiftId/edit': {
+      id: '/staff-schedule/$shiftId/edit'
+      path: '/staff-schedule/$shiftId/edit'
+      fullPath: '/staff-schedule/$shiftId/edit'
+      preLoaderRoute: typeof StaffScheduleShiftIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/$stallId/edit': {
+      id: '/stalls/$stallId/edit'
+      path: '/stalls/$stallId/edit'
+      fullPath: '/stalls/$stallId/edit'
+      preLoaderRoute: typeof StallsStallIdEditImport
+      parentRoute: typeof rootRoute
+    }
     '/_auth/dev/': {
       id: '/_auth/dev/'
       path: '/'
       fullPath: '/dev/'
       preLoaderRoute: typeof AuthDevIndexImport
       parentRoute: typeof AuthDevImport
+    }
+    '/billing/payments/': {
+      id: '/billing/payments/'
+      path: '/billing/payments'
+      fullPath: '/billing/payments'
+      preLoaderRoute: typeof BillingPaymentsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/billing/reports/': {
+      id: '/billing/reports/'
+      path: '/billing/reports'
+      fullPath: '/billing/reports'
+      preLoaderRoute: typeof BillingReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/billing/settings/': {
+      id: '/billing/settings/'
+      path: '/billing/settings'
+      fullPath: '/billing/settings'
+      preLoaderRoute: typeof BillingSettingsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/boarders/$boarderId/': {
+      id: '/boarders/$boarderId/'
+      path: '/boarders/$boarderId'
+      fullPath: '/boarders/$boarderId'
+      preLoaderRoute: typeof BoardersBoarderIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/bookings/$bookingId/': {
+      id: '/bookings/$bookingId/'
+      path: '/bookings/$bookingId'
+      fullPath: '/bookings/$bookingId'
+      preLoaderRoute: typeof BookingsBookingIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/communication-portal/announcements/': {
+      id: '/communication-portal/announcements/'
+      path: '/communication-portal/announcements'
+      fullPath: '/communication-portal/announcements'
+      preLoaderRoute: typeof CommunicationPortalAnnouncementsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/contracts/$contractId/': {
+      id: '/contracts/$contractId/'
+      path: '/contracts/$contractId'
+      fullPath: '/contracts/$contractId'
+      preLoaderRoute: typeof ContractsContractIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/contracts/reports/': {
+      id: '/contracts/reports/'
+      path: '/contracts/reports'
+      fullPath: '/contracts/reports'
+      preLoaderRoute: typeof ContractsReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/contracts/templates/': {
+      id: '/contracts/templates/'
+      path: '/contracts/templates'
+      fullPath: '/contracts/templates'
+      preLoaderRoute: typeof ContractsTemplatesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/$eventId/': {
+      id: '/events/$eventId/'
+      path: '/events/$eventId'
+      fullPath: '/events/$eventId'
+      preLoaderRoute: typeof EventsEventIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/calendar/': {
+      id: '/events/calendar/'
+      path: '/events/calendar'
+      fullPath: '/events/calendar'
+      preLoaderRoute: typeof EventsCalendarIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/reports/': {
+      id: '/events/reports/'
+      path: '/events/reports'
+      fullPath: '/events/reports'
+      preLoaderRoute: typeof EventsReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/expenses/$expenseId/': {
+      id: '/expenses/$expenseId/'
+      path: '/expenses/$expenseId'
+      fullPath: '/expenses/$expenseId'
+      preLoaderRoute: typeof ExpensesExpenseIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/facilities/$facilityId/': {
+      id: '/facilities/$facilityId/'
+      path: '/facilities/$facilityId'
+      fullPath: '/facilities/$facilityId'
+      preLoaderRoute: typeof FacilitiesFacilityIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/facilities/booking/': {
+      id: '/facilities/booking/'
+      path: '/facilities/booking'
+      fullPath: '/facilities/booking'
+      preLoaderRoute: typeof FacilitiesBookingIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/inventory/': {
+      id: '/farm-operations/inventory/'
+      path: '/farm-operations/inventory'
+      fullPath: '/farm-operations/inventory'
+      preLoaderRoute: typeof FarmOperationsInventoryIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/my-schedule/': {
+      id: '/farm-operations/my-schedule/'
+      path: '/farm-operations/my-schedule'
+      fullPath: '/farm-operations/my-schedule'
+      preLoaderRoute: typeof FarmOperationsMyScheduleIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/staff-scheduling/': {
+      id: '/farm-operations/staff-scheduling/'
+      path: '/farm-operations/staff-scheduling'
+      fullPath: '/farm-operations/staff-scheduling'
+      preLoaderRoute: typeof FarmOperationsStaffSchedulingIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/staff/': {
+      id: '/farm-operations/staff/'
+      path: '/farm-operations/staff'
+      fullPath: '/farm-operations/staff'
+      preLoaderRoute: typeof FarmOperationsStaffIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/budgets/': {
+      id: '/finance/budgets/'
+      path: '/finance/budgets'
+      fullPath: '/finance/budgets'
+      preLoaderRoute: typeof FinanceBudgetsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/expenses/': {
+      id: '/finance/expenses/'
+      path: '/finance/expenses'
+      fullPath: '/finance/expenses'
+      preLoaderRoute: typeof FinanceExpensesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/income/': {
+      id: '/finance/income/'
+      path: '/finance/income'
+      fullPath: '/finance/income'
+      preLoaderRoute: typeof FinanceIncomeIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/reports/': {
+      id: '/finance/reports/'
+      path: '/finance/reports'
+      fullPath: '/finance/reports'
+      preLoaderRoute: typeof FinanceReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/budget/': {
+      id: '/financial-management/budget/'
+      path: '/financial-management/budget'
+      fullPath: '/financial-management/budget'
+      preLoaderRoute: typeof FinancialManagementBudgetIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/categories/': {
+      id: '/financial-management/categories/'
+      path: '/financial-management/categories'
+      fullPath: '/financial-management/categories'
+      preLoaderRoute: typeof FinancialManagementCategoriesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/expenses/': {
+      id: '/financial-management/expenses/'
+      path: '/financial-management/expenses'
+      fullPath: '/financial-management/expenses'
+      preLoaderRoute: typeof FinancialManagementExpensesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/income/': {
+      id: '/financial-management/income/'
+      path: '/financial-management/income'
+      fullPath: '/financial-management/income'
+      preLoaderRoute: typeof FinancialManagementIncomeIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/reports/': {
+      id: '/financial-management/reports/'
+      path: '/financial-management/reports'
+      fullPath: '/financial-management/reports'
+      preLoaderRoute: typeof FinancialManagementReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/': {
+      id: '/horses/$horseId/'
+      path: '/horses/$horseId'
+      fullPath: '/horses/$horseId'
+      preLoaderRoute: typeof HorsesHorseIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/exercise-calendar/': {
+      id: '/horses/exercise-calendar/'
+      path: '/horses/exercise-calendar'
+      fullPath: '/horses/exercise-calendar'
+      preLoaderRoute: typeof HorsesExerciseCalendarIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/exercise-reports/': {
+      id: '/horses/exercise-reports/'
+      path: '/horses/exercise-reports'
+      fullPath: '/horses/exercise-reports'
+      preLoaderRoute: typeof HorsesExerciseReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/income/$incomeId/': {
+      id: '/income/$incomeId/'
+      path: '/income/$incomeId'
+      fullPath: '/income/$incomeId'
+      preLoaderRoute: typeof IncomeIncomeIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/inventory/$itemId/': {
+      id: '/inventory/$itemId/'
+      path: '/inventory/$itemId'
+      fullPath: '/inventory/$itemId'
+      preLoaderRoute: typeof InventoryItemIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/maintenance-requests/$requestId/': {
+      id: '/maintenance-requests/$requestId/'
+      path: '/maintenance-requests/$requestId'
+      fullPath: '/maintenance-requests/$requestId'
+      preLoaderRoute: typeof MaintenanceRequestsRequestIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/maintenance/$taskId/': {
+      id: '/maintenance/$taskId/'
+      path: '/maintenance/$taskId'
+      fullPath: '/maintenance/$taskId'
+      preLoaderRoute: typeof MaintenanceTaskIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/maintenance/calendar/': {
+      id: '/maintenance/calendar/'
+      path: '/maintenance/calendar'
+      fullPath: '/maintenance/calendar'
+      preLoaderRoute: typeof MaintenanceCalendarIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/maintenance/reports/': {
+      id: '/maintenance/reports/'
+      path: '/maintenance/reports'
+      fullPath: '/maintenance/reports'
+      preLoaderRoute: typeof MaintenanceReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/pasture-rotation/plan/': {
+      id: '/pasture-rotation/plan/'
+      path: '/pasture-rotation/plan'
+      fullPath: '/pasture-rotation/plan'
+      preLoaderRoute: typeof PastureRotationPlanIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/pastures/$pastureId/': {
+      id: '/pastures/$pastureId/'
+      path: '/pastures/$pastureId'
+      fullPath: '/pastures/$pastureId'
+      preLoaderRoute: typeof PasturesPastureIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/reports/events/': {
+      id: '/reports/events/'
+      path: '/reports/events'
+      fullPath: '/reports/events'
+      preLoaderRoute: typeof ReportsEventsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/$stallId/': {
+      id: '/stalls/$stallId/'
+      path: '/stalls/$stallId'
+      fullPath: '/stalls/$stallId'
+      preLoaderRoute: typeof StallsStallIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/maintenance/': {
+      id: '/stalls/maintenance/'
+      path: '/stalls/maintenance'
+      fullPath: '/stalls/maintenance'
+      preLoaderRoute: typeof StallsMaintenanceIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/map/': {
+      id: '/stalls/map/'
+      path: '/stalls/map'
+      fullPath: '/stalls/map'
+      preLoaderRoute: typeof StallsMapIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/occupancy/': {
+      id: '/stalls/occupancy/'
+      path: '/stalls/occupancy'
+      fullPath: '/stalls/occupancy'
+      preLoaderRoute: typeof StallsOccupancyIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/visitors/$visitorId/': {
+      id: '/visitors/$visitorId/'
+      path: '/visitors/$visitorId'
+      fullPath: '/visitors/$visitorId'
+      preLoaderRoute: typeof VisitorsVisitorIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/visitors/register/': {
+      id: '/visitors/register/'
+      path: '/visitors/register'
+      fullPath: '/visitors/register'
+      preLoaderRoute: typeof VisitorsRegisterIndexImport
+      parentRoute: typeof rootRoute
     }
     '/_auth/dev/examples/basic-dialog-form': {
       id: '/_auth/dev/examples/basic-dialog-form'
@@ -250,12 +1963,201 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthDevExamplesSettingsImport
       parentRoute: typeof AuthDevExamplesImport
     }
+    '/farm-operations/inventory/items/create': {
+      id: '/farm-operations/inventory/items/create'
+      path: '/farm-operations/inventory/items/create'
+      fullPath: '/farm-operations/inventory/items/create'
+      preLoaderRoute: typeof FarmOperationsInventoryItemsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/schedules/$scheduleId/edit': {
+      id: '/farm-operations/schedules/$scheduleId/edit'
+      path: '/farm-operations/schedules/$scheduleId/edit'
+      fullPath: '/farm-operations/schedules/$scheduleId/edit'
+      preLoaderRoute: typeof FarmOperationsSchedulesScheduleIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/staff/$staffId/edit': {
+      id: '/farm-operations/staff/$staffId/edit'
+      path: '/farm-operations/staff/$staffId/edit'
+      fullPath: '/farm-operations/staff/$staffId/edit'
+      preLoaderRoute: typeof FarmOperationsStaffStaffIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/budget/$budgetId/edit': {
+      id: '/financial-management/budget/$budgetId/edit'
+      path: '/financial-management/budget/$budgetId/edit'
+      fullPath: '/financial-management/budget/$budgetId/edit'
+      preLoaderRoute: typeof FinancialManagementBudgetBudgetIdEditImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/exercise-logs/create': {
+      id: '/horses/$horseId/exercise-logs/create'
+      path: '/horses/$horseId/exercise-logs/create'
+      fullPath: '/horses/$horseId/exercise-logs/create'
+      preLoaderRoute: typeof HorsesHorseIdExerciseLogsCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/feeding/create': {
+      id: '/horses/$horseId/feeding/create'
+      path: '/horses/$horseId/feeding/create'
+      fullPath: '/horses/$horseId/feeding/create'
+      preLoaderRoute: typeof HorsesHorseIdFeedingCreateImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/health/create': {
+      id: '/horses/$horseId/health/create'
+      path: '/horses/$horseId/health/create'
+      fullPath: '/horses/$horseId/health/create'
+      preLoaderRoute: typeof HorsesHorseIdHealthCreateImport
+      parentRoute: typeof rootRoute
+    }
     '/layouts/app/basic/tabs': {
       id: '/layouts/app/basic/tabs'
       path: '/tabs'
       fullPath: '/layouts/app/basic/tabs'
       preLoaderRoute: typeof LayoutsAppBasicTabsImport
       parentRoute: typeof LayoutsAppBasicImport
+    }
+    '/boarders/$boarderId/billing/': {
+      id: '/boarders/$boarderId/billing/'
+      path: '/boarders/$boarderId/billing'
+      fullPath: '/boarders/$boarderId/billing'
+      preLoaderRoute: typeof BoardersBoarderIdBillingIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/boarders/$boarderId/contract/': {
+      id: '/boarders/$boarderId/contract/'
+      path: '/boarders/$boarderId/contract'
+      fullPath: '/boarders/$boarderId/contract'
+      preLoaderRoute: typeof BoardersBoarderIdContractIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/boarders/$boarderId/invoices/': {
+      id: '/boarders/$boarderId/invoices/'
+      path: '/boarders/$boarderId/invoices'
+      fullPath: '/boarders/$boarderId/invoices'
+      preLoaderRoute: typeof BoardersBoarderIdInvoicesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/bookings/$bookingId/': {
+      id: '/events/bookings/$bookingId/'
+      path: '/events/bookings/$bookingId'
+      fullPath: '/events/bookings/$bookingId'
+      preLoaderRoute: typeof EventsBookingsBookingIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/events/farm-events/$eventId/': {
+      id: '/events/farm-events/$eventId/'
+      path: '/events/farm-events/$eventId'
+      fullPath: '/events/farm-events/$eventId'
+      preLoaderRoute: typeof EventsFarmEventsEventIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/inventory/categories/': {
+      id: '/farm-operations/inventory/categories/'
+      path: '/farm-operations/inventory/categories'
+      fullPath: '/farm-operations/inventory/categories'
+      preLoaderRoute: typeof FarmOperationsInventoryCategoriesIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/inventory/items/': {
+      id: '/farm-operations/inventory/items/'
+      path: '/farm-operations/inventory/items'
+      fullPath: '/farm-operations/inventory/items'
+      preLoaderRoute: typeof FarmOperationsInventoryItemsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/inventory/reports/': {
+      id: '/farm-operations/inventory/reports/'
+      path: '/farm-operations/inventory/reports'
+      fullPath: '/farm-operations/inventory/reports'
+      preLoaderRoute: typeof FarmOperationsInventoryReportsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/inventory/suppliers/': {
+      id: '/farm-operations/inventory/suppliers/'
+      path: '/farm-operations/inventory/suppliers'
+      fullPath: '/farm-operations/inventory/suppliers'
+      preLoaderRoute: typeof FarmOperationsInventorySuppliersIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/farm-operations/staff/$staffId/': {
+      id: '/farm-operations/staff/$staffId/'
+      path: '/farm-operations/staff/$staffId'
+      fullPath: '/farm-operations/staff/$staffId'
+      preLoaderRoute: typeof FarmOperationsStaffStaffIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/budgets/$budgetId/': {
+      id: '/finance/budgets/$budgetId/'
+      path: '/finance/budgets/$budgetId'
+      fullPath: '/finance/budgets/$budgetId'
+      preLoaderRoute: typeof FinanceBudgetsBudgetIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/finance/reports/$reportId/': {
+      id: '/finance/reports/$reportId/'
+      path: '/finance/reports/$reportId'
+      fullPath: '/finance/reports/$reportId'
+      preLoaderRoute: typeof FinanceReportsReportIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/financial-management/budget/$budgetId/': {
+      id: '/financial-management/budget/$budgetId/'
+      path: '/financial-management/budget/$budgetId'
+      fullPath: '/financial-management/budget/$budgetId'
+      preLoaderRoute: typeof FinancialManagementBudgetBudgetIdIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/exercise-logs/': {
+      id: '/horses/$horseId/exercise-logs/'
+      path: '/horses/$horseId/exercise-logs'
+      fullPath: '/horses/$horseId/exercise-logs'
+      preLoaderRoute: typeof HorsesHorseIdExerciseLogsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/exercise/': {
+      id: '/horses/$horseId/exercise/'
+      path: '/horses/$horseId/exercise'
+      fullPath: '/horses/$horseId/exercise'
+      preLoaderRoute: typeof HorsesHorseIdExerciseIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/feeding/': {
+      id: '/horses/$horseId/feeding/'
+      path: '/horses/$horseId/feeding'
+      fullPath: '/horses/$horseId/feeding'
+      preLoaderRoute: typeof HorsesHorseIdFeedingIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/health/': {
+      id: '/horses/$horseId/health/'
+      path: '/horses/$horseId/health'
+      fullPath: '/horses/$horseId/health'
+      preLoaderRoute: typeof HorsesHorseIdHealthIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/horses/$horseId/training/': {
+      id: '/horses/$horseId/training/'
+      path: '/horses/$horseId/training'
+      fullPath: '/horses/$horseId/training'
+      preLoaderRoute: typeof HorsesHorseIdTrainingIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/$stallId/assign/': {
+      id: '/stalls/$stallId/assign/'
+      path: '/stalls/$stallId/assign'
+      fullPath: '/stalls/$stallId/assign'
+      preLoaderRoute: typeof StallsStallIdAssignIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/stalls/$stallId/customize/': {
+      id: '/stalls/$stallId/customize/'
+      path: '/stalls/$stallId/customize'
+      fullPath: '/stalls/$stallId/customize'
+      preLoaderRoute: typeof StallsStallIdCustomizeIndexImport
+      parentRoute: typeof rootRoute
     }
     '/_auth/dev/examples/settings/account': {
       id: '/_auth/dev/examples/settings/account'
@@ -271,53 +2173,1423 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthDevExamplesSettingsPasswordImport
       parentRoute: typeof AuthDevExamplesSettingsImport
     }
-    '/layouts/app/basic/tabs/account': {
-      id: '/layouts/app/basic/tabs/account'
-      path: '/account'
-      fullPath: '/layouts/app/basic/tabs/account'
-      preLoaderRoute: typeof LayoutsAppBasicTabsAccountImport
-      parentRoute: typeof LayoutsAppBasicTabsImport
+    '/farm-operations/inventory/items/$itemId/edit': {
+      id: '/farm-operations/inventory/items/$itemId/edit'
+      path: '/farm-operations/inventory/items/$itemId/edit'
+      fullPath: '/farm-operations/inventory/items/$itemId/edit'
+      preLoaderRoute: typeof FarmOperationsInventoryItemsItemIdEditImport
+      parentRoute: typeof rootRoute
     }
-    '/layouts/app/basic/tabs/password': {
-      id: '/layouts/app/basic/tabs/password'
-      path: '/password'
-      fullPath: '/layouts/app/basic/tabs/password'
-      preLoaderRoute: typeof LayoutsAppBasicTabsPasswordImport
-      parentRoute: typeof LayoutsAppBasicTabsImport
+    '/farm-operations/inventory/items/$itemId/': {
+      id: '/farm-operations/inventory/items/$itemId/'
+      path: '/farm-operations/inventory/items/$itemId'
+      fullPath: '/farm-operations/inventory/items/$itemId'
+      preLoaderRoute: typeof FarmOperationsInventoryItemsItemIdIndexImport
+      parentRoute: typeof rootRoute
     }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({
-  IndexRoute,
-  SignupRoute,
-  AuthDevRoute: AuthDevRoute.addChildren({
-    AuthDevExamplesRoute: AuthDevExamplesRoute.addChildren({
-      AuthDevExamplesBasicDialogFormRoute,
-      AuthDevExamplesBasicFormRoute,
-      AuthDevExamplesBasicFormEditRoute,
-      AuthDevExamplesBasicTableRoute,
-      AuthDevExamplesDataTableRoute,
-      AuthDevExamplesSettingsRoute: AuthDevExamplesSettingsRoute.addChildren({
-        AuthDevExamplesSettingsAccountRoute,
-        AuthDevExamplesSettingsPasswordRoute,
-      }),
-    }),
-    AuthDevPagesRoute,
-    AuthDevIndexRoute,
-  }),
-  AuthHomeRoute,
-  LayoutsAppRoute: LayoutsAppRoute.addChildren({
-    LayoutsAppBasicRoute: LayoutsAppBasicRoute.addChildren({
-      LayoutsAppBasicTabsRoute: LayoutsAppBasicTabsRoute.addChildren({
-        LayoutsAppBasicTabsAccountRoute,
-        LayoutsAppBasicTabsPasswordRoute,
-      }),
-    }),
-  }),
-})
+interface AuthDevExamplesSettingsRouteChildren {
+  AuthDevExamplesSettingsAccountRoute: typeof AuthDevExamplesSettingsAccountRoute
+  AuthDevExamplesSettingsPasswordRoute: typeof AuthDevExamplesSettingsPasswordRoute
+}
+
+const AuthDevExamplesSettingsRouteChildren: AuthDevExamplesSettingsRouteChildren =
+  {
+    AuthDevExamplesSettingsAccountRoute: AuthDevExamplesSettingsAccountRoute,
+    AuthDevExamplesSettingsPasswordRoute: AuthDevExamplesSettingsPasswordRoute,
+  }
+
+const AuthDevExamplesSettingsRouteWithChildren =
+  AuthDevExamplesSettingsRoute._addFileChildren(
+    AuthDevExamplesSettingsRouteChildren,
+  )
+
+interface AuthDevExamplesRouteChildren {
+  AuthDevExamplesBasicDialogFormRoute: typeof AuthDevExamplesBasicDialogFormRoute
+  AuthDevExamplesBasicFormRoute: typeof AuthDevExamplesBasicFormRoute
+  AuthDevExamplesBasicFormEditRoute: typeof AuthDevExamplesBasicFormEditRoute
+  AuthDevExamplesBasicTableRoute: typeof AuthDevExamplesBasicTableRoute
+  AuthDevExamplesDataTableRoute: typeof AuthDevExamplesDataTableRoute
+  AuthDevExamplesSettingsRoute: typeof AuthDevExamplesSettingsRouteWithChildren
+}
+
+const AuthDevExamplesRouteChildren: AuthDevExamplesRouteChildren = {
+  AuthDevExamplesBasicDialogFormRoute: AuthDevExamplesBasicDialogFormRoute,
+  AuthDevExamplesBasicFormRoute: AuthDevExamplesBasicFormRoute,
+  AuthDevExamplesBasicFormEditRoute: AuthDevExamplesBasicFormEditRoute,
+  AuthDevExamplesBasicTableRoute: AuthDevExamplesBasicTableRoute,
+  AuthDevExamplesDataTableRoute: AuthDevExamplesDataTableRoute,
+  AuthDevExamplesSettingsRoute: AuthDevExamplesSettingsRouteWithChildren,
+}
+
+const AuthDevExamplesRouteWithChildren = AuthDevExamplesRoute._addFileChildren(
+  AuthDevExamplesRouteChildren,
+)
+
+interface AuthDevRouteChildren {
+  AuthDevExamplesRoute: typeof AuthDevExamplesRouteWithChildren
+  AuthDevPagesRoute: typeof AuthDevPagesRoute
+  AuthDevIndexRoute: typeof AuthDevIndexRoute
+}
+
+const AuthDevRouteChildren: AuthDevRouteChildren = {
+  AuthDevExamplesRoute: AuthDevExamplesRouteWithChildren,
+  AuthDevPagesRoute: AuthDevPagesRoute,
+  AuthDevIndexRoute: AuthDevIndexRoute,
+}
+
+const AuthDevRouteWithChildren =
+  AuthDevRoute._addFileChildren(AuthDevRouteChildren)
+
+interface LayoutsAppBasicRouteChildren {
+  LayoutsAppBasicTabsRoute: typeof LayoutsAppBasicTabsRoute
+}
+
+const LayoutsAppBasicRouteChildren: LayoutsAppBasicRouteChildren = {
+  LayoutsAppBasicTabsRoute: LayoutsAppBasicTabsRoute,
+}
+
+const LayoutsAppBasicRouteWithChildren = LayoutsAppBasicRoute._addFileChildren(
+  LayoutsAppBasicRouteChildren,
+)
+
+interface LayoutsAppRouteChildren {
+  LayoutsAppBasicRoute: typeof LayoutsAppBasicRouteWithChildren
+}
+
+const LayoutsAppRouteChildren: LayoutsAppRouteChildren = {
+  LayoutsAppBasicRoute: LayoutsAppBasicRouteWithChildren,
+}
+
+const LayoutsAppRouteWithChildren = LayoutsAppRoute._addFileChildren(
+  LayoutsAppRouteChildren,
+)
+
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
+  '/signup': typeof SignupRoute
+  '/dev': typeof AuthDevRouteWithChildren
+  '/home': typeof AuthHomeRoute
+  '/boarders/create': typeof BoardersCreateRoute
+  '/boarders/list': typeof BoardersListRoute
+  '/bookings/create': typeof BookingsCreateRoute
+  '/contracts/create': typeof ContractsCreateRoute
+  '/events/create': typeof EventsCreateRoute
+  '/expenses/create': typeof ExpensesCreateRoute
+  '/facilities/create': typeof FacilitiesCreateRoute
+  '/horses/create': typeof HorsesCreateRoute
+  '/horses/list': typeof HorsesListRoute
+  '/income/create': typeof IncomeCreateRoute
+  '/inventory/create': typeof InventoryCreateRoute
+  '/layouts/app': typeof LayoutsAppRouteWithChildren
+  '/maintenance-requests/create': typeof MaintenanceRequestsCreateRoute
+  '/maintenance/create': typeof MaintenanceCreateRoute
+  '/pastures/create': typeof PasturesCreateRoute
+  '/staff-schedule/create': typeof StaffScheduleCreateRoute
+  '/stalls/create': typeof StallsCreateRoute
+  '/stalls/list': typeof StallsListRoute
+  '/visitors/create': typeof VisitorsCreateRoute
+  '/billing': typeof BillingIndexRoute
+  '/boarder-management': typeof BoarderManagementIndexRoute
+  '/boarders': typeof BoardersIndexRoute
+  '/budget-planning': typeof BudgetPlanningIndexRoute
+  '/categories': typeof CategoriesIndexRoute
+  '/communication-portal': typeof CommunicationPortalIndexRoute
+  '/communication': typeof CommunicationIndexRoute
+  '/contracts': typeof ContractsIndexRoute
+  '/events': typeof EventsIndexRoute
+  '/expenses': typeof ExpensesIndexRoute
+  '/facilities': typeof FacilitiesIndexRoute
+  '/farm-operations': typeof FarmOperationsIndexRoute
+  '/finance': typeof FinanceIndexRoute
+  '/financial-dashboard': typeof FinancialDashboardIndexRoute
+  '/financial-management': typeof FinancialManagementIndexRoute
+  '/financial-reports': typeof FinancialReportsIndexRoute
+  '/horses': typeof HorsesIndexRoute
+  '/income-categories': typeof IncomeCategoriesIndexRoute
+  '/income': typeof IncomeIndexRoute
+  '/inventory': typeof InventoryIndexRoute
+  '/maintenance-requests': typeof MaintenanceRequestsIndexRoute
+  '/maintenance': typeof MaintenanceIndexRoute
+  '/pasture-rotation': typeof PastureRotationIndexRoute
+  '/pastures': typeof PasturesIndexRoute
+  '/reports': typeof ReportsIndexRoute
+  '/staff-schedule': typeof StaffScheduleIndexRoute
+  '/stalls': typeof StallsIndexRoute
+  '/transactions': typeof TransactionsIndexRoute
+  '/visitors': typeof VisitorsIndexRoute
+  '/dev/examples': typeof AuthDevExamplesRouteWithChildren
+  '/dev/pages': typeof AuthDevPagesRoute
+  '/billing/invoices/$invoiceId': typeof BillingInvoicesInvoiceIdRoute
+  '/billing/invoices/create': typeof BillingInvoicesCreateRoute
+  '/boarders/$boarderId/edit': typeof BoardersBoarderIdEditRoute
+  '/bookings/$bookingId/edit': typeof BookingsBookingIdEditRoute
+  '/communication-portal/messages/$messageId': typeof CommunicationPortalMessagesMessageIdRoute
+  '/contracts/$contractId/edit': typeof ContractsContractIdEditRoute
+  '/events/$eventId/edit': typeof EventsEventIdEditRoute
+  '/events/bookings/create': typeof EventsBookingsCreateRoute
+  '/events/farm-events/create': typeof EventsFarmEventsCreateRoute
+  '/expenses/$expenseId/edit': typeof ExpensesExpenseIdEditRoute
+  '/farm-operations/schedules/create': typeof FarmOperationsSchedulesCreateRoute
+  '/farm-operations/staff/create': typeof FarmOperationsStaffCreateRoute
+  '/finance/budgets/create': typeof FinanceBudgetsCreateRoute
+  '/finance/reports/create': typeof FinanceReportsCreateRoute
+  '/financial-management/budget/create': typeof FinancialManagementBudgetCreateRoute
+  '/financial-management/expenses/create': typeof FinancialManagementExpensesCreateRoute
+  '/financial-management/income/create': typeof FinancialManagementIncomeCreateRoute
+  '/horses/$horseId/edit': typeof HorsesHorseIdEditRoute
+  '/income/$incomeId/edit': typeof IncomeIncomeIdEditRoute
+  '/inventory/$itemId/edit': typeof InventoryItemIdEditRoute
+  '/layouts/app/basic': typeof LayoutsAppBasicRouteWithChildren
+  '/pastures/$pastureId/edit': typeof PasturesPastureIdEditRoute
+  '/staff-schedule/$shiftId/edit': typeof StaffScheduleShiftIdEditRoute
+  '/stalls/$stallId/edit': typeof StallsStallIdEditRoute
+  '/dev/': typeof AuthDevIndexRoute
+  '/billing/payments': typeof BillingPaymentsIndexRoute
+  '/billing/reports': typeof BillingReportsIndexRoute
+  '/billing/settings': typeof BillingSettingsIndexRoute
+  '/boarders/$boarderId': typeof BoardersBoarderIdIndexRoute
+  '/bookings/$bookingId': typeof BookingsBookingIdIndexRoute
+  '/communication-portal/announcements': typeof CommunicationPortalAnnouncementsIndexRoute
+  '/contracts/$contractId': typeof ContractsContractIdIndexRoute
+  '/contracts/reports': typeof ContractsReportsIndexRoute
+  '/contracts/templates': typeof ContractsTemplatesIndexRoute
+  '/events/$eventId': typeof EventsEventIdIndexRoute
+  '/events/calendar': typeof EventsCalendarIndexRoute
+  '/events/reports': typeof EventsReportsIndexRoute
+  '/expenses/$expenseId': typeof ExpensesExpenseIdIndexRoute
+  '/facilities/$facilityId': typeof FacilitiesFacilityIdIndexRoute
+  '/facilities/booking': typeof FacilitiesBookingIndexRoute
+  '/farm-operations/inventory': typeof FarmOperationsInventoryIndexRoute
+  '/farm-operations/my-schedule': typeof FarmOperationsMyScheduleIndexRoute
+  '/farm-operations/staff-scheduling': typeof FarmOperationsStaffSchedulingIndexRoute
+  '/farm-operations/staff': typeof FarmOperationsStaffIndexRoute
+  '/finance/budgets': typeof FinanceBudgetsIndexRoute
+  '/finance/expenses': typeof FinanceExpensesIndexRoute
+  '/finance/income': typeof FinanceIncomeIndexRoute
+  '/finance/reports': typeof FinanceReportsIndexRoute
+  '/financial-management/budget': typeof FinancialManagementBudgetIndexRoute
+  '/financial-management/categories': typeof FinancialManagementCategoriesIndexRoute
+  '/financial-management/expenses': typeof FinancialManagementExpensesIndexRoute
+  '/financial-management/income': typeof FinancialManagementIncomeIndexRoute
+  '/financial-management/reports': typeof FinancialManagementReportsIndexRoute
+  '/horses/$horseId': typeof HorsesHorseIdIndexRoute
+  '/horses/exercise-calendar': typeof HorsesExerciseCalendarIndexRoute
+  '/horses/exercise-reports': typeof HorsesExerciseReportsIndexRoute
+  '/income/$incomeId': typeof IncomeIncomeIdIndexRoute
+  '/inventory/$itemId': typeof InventoryItemIdIndexRoute
+  '/maintenance-requests/$requestId': typeof MaintenanceRequestsRequestIdIndexRoute
+  '/maintenance/$taskId': typeof MaintenanceTaskIdIndexRoute
+  '/maintenance/calendar': typeof MaintenanceCalendarIndexRoute
+  '/maintenance/reports': typeof MaintenanceReportsIndexRoute
+  '/pasture-rotation/plan': typeof PastureRotationPlanIndexRoute
+  '/pastures/$pastureId': typeof PasturesPastureIdIndexRoute
+  '/reports/events': typeof ReportsEventsIndexRoute
+  '/stalls/$stallId': typeof StallsStallIdIndexRoute
+  '/stalls/maintenance': typeof StallsMaintenanceIndexRoute
+  '/stalls/map': typeof StallsMapIndexRoute
+  '/stalls/occupancy': typeof StallsOccupancyIndexRoute
+  '/visitors/$visitorId': typeof VisitorsVisitorIdIndexRoute
+  '/visitors/register': typeof VisitorsRegisterIndexRoute
+  '/dev/examples/basic-dialog-form': typeof AuthDevExamplesBasicDialogFormRoute
+  '/dev/examples/basic-form': typeof AuthDevExamplesBasicFormRoute
+  '/dev/examples/basic-form-edit': typeof AuthDevExamplesBasicFormEditRoute
+  '/dev/examples/basic-table': typeof AuthDevExamplesBasicTableRoute
+  '/dev/examples/data-table': typeof AuthDevExamplesDataTableRoute
+  '/dev/examples/settings': typeof AuthDevExamplesSettingsRouteWithChildren
+  '/farm-operations/inventory/items/create': typeof FarmOperationsInventoryItemsCreateRoute
+  '/farm-operations/schedules/$scheduleId/edit': typeof FarmOperationsSchedulesScheduleIdEditRoute
+  '/farm-operations/staff/$staffId/edit': typeof FarmOperationsStaffStaffIdEditRoute
+  '/financial-management/budget/$budgetId/edit': typeof FinancialManagementBudgetBudgetIdEditRoute
+  '/horses/$horseId/exercise-logs/create': typeof HorsesHorseIdExerciseLogsCreateRoute
+  '/horses/$horseId/feeding/create': typeof HorsesHorseIdFeedingCreateRoute
+  '/horses/$horseId/health/create': typeof HorsesHorseIdHealthCreateRoute
+  '/layouts/app/basic/tabs': typeof LayoutsAppBasicTabsRoute
+  '/boarders/$boarderId/billing': typeof BoardersBoarderIdBillingIndexRoute
+  '/boarders/$boarderId/contract': typeof BoardersBoarderIdContractIndexRoute
+  '/boarders/$boarderId/invoices': typeof BoardersBoarderIdInvoicesIndexRoute
+  '/events/bookings/$bookingId': typeof EventsBookingsBookingIdIndexRoute
+  '/events/farm-events/$eventId': typeof EventsFarmEventsEventIdIndexRoute
+  '/farm-operations/inventory/categories': typeof FarmOperationsInventoryCategoriesIndexRoute
+  '/farm-operations/inventory/items': typeof FarmOperationsInventoryItemsIndexRoute
+  '/farm-operations/inventory/reports': typeof FarmOperationsInventoryReportsIndexRoute
+  '/farm-operations/inventory/suppliers': typeof FarmOperationsInventorySuppliersIndexRoute
+  '/farm-operations/staff/$staffId': typeof FarmOperationsStaffStaffIdIndexRoute
+  '/finance/budgets/$budgetId': typeof FinanceBudgetsBudgetIdIndexRoute
+  '/finance/reports/$reportId': typeof FinanceReportsReportIdIndexRoute
+  '/financial-management/budget/$budgetId': typeof FinancialManagementBudgetBudgetIdIndexRoute
+  '/horses/$horseId/exercise-logs': typeof HorsesHorseIdExerciseLogsIndexRoute
+  '/horses/$horseId/exercise': typeof HorsesHorseIdExerciseIndexRoute
+  '/horses/$horseId/feeding': typeof HorsesHorseIdFeedingIndexRoute
+  '/horses/$horseId/health': typeof HorsesHorseIdHealthIndexRoute
+  '/horses/$horseId/training': typeof HorsesHorseIdTrainingIndexRoute
+  '/stalls/$stallId/assign': typeof StallsStallIdAssignIndexRoute
+  '/stalls/$stallId/customize': typeof StallsStallIdCustomizeIndexRoute
+  '/dev/examples/settings/account': typeof AuthDevExamplesSettingsAccountRoute
+  '/dev/examples/settings/password': typeof AuthDevExamplesSettingsPasswordRoute
+  '/farm-operations/inventory/items/$itemId/edit': typeof FarmOperationsInventoryItemsItemIdEditRoute
+  '/farm-operations/inventory/items/$itemId': typeof FarmOperationsInventoryItemsItemIdIndexRoute
+}
+
+export interface FileRoutesByTo {
+  '/': typeof IndexRoute
+  '/signup': typeof SignupRoute
+  '/home': typeof AuthHomeRoute
+  '/boarders/create': typeof BoardersCreateRoute
+  '/boarders/list': typeof BoardersListRoute
+  '/bookings/create': typeof BookingsCreateRoute
+  '/contracts/create': typeof ContractsCreateRoute
+  '/events/create': typeof EventsCreateRoute
+  '/expenses/create': typeof ExpensesCreateRoute
+  '/facilities/create': typeof FacilitiesCreateRoute
+  '/horses/create': typeof HorsesCreateRoute
+  '/horses/list': typeof HorsesListRoute
+  '/income/create': typeof IncomeCreateRoute
+  '/inventory/create': typeof InventoryCreateRoute
+  '/layouts/app': typeof LayoutsAppRouteWithChildren
+  '/maintenance-requests/create': typeof MaintenanceRequestsCreateRoute
+  '/maintenance/create': typeof MaintenanceCreateRoute
+  '/pastures/create': typeof PasturesCreateRoute
+  '/staff-schedule/create': typeof StaffScheduleCreateRoute
+  '/stalls/create': typeof StallsCreateRoute
+  '/stalls/list': typeof StallsListRoute
+  '/visitors/create': typeof VisitorsCreateRoute
+  '/billing': typeof BillingIndexRoute
+  '/boarder-management': typeof BoarderManagementIndexRoute
+  '/boarders': typeof BoardersIndexRoute
+  '/budget-planning': typeof BudgetPlanningIndexRoute
+  '/categories': typeof CategoriesIndexRoute
+  '/communication-portal': typeof CommunicationPortalIndexRoute
+  '/communication': typeof CommunicationIndexRoute
+  '/contracts': typeof ContractsIndexRoute
+  '/events': typeof EventsIndexRoute
+  '/expenses': typeof ExpensesIndexRoute
+  '/facilities': typeof FacilitiesIndexRoute
+  '/farm-operations': typeof FarmOperationsIndexRoute
+  '/finance': typeof FinanceIndexRoute
+  '/financial-dashboard': typeof FinancialDashboardIndexRoute
+  '/financial-management': typeof FinancialManagementIndexRoute
+  '/financial-reports': typeof FinancialReportsIndexRoute
+  '/horses': typeof HorsesIndexRoute
+  '/income-categories': typeof IncomeCategoriesIndexRoute
+  '/income': typeof IncomeIndexRoute
+  '/inventory': typeof InventoryIndexRoute
+  '/maintenance-requests': typeof MaintenanceRequestsIndexRoute
+  '/maintenance': typeof MaintenanceIndexRoute
+  '/pasture-rotation': typeof PastureRotationIndexRoute
+  '/pastures': typeof PasturesIndexRoute
+  '/reports': typeof ReportsIndexRoute
+  '/staff-schedule': typeof StaffScheduleIndexRoute
+  '/stalls': typeof StallsIndexRoute
+  '/transactions': typeof TransactionsIndexRoute
+  '/visitors': typeof VisitorsIndexRoute
+  '/dev/examples': typeof AuthDevExamplesRouteWithChildren
+  '/dev/pages': typeof AuthDevPagesRoute
+  '/billing/invoices/$invoiceId': typeof BillingInvoicesInvoiceIdRoute
+  '/billing/invoices/create': typeof BillingInvoicesCreateRoute
+  '/boarders/$boarderId/edit': typeof BoardersBoarderIdEditRoute
+  '/bookings/$bookingId/edit': typeof BookingsBookingIdEditRoute
+  '/communication-portal/messages/$messageId': typeof CommunicationPortalMessagesMessageIdRoute
+  '/contracts/$contractId/edit': typeof ContractsContractIdEditRoute
+  '/events/$eventId/edit': typeof EventsEventIdEditRoute
+  '/events/bookings/create': typeof EventsBookingsCreateRoute
+  '/events/farm-events/create': typeof EventsFarmEventsCreateRoute
+  '/expenses/$expenseId/edit': typeof ExpensesExpenseIdEditRoute
+  '/farm-operations/schedules/create': typeof FarmOperationsSchedulesCreateRoute
+  '/farm-operations/staff/create': typeof FarmOperationsStaffCreateRoute
+  '/finance/budgets/create': typeof FinanceBudgetsCreateRoute
+  '/finance/reports/create': typeof FinanceReportsCreateRoute
+  '/financial-management/budget/create': typeof FinancialManagementBudgetCreateRoute
+  '/financial-management/expenses/create': typeof FinancialManagementExpensesCreateRoute
+  '/financial-management/income/create': typeof FinancialManagementIncomeCreateRoute
+  '/horses/$horseId/edit': typeof HorsesHorseIdEditRoute
+  '/income/$incomeId/edit': typeof IncomeIncomeIdEditRoute
+  '/inventory/$itemId/edit': typeof InventoryItemIdEditRoute
+  '/layouts/app/basic': typeof LayoutsAppBasicRouteWithChildren
+  '/pastures/$pastureId/edit': typeof PasturesPastureIdEditRoute
+  '/staff-schedule/$shiftId/edit': typeof StaffScheduleShiftIdEditRoute
+  '/stalls/$stallId/edit': typeof StallsStallIdEditRoute
+  '/dev': typeof AuthDevIndexRoute
+  '/billing/payments': typeof BillingPaymentsIndexRoute
+  '/billing/reports': typeof BillingReportsIndexRoute
+  '/billing/settings': typeof BillingSettingsIndexRoute
+  '/boarders/$boarderId': typeof BoardersBoarderIdIndexRoute
+  '/bookings/$bookingId': typeof BookingsBookingIdIndexRoute
+  '/communication-portal/announcements': typeof CommunicationPortalAnnouncementsIndexRoute
+  '/contracts/$contractId': typeof ContractsContractIdIndexRoute
+  '/contracts/reports': typeof ContractsReportsIndexRoute
+  '/contracts/templates': typeof ContractsTemplatesIndexRoute
+  '/events/$eventId': typeof EventsEventIdIndexRoute
+  '/events/calendar': typeof EventsCalendarIndexRoute
+  '/events/reports': typeof EventsReportsIndexRoute
+  '/expenses/$expenseId': typeof ExpensesExpenseIdIndexRoute
+  '/facilities/$facilityId': typeof FacilitiesFacilityIdIndexRoute
+  '/facilities/booking': typeof FacilitiesBookingIndexRoute
+  '/farm-operations/inventory': typeof FarmOperationsInventoryIndexRoute
+  '/farm-operations/my-schedule': typeof FarmOperationsMyScheduleIndexRoute
+  '/farm-operations/staff-scheduling': typeof FarmOperationsStaffSchedulingIndexRoute
+  '/farm-operations/staff': typeof FarmOperationsStaffIndexRoute
+  '/finance/budgets': typeof FinanceBudgetsIndexRoute
+  '/finance/expenses': typeof FinanceExpensesIndexRoute
+  '/finance/income': typeof FinanceIncomeIndexRoute
+  '/finance/reports': typeof FinanceReportsIndexRoute
+  '/financial-management/budget': typeof FinancialManagementBudgetIndexRoute
+  '/financial-management/categories': typeof FinancialManagementCategoriesIndexRoute
+  '/financial-management/expenses': typeof FinancialManagementExpensesIndexRoute
+  '/financial-management/income': typeof FinancialManagementIncomeIndexRoute
+  '/financial-management/reports': typeof FinancialManagementReportsIndexRoute
+  '/horses/$horseId': typeof HorsesHorseIdIndexRoute
+  '/horses/exercise-calendar': typeof HorsesExerciseCalendarIndexRoute
+  '/horses/exercise-reports': typeof HorsesExerciseReportsIndexRoute
+  '/income/$incomeId': typeof IncomeIncomeIdIndexRoute
+  '/inventory/$itemId': typeof InventoryItemIdIndexRoute
+  '/maintenance-requests/$requestId': typeof MaintenanceRequestsRequestIdIndexRoute
+  '/maintenance/$taskId': typeof MaintenanceTaskIdIndexRoute
+  '/maintenance/calendar': typeof MaintenanceCalendarIndexRoute
+  '/maintenance/reports': typeof MaintenanceReportsIndexRoute
+  '/pasture-rotation/plan': typeof PastureRotationPlanIndexRoute
+  '/pastures/$pastureId': typeof PasturesPastureIdIndexRoute
+  '/reports/events': typeof ReportsEventsIndexRoute
+  '/stalls/$stallId': typeof StallsStallIdIndexRoute
+  '/stalls/maintenance': typeof StallsMaintenanceIndexRoute
+  '/stalls/map': typeof StallsMapIndexRoute
+  '/stalls/occupancy': typeof StallsOccupancyIndexRoute
+  '/visitors/$visitorId': typeof VisitorsVisitorIdIndexRoute
+  '/visitors/register': typeof VisitorsRegisterIndexRoute
+  '/dev/examples/basic-dialog-form': typeof AuthDevExamplesBasicDialogFormRoute
+  '/dev/examples/basic-form': typeof AuthDevExamplesBasicFormRoute
+  '/dev/examples/basic-form-edit': typeof AuthDevExamplesBasicFormEditRoute
+  '/dev/examples/basic-table': typeof AuthDevExamplesBasicTableRoute
+  '/dev/examples/data-table': typeof AuthDevExamplesDataTableRoute
+  '/dev/examples/settings': typeof AuthDevExamplesSettingsRouteWithChildren
+  '/farm-operations/inventory/items/create': typeof FarmOperationsInventoryItemsCreateRoute
+  '/farm-operations/schedules/$scheduleId/edit': typeof FarmOperationsSchedulesScheduleIdEditRoute
+  '/farm-operations/staff/$staffId/edit': typeof FarmOperationsStaffStaffIdEditRoute
+  '/financial-management/budget/$budgetId/edit': typeof FinancialManagementBudgetBudgetIdEditRoute
+  '/horses/$horseId/exercise-logs/create': typeof HorsesHorseIdExerciseLogsCreateRoute
+  '/horses/$horseId/feeding/create': typeof HorsesHorseIdFeedingCreateRoute
+  '/horses/$horseId/health/create': typeof HorsesHorseIdHealthCreateRoute
+  '/layouts/app/basic/tabs': typeof LayoutsAppBasicTabsRoute
+  '/boarders/$boarderId/billing': typeof BoardersBoarderIdBillingIndexRoute
+  '/boarders/$boarderId/contract': typeof BoardersBoarderIdContractIndexRoute
+  '/boarders/$boarderId/invoices': typeof BoardersBoarderIdInvoicesIndexRoute
+  '/events/bookings/$bookingId': typeof EventsBookingsBookingIdIndexRoute
+  '/events/farm-events/$eventId': typeof EventsFarmEventsEventIdIndexRoute
+  '/farm-operations/inventory/categories': typeof FarmOperationsInventoryCategoriesIndexRoute
+  '/farm-operations/inventory/items': typeof FarmOperationsInventoryItemsIndexRoute
+  '/farm-operations/inventory/reports': typeof FarmOperationsInventoryReportsIndexRoute
+  '/farm-operations/inventory/suppliers': typeof FarmOperationsInventorySuppliersIndexRoute
+  '/farm-operations/staff/$staffId': typeof FarmOperationsStaffStaffIdIndexRoute
+  '/finance/budgets/$budgetId': typeof FinanceBudgetsBudgetIdIndexRoute
+  '/finance/reports/$reportId': typeof FinanceReportsReportIdIndexRoute
+  '/financial-management/budget/$budgetId': typeof FinancialManagementBudgetBudgetIdIndexRoute
+  '/horses/$horseId/exercise-logs': typeof HorsesHorseIdExerciseLogsIndexRoute
+  '/horses/$horseId/exercise': typeof HorsesHorseIdExerciseIndexRoute
+  '/horses/$horseId/feeding': typeof HorsesHorseIdFeedingIndexRoute
+  '/horses/$horseId/health': typeof HorsesHorseIdHealthIndexRoute
+  '/horses/$horseId/training': typeof HorsesHorseIdTrainingIndexRoute
+  '/stalls/$stallId/assign': typeof StallsStallIdAssignIndexRoute
+  '/stalls/$stallId/customize': typeof StallsStallIdCustomizeIndexRoute
+  '/dev/examples/settings/account': typeof AuthDevExamplesSettingsAccountRoute
+  '/dev/examples/settings/password': typeof AuthDevExamplesSettingsPasswordRoute
+  '/farm-operations/inventory/items/$itemId/edit': typeof FarmOperationsInventoryItemsItemIdEditRoute
+  '/farm-operations/inventory/items/$itemId': typeof FarmOperationsInventoryItemsItemIdIndexRoute
+}
+
+export interface FileRoutesById {
+  __root__: typeof rootRoute
+  '/': typeof IndexRoute
+  '/signup': typeof SignupRoute
+  '/_auth/dev': typeof AuthDevRouteWithChildren
+  '/_auth/home': typeof AuthHomeRoute
+  '/boarders/create': typeof BoardersCreateRoute
+  '/boarders/list': typeof BoardersListRoute
+  '/bookings/create': typeof BookingsCreateRoute
+  '/contracts/create': typeof ContractsCreateRoute
+  '/events/create': typeof EventsCreateRoute
+  '/expenses/create': typeof ExpensesCreateRoute
+  '/facilities/create': typeof FacilitiesCreateRoute
+  '/horses/create': typeof HorsesCreateRoute
+  '/horses/list': typeof HorsesListRoute
+  '/income/create': typeof IncomeCreateRoute
+  '/inventory/create': typeof InventoryCreateRoute
+  '/layouts/app': typeof LayoutsAppRouteWithChildren
+  '/maintenance-requests/create': typeof MaintenanceRequestsCreateRoute
+  '/maintenance/create': typeof MaintenanceCreateRoute
+  '/pastures/create': typeof PasturesCreateRoute
+  '/staff-schedule/create': typeof StaffScheduleCreateRoute
+  '/stalls/create': typeof StallsCreateRoute
+  '/stalls/list': typeof StallsListRoute
+  '/visitors/create': typeof VisitorsCreateRoute
+  '/billing/': typeof BillingIndexRoute
+  '/boarder-management/': typeof BoarderManagementIndexRoute
+  '/boarders/': typeof BoardersIndexRoute
+  '/budget-planning/': typeof BudgetPlanningIndexRoute
+  '/categories/': typeof CategoriesIndexRoute
+  '/communication-portal/': typeof CommunicationPortalIndexRoute
+  '/communication/': typeof CommunicationIndexRoute
+  '/contracts/': typeof ContractsIndexRoute
+  '/events/': typeof EventsIndexRoute
+  '/expenses/': typeof ExpensesIndexRoute
+  '/facilities/': typeof FacilitiesIndexRoute
+  '/farm-operations/': typeof FarmOperationsIndexRoute
+  '/finance/': typeof FinanceIndexRoute
+  '/financial-dashboard/': typeof FinancialDashboardIndexRoute
+  '/financial-management/': typeof FinancialManagementIndexRoute
+  '/financial-reports/': typeof FinancialReportsIndexRoute
+  '/horses/': typeof HorsesIndexRoute
+  '/income-categories/': typeof IncomeCategoriesIndexRoute
+  '/income/': typeof IncomeIndexRoute
+  '/inventory/': typeof InventoryIndexRoute
+  '/maintenance-requests/': typeof MaintenanceRequestsIndexRoute
+  '/maintenance/': typeof MaintenanceIndexRoute
+  '/pasture-rotation/': typeof PastureRotationIndexRoute
+  '/pastures/': typeof PasturesIndexRoute
+  '/reports/': typeof ReportsIndexRoute
+  '/staff-schedule/': typeof StaffScheduleIndexRoute
+  '/stalls/': typeof StallsIndexRoute
+  '/transactions/': typeof TransactionsIndexRoute
+  '/visitors/': typeof VisitorsIndexRoute
+  '/_auth/dev/examples': typeof AuthDevExamplesRouteWithChildren
+  '/_auth/dev/pages': typeof AuthDevPagesRoute
+  '/billing/invoices/$invoiceId': typeof BillingInvoicesInvoiceIdRoute
+  '/billing/invoices/create': typeof BillingInvoicesCreateRoute
+  '/boarders/$boarderId/edit': typeof BoardersBoarderIdEditRoute
+  '/bookings/$bookingId/edit': typeof BookingsBookingIdEditRoute
+  '/communication-portal/messages/$messageId': typeof CommunicationPortalMessagesMessageIdRoute
+  '/contracts/$contractId/edit': typeof ContractsContractIdEditRoute
+  '/events/$eventId/edit': typeof EventsEventIdEditRoute
+  '/events/bookings/create': typeof EventsBookingsCreateRoute
+  '/events/farm-events/create': typeof EventsFarmEventsCreateRoute
+  '/expenses/$expenseId/edit': typeof ExpensesExpenseIdEditRoute
+  '/farm-operations/schedules/create': typeof FarmOperationsSchedulesCreateRoute
+  '/farm-operations/staff/create': typeof FarmOperationsStaffCreateRoute
+  '/finance/budgets/create': typeof FinanceBudgetsCreateRoute
+  '/finance/reports/create': typeof FinanceReportsCreateRoute
+  '/financial-management/budget/create': typeof FinancialManagementBudgetCreateRoute
+  '/financial-management/expenses/create': typeof FinancialManagementExpensesCreateRoute
+  '/financial-management/income/create': typeof FinancialManagementIncomeCreateRoute
+  '/horses/$horseId/edit': typeof HorsesHorseIdEditRoute
+  '/income/$incomeId/edit': typeof IncomeIncomeIdEditRoute
+  '/inventory/$itemId/edit': typeof InventoryItemIdEditRoute
+  '/layouts/app/basic': typeof LayoutsAppBasicRouteWithChildren
+  '/pastures/$pastureId/edit': typeof PasturesPastureIdEditRoute
+  '/staff-schedule/$shiftId/edit': typeof StaffScheduleShiftIdEditRoute
+  '/stalls/$stallId/edit': typeof StallsStallIdEditRoute
+  '/_auth/dev/': typeof AuthDevIndexRoute
+  '/billing/payments/': typeof BillingPaymentsIndexRoute
+  '/billing/reports/': typeof BillingReportsIndexRoute
+  '/billing/settings/': typeof BillingSettingsIndexRoute
+  '/boarders/$boarderId/': typeof BoardersBoarderIdIndexRoute
+  '/bookings/$bookingId/': typeof BookingsBookingIdIndexRoute
+  '/communication-portal/announcements/': typeof CommunicationPortalAnnouncementsIndexRoute
+  '/contracts/$contractId/': typeof ContractsContractIdIndexRoute
+  '/contracts/reports/': typeof ContractsReportsIndexRoute
+  '/contracts/templates/': typeof ContractsTemplatesIndexRoute
+  '/events/$eventId/': typeof EventsEventIdIndexRoute
+  '/events/calendar/': typeof EventsCalendarIndexRoute
+  '/events/reports/': typeof EventsReportsIndexRoute
+  '/expenses/$expenseId/': typeof ExpensesExpenseIdIndexRoute
+  '/facilities/$facilityId/': typeof FacilitiesFacilityIdIndexRoute
+  '/facilities/booking/': typeof FacilitiesBookingIndexRoute
+  '/farm-operations/inventory/': typeof FarmOperationsInventoryIndexRoute
+  '/farm-operations/my-schedule/': typeof FarmOperationsMyScheduleIndexRoute
+  '/farm-operations/staff-scheduling/': typeof FarmOperationsStaffSchedulingIndexRoute
+  '/farm-operations/staff/': typeof FarmOperationsStaffIndexRoute
+  '/finance/budgets/': typeof FinanceBudgetsIndexRoute
+  '/finance/expenses/': typeof FinanceExpensesIndexRoute
+  '/finance/income/': typeof FinanceIncomeIndexRoute
+  '/finance/reports/': typeof FinanceReportsIndexRoute
+  '/financial-management/budget/': typeof FinancialManagementBudgetIndexRoute
+  '/financial-management/categories/': typeof FinancialManagementCategoriesIndexRoute
+  '/financial-management/expenses/': typeof FinancialManagementExpensesIndexRoute
+  '/financial-management/income/': typeof FinancialManagementIncomeIndexRoute
+  '/financial-management/reports/': typeof FinancialManagementReportsIndexRoute
+  '/horses/$horseId/': typeof HorsesHorseIdIndexRoute
+  '/horses/exercise-calendar/': typeof HorsesExerciseCalendarIndexRoute
+  '/horses/exercise-reports/': typeof HorsesExerciseReportsIndexRoute
+  '/income/$incomeId/': typeof IncomeIncomeIdIndexRoute
+  '/inventory/$itemId/': typeof InventoryItemIdIndexRoute
+  '/maintenance-requests/$requestId/': typeof MaintenanceRequestsRequestIdIndexRoute
+  '/maintenance/$taskId/': typeof MaintenanceTaskIdIndexRoute
+  '/maintenance/calendar/': typeof MaintenanceCalendarIndexRoute
+  '/maintenance/reports/': typeof MaintenanceReportsIndexRoute
+  '/pasture-rotation/plan/': typeof PastureRotationPlanIndexRoute
+  '/pastures/$pastureId/': typeof PasturesPastureIdIndexRoute
+  '/reports/events/': typeof ReportsEventsIndexRoute
+  '/stalls/$stallId/': typeof StallsStallIdIndexRoute
+  '/stalls/maintenance/': typeof StallsMaintenanceIndexRoute
+  '/stalls/map/': typeof StallsMapIndexRoute
+  '/stalls/occupancy/': typeof StallsOccupancyIndexRoute
+  '/visitors/$visitorId/': typeof VisitorsVisitorIdIndexRoute
+  '/visitors/register/': typeof VisitorsRegisterIndexRoute
+  '/_auth/dev/examples/basic-dialog-form': typeof AuthDevExamplesBasicDialogFormRoute
+  '/_auth/dev/examples/basic-form': typeof AuthDevExamplesBasicFormRoute
+  '/_auth/dev/examples/basic-form-edit': typeof AuthDevExamplesBasicFormEditRoute
+  '/_auth/dev/examples/basic-table': typeof AuthDevExamplesBasicTableRoute
+  '/_auth/dev/examples/data-table': typeof AuthDevExamplesDataTableRoute
+  '/_auth/dev/examples/settings': typeof AuthDevExamplesSettingsRouteWithChildren
+  '/farm-operations/inventory/items/create': typeof FarmOperationsInventoryItemsCreateRoute
+  '/farm-operations/schedules/$scheduleId/edit': typeof FarmOperationsSchedulesScheduleIdEditRoute
+  '/farm-operations/staff/$staffId/edit': typeof FarmOperationsStaffStaffIdEditRoute
+  '/financial-management/budget/$budgetId/edit': typeof FinancialManagementBudgetBudgetIdEditRoute
+  '/horses/$horseId/exercise-logs/create': typeof HorsesHorseIdExerciseLogsCreateRoute
+  '/horses/$horseId/feeding/create': typeof HorsesHorseIdFeedingCreateRoute
+  '/horses/$horseId/health/create': typeof HorsesHorseIdHealthCreateRoute
+  '/layouts/app/basic/tabs': typeof LayoutsAppBasicTabsRoute
+  '/boarders/$boarderId/billing/': typeof BoardersBoarderIdBillingIndexRoute
+  '/boarders/$boarderId/contract/': typeof BoardersBoarderIdContractIndexRoute
+  '/boarders/$boarderId/invoices/': typeof BoardersBoarderIdInvoicesIndexRoute
+  '/events/bookings/$bookingId/': typeof EventsBookingsBookingIdIndexRoute
+  '/events/farm-events/$eventId/': typeof EventsFarmEventsEventIdIndexRoute
+  '/farm-operations/inventory/categories/': typeof FarmOperationsInventoryCategoriesIndexRoute
+  '/farm-operations/inventory/items/': typeof FarmOperationsInventoryItemsIndexRoute
+  '/farm-operations/inventory/reports/': typeof FarmOperationsInventoryReportsIndexRoute
+  '/farm-operations/inventory/suppliers/': typeof FarmOperationsInventorySuppliersIndexRoute
+  '/farm-operations/staff/$staffId/': typeof FarmOperationsStaffStaffIdIndexRoute
+  '/finance/budgets/$budgetId/': typeof FinanceBudgetsBudgetIdIndexRoute
+  '/finance/reports/$reportId/': typeof FinanceReportsReportIdIndexRoute
+  '/financial-management/budget/$budgetId/': typeof FinancialManagementBudgetBudgetIdIndexRoute
+  '/horses/$horseId/exercise-logs/': typeof HorsesHorseIdExerciseLogsIndexRoute
+  '/horses/$horseId/exercise/': typeof HorsesHorseIdExerciseIndexRoute
+  '/horses/$horseId/feeding/': typeof HorsesHorseIdFeedingIndexRoute
+  '/horses/$horseId/health/': typeof HorsesHorseIdHealthIndexRoute
+  '/horses/$horseId/training/': typeof HorsesHorseIdTrainingIndexRoute
+  '/stalls/$stallId/assign/': typeof StallsStallIdAssignIndexRoute
+  '/stalls/$stallId/customize/': typeof StallsStallIdCustomizeIndexRoute
+  '/_auth/dev/examples/settings/account': typeof AuthDevExamplesSettingsAccountRoute
+  '/_auth/dev/examples/settings/password': typeof AuthDevExamplesSettingsPasswordRoute
+  '/farm-operations/inventory/items/$itemId/edit': typeof FarmOperationsInventoryItemsItemIdEditRoute
+  '/farm-operations/inventory/items/$itemId/': typeof FarmOperationsInventoryItemsItemIdIndexRoute
+}
+
+export interface FileRouteTypes {
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths:
+    | '/'
+    | '/signup'
+    | '/dev'
+    | '/home'
+    | '/boarders/create'
+    | '/boarders/list'
+    | '/bookings/create'
+    | '/contracts/create'
+    | '/events/create'
+    | '/expenses/create'
+    | '/facilities/create'
+    | '/horses/create'
+    | '/horses/list'
+    | '/income/create'
+    | '/inventory/create'
+    | '/layouts/app'
+    | '/maintenance-requests/create'
+    | '/maintenance/create'
+    | '/pastures/create'
+    | '/staff-schedule/create'
+    | '/stalls/create'
+    | '/stalls/list'
+    | '/visitors/create'
+    | '/billing'
+    | '/boarder-management'
+    | '/boarders'
+    | '/budget-planning'
+    | '/categories'
+    | '/communication-portal'
+    | '/communication'
+    | '/contracts'
+    | '/events'
+    | '/expenses'
+    | '/facilities'
+    | '/farm-operations'
+    | '/finance'
+    | '/financial-dashboard'
+    | '/financial-management'
+    | '/financial-reports'
+    | '/horses'
+    | '/income-categories'
+    | '/income'
+    | '/inventory'
+    | '/maintenance-requests'
+    | '/maintenance'
+    | '/pasture-rotation'
+    | '/pastures'
+    | '/reports'
+    | '/staff-schedule'
+    | '/stalls'
+    | '/transactions'
+    | '/visitors'
+    | '/dev/examples'
+    | '/dev/pages'
+    | '/billing/invoices/$invoiceId'
+    | '/billing/invoices/create'
+    | '/boarders/$boarderId/edit'
+    | '/bookings/$bookingId/edit'
+    | '/communication-portal/messages/$messageId'
+    | '/contracts/$contractId/edit'
+    | '/events/$eventId/edit'
+    | '/events/bookings/create'
+    | '/events/farm-events/create'
+    | '/expenses/$expenseId/edit'
+    | '/farm-operations/schedules/create'
+    | '/farm-operations/staff/create'
+    | '/finance/budgets/create'
+    | '/finance/reports/create'
+    | '/financial-management/budget/create'
+    | '/financial-management/expenses/create'
+    | '/financial-management/income/create'
+    | '/horses/$horseId/edit'
+    | '/income/$incomeId/edit'
+    | '/inventory/$itemId/edit'
+    | '/layouts/app/basic'
+    | '/pastures/$pastureId/edit'
+    | '/staff-schedule/$shiftId/edit'
+    | '/stalls/$stallId/edit'
+    | '/dev/'
+    | '/billing/payments'
+    | '/billing/reports'
+    | '/billing/settings'
+    | '/boarders/$boarderId'
+    | '/bookings/$bookingId'
+    | '/communication-portal/announcements'
+    | '/contracts/$contractId'
+    | '/contracts/reports'
+    | '/contracts/templates'
+    | '/events/$eventId'
+    | '/events/calendar'
+    | '/events/reports'
+    | '/expenses/$expenseId'
+    | '/facilities/$facilityId'
+    | '/facilities/booking'
+    | '/farm-operations/inventory'
+    | '/farm-operations/my-schedule'
+    | '/farm-operations/staff-scheduling'
+    | '/farm-operations/staff'
+    | '/finance/budgets'
+    | '/finance/expenses'
+    | '/finance/income'
+    | '/finance/reports'
+    | '/financial-management/budget'
+    | '/financial-management/categories'
+    | '/financial-management/expenses'
+    | '/financial-management/income'
+    | '/financial-management/reports'
+    | '/horses/$horseId'
+    | '/horses/exercise-calendar'
+    | '/horses/exercise-reports'
+    | '/income/$incomeId'
+    | '/inventory/$itemId'
+    | '/maintenance-requests/$requestId'
+    | '/maintenance/$taskId'
+    | '/maintenance/calendar'
+    | '/maintenance/reports'
+    | '/pasture-rotation/plan'
+    | '/pastures/$pastureId'
+    | '/reports/events'
+    | '/stalls/$stallId'
+    | '/stalls/maintenance'
+    | '/stalls/map'
+    | '/stalls/occupancy'
+    | '/visitors/$visitorId'
+    | '/visitors/register'
+    | '/dev/examples/basic-dialog-form'
+    | '/dev/examples/basic-form'
+    | '/dev/examples/basic-form-edit'
+    | '/dev/examples/basic-table'
+    | '/dev/examples/data-table'
+    | '/dev/examples/settings'
+    | '/farm-operations/inventory/items/create'
+    | '/farm-operations/schedules/$scheduleId/edit'
+    | '/farm-operations/staff/$staffId/edit'
+    | '/financial-management/budget/$budgetId/edit'
+    | '/horses/$horseId/exercise-logs/create'
+    | '/horses/$horseId/feeding/create'
+    | '/horses/$horseId/health/create'
+    | '/layouts/app/basic/tabs'
+    | '/boarders/$boarderId/billing'
+    | '/boarders/$boarderId/contract'
+    | '/boarders/$boarderId/invoices'
+    | '/events/bookings/$bookingId'
+    | '/events/farm-events/$eventId'
+    | '/farm-operations/inventory/categories'
+    | '/farm-operations/inventory/items'
+    | '/farm-operations/inventory/reports'
+    | '/farm-operations/inventory/suppliers'
+    | '/farm-operations/staff/$staffId'
+    | '/finance/budgets/$budgetId'
+    | '/finance/reports/$reportId'
+    | '/financial-management/budget/$budgetId'
+    | '/horses/$horseId/exercise-logs'
+    | '/horses/$horseId/exercise'
+    | '/horses/$horseId/feeding'
+    | '/horses/$horseId/health'
+    | '/horses/$horseId/training'
+    | '/stalls/$stallId/assign'
+    | '/stalls/$stallId/customize'
+    | '/dev/examples/settings/account'
+    | '/dev/examples/settings/password'
+    | '/farm-operations/inventory/items/$itemId/edit'
+    | '/farm-operations/inventory/items/$itemId'
+  fileRoutesByTo: FileRoutesByTo
+  to:
+    | '/'
+    | '/signup'
+    | '/home'
+    | '/boarders/create'
+    | '/boarders/list'
+    | '/bookings/create'
+    | '/contracts/create'
+    | '/events/create'
+    | '/expenses/create'
+    | '/facilities/create'
+    | '/horses/create'
+    | '/horses/list'
+    | '/income/create'
+    | '/inventory/create'
+    | '/layouts/app'
+    | '/maintenance-requests/create'
+    | '/maintenance/create'
+    | '/pastures/create'
+    | '/staff-schedule/create'
+    | '/stalls/create'
+    | '/stalls/list'
+    | '/visitors/create'
+    | '/billing'
+    | '/boarder-management'
+    | '/boarders'
+    | '/budget-planning'
+    | '/categories'
+    | '/communication-portal'
+    | '/communication'
+    | '/contracts'
+    | '/events'
+    | '/expenses'
+    | '/facilities'
+    | '/farm-operations'
+    | '/finance'
+    | '/financial-dashboard'
+    | '/financial-management'
+    | '/financial-reports'
+    | '/horses'
+    | '/income-categories'
+    | '/income'
+    | '/inventory'
+    | '/maintenance-requests'
+    | '/maintenance'
+    | '/pasture-rotation'
+    | '/pastures'
+    | '/reports'
+    | '/staff-schedule'
+    | '/stalls'
+    | '/transactions'
+    | '/visitors'
+    | '/dev/examples'
+    | '/dev/pages'
+    | '/billing/invoices/$invoiceId'
+    | '/billing/invoices/create'
+    | '/boarders/$boarderId/edit'
+    | '/bookings/$bookingId/edit'
+    | '/communication-portal/messages/$messageId'
+    | '/contracts/$contractId/edit'
+    | '/events/$eventId/edit'
+    | '/events/bookings/create'
+    | '/events/farm-events/create'
+    | '/expenses/$expenseId/edit'
+    | '/farm-operations/schedules/create'
+    | '/farm-operations/staff/create'
+    | '/finance/budgets/create'
+    | '/finance/reports/create'
+    | '/financial-management/budget/create'
+    | '/financial-management/expenses/create'
+    | '/financial-management/income/create'
+    | '/horses/$horseId/edit'
+    | '/income/$incomeId/edit'
+    | '/inventory/$itemId/edit'
+    | '/layouts/app/basic'
+    | '/pastures/$pastureId/edit'
+    | '/staff-schedule/$shiftId/edit'
+    | '/stalls/$stallId/edit'
+    | '/dev'
+    | '/billing/payments'
+    | '/billing/reports'
+    | '/billing/settings'
+    | '/boarders/$boarderId'
+    | '/bookings/$bookingId'
+    | '/communication-portal/announcements'
+    | '/contracts/$contractId'
+    | '/contracts/reports'
+    | '/contracts/templates'
+    | '/events/$eventId'
+    | '/events/calendar'
+    | '/events/reports'
+    | '/expenses/$expenseId'
+    | '/facilities/$facilityId'
+    | '/facilities/booking'
+    | '/farm-operations/inventory'
+    | '/farm-operations/my-schedule'
+    | '/farm-operations/staff-scheduling'
+    | '/farm-operations/staff'
+    | '/finance/budgets'
+    | '/finance/expenses'
+    | '/finance/income'
+    | '/finance/reports'
+    | '/financial-management/budget'
+    | '/financial-management/categories'
+    | '/financial-management/expenses'
+    | '/financial-management/income'
+    | '/financial-management/reports'
+    | '/horses/$horseId'
+    | '/horses/exercise-calendar'
+    | '/horses/exercise-reports'
+    | '/income/$incomeId'
+    | '/inventory/$itemId'
+    | '/maintenance-requests/$requestId'
+    | '/maintenance/$taskId'
+    | '/maintenance/calendar'
+    | '/maintenance/reports'
+    | '/pasture-rotation/plan'
+    | '/pastures/$pastureId'
+    | '/reports/events'
+    | '/stalls/$stallId'
+    | '/stalls/maintenance'
+    | '/stalls/map'
+    | '/stalls/occupancy'
+    | '/visitors/$visitorId'
+    | '/visitors/register'
+    | '/dev/examples/basic-dialog-form'
+    | '/dev/examples/basic-form'
+    | '/dev/examples/basic-form-edit'
+    | '/dev/examples/basic-table'
+    | '/dev/examples/data-table'
+    | '/dev/examples/settings'
+    | '/farm-operations/inventory/items/create'
+    | '/farm-operations/schedules/$scheduleId/edit'
+    | '/farm-operations/staff/$staffId/edit'
+    | '/financial-management/budget/$budgetId/edit'
+    | '/horses/$horseId/exercise-logs/create'
+    | '/horses/$horseId/feeding/create'
+    | '/horses/$horseId/health/create'
+    | '/layouts/app/basic/tabs'
+    | '/boarders/$boarderId/billing'
+    | '/boarders/$boarderId/contract'
+    | '/boarders/$boarderId/invoices'
+    | '/events/bookings/$bookingId'
+    | '/events/farm-events/$eventId'
+    | '/farm-operations/inventory/categories'
+    | '/farm-operations/inventory/items'
+    | '/farm-operations/inventory/reports'
+    | '/farm-operations/inventory/suppliers'
+    | '/farm-operations/staff/$staffId'
+    | '/finance/budgets/$budgetId'
+    | '/finance/reports/$reportId'
+    | '/financial-management/budget/$budgetId'
+    | '/horses/$horseId/exercise-logs'
+    | '/horses/$horseId/exercise'
+    | '/horses/$horseId/feeding'
+    | '/horses/$horseId/health'
+    | '/horses/$horseId/training'
+    | '/stalls/$stallId/assign'
+    | '/stalls/$stallId/customize'
+    | '/dev/examples/settings/account'
+    | '/dev/examples/settings/password'
+    | '/farm-operations/inventory/items/$itemId/edit'
+    | '/farm-operations/inventory/items/$itemId'
+  id:
+    | '__root__'
+    | '/'
+    | '/signup'
+    | '/_auth/dev'
+    | '/_auth/home'
+    | '/boarders/create'
+    | '/boarders/list'
+    | '/bookings/create'
+    | '/contracts/create'
+    | '/events/create'
+    | '/expenses/create'
+    | '/facilities/create'
+    | '/horses/create'
+    | '/horses/list'
+    | '/income/create'
+    | '/inventory/create'
+    | '/layouts/app'
+    | '/maintenance-requests/create'
+    | '/maintenance/create'
+    | '/pastures/create'
+    | '/staff-schedule/create'
+    | '/stalls/create'
+    | '/stalls/list'
+    | '/visitors/create'
+    | '/billing/'
+    | '/boarder-management/'
+    | '/boarders/'
+    | '/budget-planning/'
+    | '/categories/'
+    | '/communication-portal/'
+    | '/communication/'
+    | '/contracts/'
+    | '/events/'
+    | '/expenses/'
+    | '/facilities/'
+    | '/farm-operations/'
+    | '/finance/'
+    | '/financial-dashboard/'
+    | '/financial-management/'
+    | '/financial-reports/'
+    | '/horses/'
+    | '/income-categories/'
+    | '/income/'
+    | '/inventory/'
+    | '/maintenance-requests/'
+    | '/maintenance/'
+    | '/pasture-rotation/'
+    | '/pastures/'
+    | '/reports/'
+    | '/staff-schedule/'
+    | '/stalls/'
+    | '/transactions/'
+    | '/visitors/'
+    | '/_auth/dev/examples'
+    | '/_auth/dev/pages'
+    | '/billing/invoices/$invoiceId'
+    | '/billing/invoices/create'
+    | '/boarders/$boarderId/edit'
+    | '/bookings/$bookingId/edit'
+    | '/communication-portal/messages/$messageId'
+    | '/contracts/$contractId/edit'
+    | '/events/$eventId/edit'
+    | '/events/bookings/create'
+    | '/events/farm-events/create'
+    | '/expenses/$expenseId/edit'
+    | '/farm-operations/schedules/create'
+    | '/farm-operations/staff/create'
+    | '/finance/budgets/create'
+    | '/finance/reports/create'
+    | '/financial-management/budget/create'
+    | '/financial-management/expenses/create'
+    | '/financial-management/income/create'
+    | '/horses/$horseId/edit'
+    | '/income/$incomeId/edit'
+    | '/inventory/$itemId/edit'
+    | '/layouts/app/basic'
+    | '/pastures/$pastureId/edit'
+    | '/staff-schedule/$shiftId/edit'
+    | '/stalls/$stallId/edit'
+    | '/_auth/dev/'
+    | '/billing/payments/'
+    | '/billing/reports/'
+    | '/billing/settings/'
+    | '/boarders/$boarderId/'
+    | '/bookings/$bookingId/'
+    | '/communication-portal/announcements/'
+    | '/contracts/$contractId/'
+    | '/contracts/reports/'
+    | '/contracts/templates/'
+    | '/events/$eventId/'
+    | '/events/calendar/'
+    | '/events/reports/'
+    | '/expenses/$expenseId/'
+    | '/facilities/$facilityId/'
+    | '/facilities/booking/'
+    | '/farm-operations/inventory/'
+    | '/farm-operations/my-schedule/'
+    | '/farm-operations/staff-scheduling/'
+    | '/farm-operations/staff/'
+    | '/finance/budgets/'
+    | '/finance/expenses/'
+    | '/finance/income/'
+    | '/finance/reports/'
+    | '/financial-management/budget/'
+    | '/financial-management/categories/'
+    | '/financial-management/expenses/'
+    | '/financial-management/income/'
+    | '/financial-management/reports/'
+    | '/horses/$horseId/'
+    | '/horses/exercise-calendar/'
+    | '/horses/exercise-reports/'
+    | '/income/$incomeId/'
+    | '/inventory/$itemId/'
+    | '/maintenance-requests/$requestId/'
+    | '/maintenance/$taskId/'
+    | '/maintenance/calendar/'
+    | '/maintenance/reports/'
+    | '/pasture-rotation/plan/'
+    | '/pastures/$pastureId/'
+    | '/reports/events/'
+    | '/stalls/$stallId/'
+    | '/stalls/maintenance/'
+    | '/stalls/map/'
+    | '/stalls/occupancy/'
+    | '/visitors/$visitorId/'
+    | '/visitors/register/'
+    | '/_auth/dev/examples/basic-dialog-form'
+    | '/_auth/dev/examples/basic-form'
+    | '/_auth/dev/examples/basic-form-edit'
+    | '/_auth/dev/examples/basic-table'
+    | '/_auth/dev/examples/data-table'
+    | '/_auth/dev/examples/settings'
+    | '/farm-operations/inventory/items/create'
+    | '/farm-operations/schedules/$scheduleId/edit'
+    | '/farm-operations/staff/$staffId/edit'
+    | '/financial-management/budget/$budgetId/edit'
+    | '/horses/$horseId/exercise-logs/create'
+    | '/horses/$horseId/feeding/create'
+    | '/horses/$horseId/health/create'
+    | '/layouts/app/basic/tabs'
+    | '/boarders/$boarderId/billing/'
+    | '/boarders/$boarderId/contract/'
+    | '/boarders/$boarderId/invoices/'
+    | '/events/bookings/$bookingId/'
+    | '/events/farm-events/$eventId/'
+    | '/farm-operations/inventory/categories/'
+    | '/farm-operations/inventory/items/'
+    | '/farm-operations/inventory/reports/'
+    | '/farm-operations/inventory/suppliers/'
+    | '/farm-operations/staff/$staffId/'
+    | '/finance/budgets/$budgetId/'
+    | '/finance/reports/$reportId/'
+    | '/financial-management/budget/$budgetId/'
+    | '/horses/$horseId/exercise-logs/'
+    | '/horses/$horseId/exercise/'
+    | '/horses/$horseId/feeding/'
+    | '/horses/$horseId/health/'
+    | '/horses/$horseId/training/'
+    | '/stalls/$stallId/assign/'
+    | '/stalls/$stallId/customize/'
+    | '/_auth/dev/examples/settings/account'
+    | '/_auth/dev/examples/settings/password'
+    | '/farm-operations/inventory/items/$itemId/edit'
+    | '/farm-operations/inventory/items/$itemId/'
+  fileRoutesById: FileRoutesById
+}
+
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
+  SignupRoute: typeof SignupRoute
+  AuthDevRoute: typeof AuthDevRouteWithChildren
+  AuthHomeRoute: typeof AuthHomeRoute
+  BoardersCreateRoute: typeof BoardersCreateRoute
+  BoardersListRoute: typeof BoardersListRoute
+  BookingsCreateRoute: typeof BookingsCreateRoute
+  ContractsCreateRoute: typeof ContractsCreateRoute
+  EventsCreateRoute: typeof EventsCreateRoute
+  ExpensesCreateRoute: typeof ExpensesCreateRoute
+  FacilitiesCreateRoute: typeof FacilitiesCreateRoute
+  HorsesCreateRoute: typeof HorsesCreateRoute
+  HorsesListRoute: typeof HorsesListRoute
+  IncomeCreateRoute: typeof IncomeCreateRoute
+  InventoryCreateRoute: typeof InventoryCreateRoute
+  LayoutsAppRoute: typeof LayoutsAppRouteWithChildren
+  MaintenanceRequestsCreateRoute: typeof MaintenanceRequestsCreateRoute
+  MaintenanceCreateRoute: typeof MaintenanceCreateRoute
+  PasturesCreateRoute: typeof PasturesCreateRoute
+  StaffScheduleCreateRoute: typeof StaffScheduleCreateRoute
+  StallsCreateRoute: typeof StallsCreateRoute
+  StallsListRoute: typeof StallsListRoute
+  VisitorsCreateRoute: typeof VisitorsCreateRoute
+  BillingIndexRoute: typeof BillingIndexRoute
+  BoarderManagementIndexRoute: typeof BoarderManagementIndexRoute
+  BoardersIndexRoute: typeof BoardersIndexRoute
+  BudgetPlanningIndexRoute: typeof BudgetPlanningIndexRoute
+  CategoriesIndexRoute: typeof CategoriesIndexRoute
+  CommunicationPortalIndexRoute: typeof CommunicationPortalIndexRoute
+  CommunicationIndexRoute: typeof CommunicationIndexRoute
+  ContractsIndexRoute: typeof ContractsIndexRoute
+  EventsIndexRoute: typeof EventsIndexRoute
+  ExpensesIndexRoute: typeof ExpensesIndexRoute
+  FacilitiesIndexRoute: typeof FacilitiesIndexRoute
+  FarmOperationsIndexRoute: typeof FarmOperationsIndexRoute
+  FinanceIndexRoute: typeof FinanceIndexRoute
+  FinancialDashboardIndexRoute: typeof FinancialDashboardIndexRoute
+  FinancialManagementIndexRoute: typeof FinancialManagementIndexRoute
+  FinancialReportsIndexRoute: typeof FinancialReportsIndexRoute
+  HorsesIndexRoute: typeof HorsesIndexRoute
+  IncomeCategoriesIndexRoute: typeof IncomeCategoriesIndexRoute
+  IncomeIndexRoute: typeof IncomeIndexRoute
+  InventoryIndexRoute: typeof InventoryIndexRoute
+  MaintenanceRequestsIndexRoute: typeof MaintenanceRequestsIndexRoute
+  MaintenanceIndexRoute: typeof MaintenanceIndexRoute
+  PastureRotationIndexRoute: typeof PastureRotationIndexRoute
+  PasturesIndexRoute: typeof PasturesIndexRoute
+  ReportsIndexRoute: typeof ReportsIndexRoute
+  StaffScheduleIndexRoute: typeof StaffScheduleIndexRoute
+  StallsIndexRoute: typeof StallsIndexRoute
+  TransactionsIndexRoute: typeof TransactionsIndexRoute
+  VisitorsIndexRoute: typeof VisitorsIndexRoute
+  BillingInvoicesInvoiceIdRoute: typeof BillingInvoicesInvoiceIdRoute
+  BillingInvoicesCreateRoute: typeof BillingInvoicesCreateRoute
+  BoardersBoarderIdEditRoute: typeof BoardersBoarderIdEditRoute
+  BookingsBookingIdEditRoute: typeof BookingsBookingIdEditRoute
+  CommunicationPortalMessagesMessageIdRoute: typeof CommunicationPortalMessagesMessageIdRoute
+  ContractsContractIdEditRoute: typeof ContractsContractIdEditRoute
+  EventsEventIdEditRoute: typeof EventsEventIdEditRoute
+  EventsBookingsCreateRoute: typeof EventsBookingsCreateRoute
+  EventsFarmEventsCreateRoute: typeof EventsFarmEventsCreateRoute
+  ExpensesExpenseIdEditRoute: typeof ExpensesExpenseIdEditRoute
+  FarmOperationsSchedulesCreateRoute: typeof FarmOperationsSchedulesCreateRoute
+  FarmOperationsStaffCreateRoute: typeof FarmOperationsStaffCreateRoute
+  FinanceBudgetsCreateRoute: typeof FinanceBudgetsCreateRoute
+  FinanceReportsCreateRoute: typeof FinanceReportsCreateRoute
+  FinancialManagementBudgetCreateRoute: typeof FinancialManagementBudgetCreateRoute
+  FinancialManagementExpensesCreateRoute: typeof FinancialManagementExpensesCreateRoute
+  FinancialManagementIncomeCreateRoute: typeof FinancialManagementIncomeCreateRoute
+  HorsesHorseIdEditRoute: typeof HorsesHorseIdEditRoute
+  IncomeIncomeIdEditRoute: typeof IncomeIncomeIdEditRoute
+  InventoryItemIdEditRoute: typeof InventoryItemIdEditRoute
+  PasturesPastureIdEditRoute: typeof PasturesPastureIdEditRoute
+  StaffScheduleShiftIdEditRoute: typeof StaffScheduleShiftIdEditRoute
+  StallsStallIdEditRoute: typeof StallsStallIdEditRoute
+  BillingPaymentsIndexRoute: typeof BillingPaymentsIndexRoute
+  BillingReportsIndexRoute: typeof BillingReportsIndexRoute
+  BillingSettingsIndexRoute: typeof BillingSettingsIndexRoute
+  BoardersBoarderIdIndexRoute: typeof BoardersBoarderIdIndexRoute
+  BookingsBookingIdIndexRoute: typeof BookingsBookingIdIndexRoute
+  CommunicationPortalAnnouncementsIndexRoute: typeof CommunicationPortalAnnouncementsIndexRoute
+  ContractsContractIdIndexRoute: typeof ContractsContractIdIndexRoute
+  ContractsReportsIndexRoute: typeof ContractsReportsIndexRoute
+  ContractsTemplatesIndexRoute: typeof ContractsTemplatesIndexRoute
+  EventsEventIdIndexRoute: typeof EventsEventIdIndexRoute
+  EventsCalendarIndexRoute: typeof EventsCalendarIndexRoute
+  EventsReportsIndexRoute: typeof EventsReportsIndexRoute
+  ExpensesExpenseIdIndexRoute: typeof ExpensesExpenseIdIndexRoute
+  FacilitiesFacilityIdIndexRoute: typeof FacilitiesFacilityIdIndexRoute
+  FacilitiesBookingIndexRoute: typeof FacilitiesBookingIndexRoute
+  FarmOperationsInventoryIndexRoute: typeof FarmOperationsInventoryIndexRoute
+  FarmOperationsMyScheduleIndexRoute: typeof FarmOperationsMyScheduleIndexRoute
+  FarmOperationsStaffSchedulingIndexRoute: typeof FarmOperationsStaffSchedulingIndexRoute
+  FarmOperationsStaffIndexRoute: typeof FarmOperationsStaffIndexRoute
+  FinanceBudgetsIndexRoute: typeof FinanceBudgetsIndexRoute
+  FinanceExpensesIndexRoute: typeof FinanceExpensesIndexRoute
+  FinanceIncomeIndexRoute: typeof FinanceIncomeIndexRoute
+  FinanceReportsIndexRoute: typeof FinanceReportsIndexRoute
+  FinancialManagementBudgetIndexRoute: typeof FinancialManagementBudgetIndexRoute
+  FinancialManagementCategoriesIndexRoute: typeof FinancialManagementCategoriesIndexRoute
+  FinancialManagementExpensesIndexRoute: typeof FinancialManagementExpensesIndexRoute
+  FinancialManagementIncomeIndexRoute: typeof FinancialManagementIncomeIndexRoute
+  FinancialManagementReportsIndexRoute: typeof FinancialManagementReportsIndexRoute
+  HorsesHorseIdIndexRoute: typeof HorsesHorseIdIndexRoute
+  HorsesExerciseCalendarIndexRoute: typeof HorsesExerciseCalendarIndexRoute
+  HorsesExerciseReportsIndexRoute: typeof HorsesExerciseReportsIndexRoute
+  IncomeIncomeIdIndexRoute: typeof IncomeIncomeIdIndexRoute
+  InventoryItemIdIndexRoute: typeof InventoryItemIdIndexRoute
+  MaintenanceRequestsRequestIdIndexRoute: typeof MaintenanceRequestsRequestIdIndexRoute
+  MaintenanceTaskIdIndexRoute: typeof MaintenanceTaskIdIndexRoute
+  MaintenanceCalendarIndexRoute: typeof MaintenanceCalendarIndexRoute
+  MaintenanceReportsIndexRoute: typeof MaintenanceReportsIndexRoute
+  PastureRotationPlanIndexRoute: typeof PastureRotationPlanIndexRoute
+  PasturesPastureIdIndexRoute: typeof PasturesPastureIdIndexRoute
+  ReportsEventsIndexRoute: typeof ReportsEventsIndexRoute
+  StallsStallIdIndexRoute: typeof StallsStallIdIndexRoute
+  StallsMaintenanceIndexRoute: typeof StallsMaintenanceIndexRoute
+  StallsMapIndexRoute: typeof StallsMapIndexRoute
+  StallsOccupancyIndexRoute: typeof StallsOccupancyIndexRoute
+  VisitorsVisitorIdIndexRoute: typeof VisitorsVisitorIdIndexRoute
+  VisitorsRegisterIndexRoute: typeof VisitorsRegisterIndexRoute
+  FarmOperationsInventoryItemsCreateRoute: typeof FarmOperationsInventoryItemsCreateRoute
+  FarmOperationsSchedulesScheduleIdEditRoute: typeof FarmOperationsSchedulesScheduleIdEditRoute
+  FarmOperationsStaffStaffIdEditRoute: typeof FarmOperationsStaffStaffIdEditRoute
+  FinancialManagementBudgetBudgetIdEditRoute: typeof FinancialManagementBudgetBudgetIdEditRoute
+  HorsesHorseIdExerciseLogsCreateRoute: typeof HorsesHorseIdExerciseLogsCreateRoute
+  HorsesHorseIdFeedingCreateRoute: typeof HorsesHorseIdFeedingCreateRoute
+  HorsesHorseIdHealthCreateRoute: typeof HorsesHorseIdHealthCreateRoute
+  BoardersBoarderIdBillingIndexRoute: typeof BoardersBoarderIdBillingIndexRoute
+  BoardersBoarderIdContractIndexRoute: typeof BoardersBoarderIdContractIndexRoute
+  BoardersBoarderIdInvoicesIndexRoute: typeof BoardersBoarderIdInvoicesIndexRoute
+  EventsBookingsBookingIdIndexRoute: typeof EventsBookingsBookingIdIndexRoute
+  EventsFarmEventsEventIdIndexRoute: typeof EventsFarmEventsEventIdIndexRoute
+  FarmOperationsInventoryCategoriesIndexRoute: typeof FarmOperationsInventoryCategoriesIndexRoute
+  FarmOperationsInventoryItemsIndexRoute: typeof FarmOperationsInventoryItemsIndexRoute
+  FarmOperationsInventoryReportsIndexRoute: typeof FarmOperationsInventoryReportsIndexRoute
+  FarmOperationsInventorySuppliersIndexRoute: typeof FarmOperationsInventorySuppliersIndexRoute
+  FarmOperationsStaffStaffIdIndexRoute: typeof FarmOperationsStaffStaffIdIndexRoute
+  FinanceBudgetsBudgetIdIndexRoute: typeof FinanceBudgetsBudgetIdIndexRoute
+  FinanceReportsReportIdIndexRoute: typeof FinanceReportsReportIdIndexRoute
+  FinancialManagementBudgetBudgetIdIndexRoute: typeof FinancialManagementBudgetBudgetIdIndexRoute
+  HorsesHorseIdExerciseLogsIndexRoute: typeof HorsesHorseIdExerciseLogsIndexRoute
+  HorsesHorseIdExerciseIndexRoute: typeof HorsesHorseIdExerciseIndexRoute
+  HorsesHorseIdFeedingIndexRoute: typeof HorsesHorseIdFeedingIndexRoute
+  HorsesHorseIdHealthIndexRoute: typeof HorsesHorseIdHealthIndexRoute
+  HorsesHorseIdTrainingIndexRoute: typeof HorsesHorseIdTrainingIndexRoute
+  StallsStallIdAssignIndexRoute: typeof StallsStallIdAssignIndexRoute
+  StallsStallIdCustomizeIndexRoute: typeof StallsStallIdCustomizeIndexRoute
+  FarmOperationsInventoryItemsItemIdEditRoute: typeof FarmOperationsInventoryItemsItemIdEditRoute
+  FarmOperationsInventoryItemsItemIdIndexRoute: typeof FarmOperationsInventoryItemsItemIdIndexRoute
+}
+
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  SignupRoute: SignupRoute,
+  AuthDevRoute: AuthDevRouteWithChildren,
+  AuthHomeRoute: AuthHomeRoute,
+  BoardersCreateRoute: BoardersCreateRoute,
+  BoardersListRoute: BoardersListRoute,
+  BookingsCreateRoute: BookingsCreateRoute,
+  ContractsCreateRoute: ContractsCreateRoute,
+  EventsCreateRoute: EventsCreateRoute,
+  ExpensesCreateRoute: ExpensesCreateRoute,
+  FacilitiesCreateRoute: FacilitiesCreateRoute,
+  HorsesCreateRoute: HorsesCreateRoute,
+  HorsesListRoute: HorsesListRoute,
+  IncomeCreateRoute: IncomeCreateRoute,
+  InventoryCreateRoute: InventoryCreateRoute,
+  LayoutsAppRoute: LayoutsAppRouteWithChildren,
+  MaintenanceRequestsCreateRoute: MaintenanceRequestsCreateRoute,
+  MaintenanceCreateRoute: MaintenanceCreateRoute,
+  PasturesCreateRoute: PasturesCreateRoute,
+  StaffScheduleCreateRoute: StaffScheduleCreateRoute,
+  StallsCreateRoute: StallsCreateRoute,
+  StallsListRoute: StallsListRoute,
+  VisitorsCreateRoute: VisitorsCreateRoute,
+  BillingIndexRoute: BillingIndexRoute,
+  BoarderManagementIndexRoute: BoarderManagementIndexRoute,
+  BoardersIndexRoute: BoardersIndexRoute,
+  BudgetPlanningIndexRoute: BudgetPlanningIndexRoute,
+  CategoriesIndexRoute: CategoriesIndexRoute,
+  CommunicationPortalIndexRoute: CommunicationPortalIndexRoute,
+  CommunicationIndexRoute: CommunicationIndexRoute,
+  ContractsIndexRoute: ContractsIndexRoute,
+  EventsIndexRoute: EventsIndexRoute,
+  ExpensesIndexRoute: ExpensesIndexRoute,
+  FacilitiesIndexRoute: FacilitiesIndexRoute,
+  FarmOperationsIndexRoute: FarmOperationsIndexRoute,
+  FinanceIndexRoute: FinanceIndexRoute,
+  FinancialDashboardIndexRoute: FinancialDashboardIndexRoute,
+  FinancialManagementIndexRoute: FinancialManagementIndexRoute,
+  FinancialReportsIndexRoute: FinancialReportsIndexRoute,
+  HorsesIndexRoute: HorsesIndexRoute,
+  IncomeCategoriesIndexRoute: IncomeCategoriesIndexRoute,
+  IncomeIndexRoute: IncomeIndexRoute,
+  InventoryIndexRoute: InventoryIndexRoute,
+  MaintenanceRequestsIndexRoute: MaintenanceRequestsIndexRoute,
+  MaintenanceIndexRoute: MaintenanceIndexRoute,
+  PastureRotationIndexRoute: PastureRotationIndexRoute,
+  PasturesIndexRoute: PasturesIndexRoute,
+  ReportsIndexRoute: ReportsIndexRoute,
+  StaffScheduleIndexRoute: StaffScheduleIndexRoute,
+  StallsIndexRoute: StallsIndexRoute,
+  TransactionsIndexRoute: TransactionsIndexRoute,
+  VisitorsIndexRoute: VisitorsIndexRoute,
+  BillingInvoicesInvoiceIdRoute: BillingInvoicesInvoiceIdRoute,
+  BillingInvoicesCreateRoute: BillingInvoicesCreateRoute,
+  BoardersBoarderIdEditRoute: BoardersBoarderIdEditRoute,
+  BookingsBookingIdEditRoute: BookingsBookingIdEditRoute,
+  CommunicationPortalMessagesMessageIdRoute:
+    CommunicationPortalMessagesMessageIdRoute,
+  ContractsContractIdEditRoute: ContractsContractIdEditRoute,
+  EventsEventIdEditRoute: EventsEventIdEditRoute,
+  EventsBookingsCreateRoute: EventsBookingsCreateRoute,
+  EventsFarmEventsCreateRoute: EventsFarmEventsCreateRoute,
+  ExpensesExpenseIdEditRoute: ExpensesExpenseIdEditRoute,
+  FarmOperationsSchedulesCreateRoute: FarmOperationsSchedulesCreateRoute,
+  FarmOperationsStaffCreateRoute: FarmOperationsStaffCreateRoute,
+  FinanceBudgetsCreateRoute: FinanceBudgetsCreateRoute,
+  FinanceReportsCreateRoute: FinanceReportsCreateRoute,
+  FinancialManagementBudgetCreateRoute: FinancialManagementBudgetCreateRoute,
+  FinancialManagementExpensesCreateRoute:
+    FinancialManagementExpensesCreateRoute,
+  FinancialManagementIncomeCreateRoute: FinancialManagementIncomeCreateRoute,
+  HorsesHorseIdEditRoute: HorsesHorseIdEditRoute,
+  IncomeIncomeIdEditRoute: IncomeIncomeIdEditRoute,
+  InventoryItemIdEditRoute: InventoryItemIdEditRoute,
+  PasturesPastureIdEditRoute: PasturesPastureIdEditRoute,
+  StaffScheduleShiftIdEditRoute: StaffScheduleShiftIdEditRoute,
+  StallsStallIdEditRoute: StallsStallIdEditRoute,
+  BillingPaymentsIndexRoute: BillingPaymentsIndexRoute,
+  BillingReportsIndexRoute: BillingReportsIndexRoute,
+  BillingSettingsIndexRoute: BillingSettingsIndexRoute,
+  BoardersBoarderIdIndexRoute: BoardersBoarderIdIndexRoute,
+  BookingsBookingIdIndexRoute: BookingsBookingIdIndexRoute,
+  CommunicationPortalAnnouncementsIndexRoute:
+    CommunicationPortalAnnouncementsIndexRoute,
+  ContractsContractIdIndexRoute: ContractsContractIdIndexRoute,
+  ContractsReportsIndexRoute: ContractsReportsIndexRoute,
+  ContractsTemplatesIndexRoute: ContractsTemplatesIndexRoute,
+  EventsEventIdIndexRoute: EventsEventIdIndexRoute,
+  EventsCalendarIndexRoute: EventsCalendarIndexRoute,
+  EventsReportsIndexRoute: EventsReportsIndexRoute,
+  ExpensesExpenseIdIndexRoute: ExpensesExpenseIdIndexRoute,
+  FacilitiesFacilityIdIndexRoute: FacilitiesFacilityIdIndexRoute,
+  FacilitiesBookingIndexRoute: FacilitiesBookingIndexRoute,
+  FarmOperationsInventoryIndexRoute: FarmOperationsInventoryIndexRoute,
+  FarmOperationsMyScheduleIndexRoute: FarmOperationsMyScheduleIndexRoute,
+  FarmOperationsStaffSchedulingIndexRoute:
+    FarmOperationsStaffSchedulingIndexRoute,
+  FarmOperationsStaffIndexRoute: FarmOperationsStaffIndexRoute,
+  FinanceBudgetsIndexRoute: FinanceBudgetsIndexRoute,
+  FinanceExpensesIndexRoute: FinanceExpensesIndexRoute,
+  FinanceIncomeIndexRoute: FinanceIncomeIndexRoute,
+  FinanceReportsIndexRoute: FinanceReportsIndexRoute,
+  FinancialManagementBudgetIndexRoute: FinancialManagementBudgetIndexRoute,
+  FinancialManagementCategoriesIndexRoute:
+    FinancialManagementCategoriesIndexRoute,
+  FinancialManagementExpensesIndexRoute: FinancialManagementExpensesIndexRoute,
+  FinancialManagementIncomeIndexRoute: FinancialManagementIncomeIndexRoute,
+  FinancialManagementReportsIndexRoute: FinancialManagementReportsIndexRoute,
+  HorsesHorseIdIndexRoute: HorsesHorseIdIndexRoute,
+  HorsesExerciseCalendarIndexRoute: HorsesExerciseCalendarIndexRoute,
+  HorsesExerciseReportsIndexRoute: HorsesExerciseReportsIndexRoute,
+  IncomeIncomeIdIndexRoute: IncomeIncomeIdIndexRoute,
+  InventoryItemIdIndexRoute: InventoryItemIdIndexRoute,
+  MaintenanceRequestsRequestIdIndexRoute:
+    MaintenanceRequestsRequestIdIndexRoute,
+  MaintenanceTaskIdIndexRoute: MaintenanceTaskIdIndexRoute,
+  MaintenanceCalendarIndexRoute: MaintenanceCalendarIndexRoute,
+  MaintenanceReportsIndexRoute: MaintenanceReportsIndexRoute,
+  PastureRotationPlanIndexRoute: PastureRotationPlanIndexRoute,
+  PasturesPastureIdIndexRoute: PasturesPastureIdIndexRoute,
+  ReportsEventsIndexRoute: ReportsEventsIndexRoute,
+  StallsStallIdIndexRoute: StallsStallIdIndexRoute,
+  StallsMaintenanceIndexRoute: StallsMaintenanceIndexRoute,
+  StallsMapIndexRoute: StallsMapIndexRoute,
+  StallsOccupancyIndexRoute: StallsOccupancyIndexRoute,
+  VisitorsVisitorIdIndexRoute: VisitorsVisitorIdIndexRoute,
+  VisitorsRegisterIndexRoute: VisitorsRegisterIndexRoute,
+  FarmOperationsInventoryItemsCreateRoute:
+    FarmOperationsInventoryItemsCreateRoute,
+  FarmOperationsSchedulesScheduleIdEditRoute:
+    FarmOperationsSchedulesScheduleIdEditRoute,
+  FarmOperationsStaffStaffIdEditRoute: FarmOperationsStaffStaffIdEditRoute,
+  FinancialManagementBudgetBudgetIdEditRoute:
+    FinancialManagementBudgetBudgetIdEditRoute,
+  HorsesHorseIdExerciseLogsCreateRoute: HorsesHorseIdExerciseLogsCreateRoute,
+  HorsesHorseIdFeedingCreateRoute: HorsesHorseIdFeedingCreateRoute,
+  HorsesHorseIdHealthCreateRoute: HorsesHorseIdHealthCreateRoute,
+  BoardersBoarderIdBillingIndexRoute: BoardersBoarderIdBillingIndexRoute,
+  BoardersBoarderIdContractIndexRoute: BoardersBoarderIdContractIndexRoute,
+  BoardersBoarderIdInvoicesIndexRoute: BoardersBoarderIdInvoicesIndexRoute,
+  EventsBookingsBookingIdIndexRoute: EventsBookingsBookingIdIndexRoute,
+  EventsFarmEventsEventIdIndexRoute: EventsFarmEventsEventIdIndexRoute,
+  FarmOperationsInventoryCategoriesIndexRoute:
+    FarmOperationsInventoryCategoriesIndexRoute,
+  FarmOperationsInventoryItemsIndexRoute:
+    FarmOperationsInventoryItemsIndexRoute,
+  FarmOperationsInventoryReportsIndexRoute:
+    FarmOperationsInventoryReportsIndexRoute,
+  FarmOperationsInventorySuppliersIndexRoute:
+    FarmOperationsInventorySuppliersIndexRoute,
+  FarmOperationsStaffStaffIdIndexRoute: FarmOperationsStaffStaffIdIndexRoute,
+  FinanceBudgetsBudgetIdIndexRoute: FinanceBudgetsBudgetIdIndexRoute,
+  FinanceReportsReportIdIndexRoute: FinanceReportsReportIdIndexRoute,
+  FinancialManagementBudgetBudgetIdIndexRoute:
+    FinancialManagementBudgetBudgetIdIndexRoute,
+  HorsesHorseIdExerciseLogsIndexRoute: HorsesHorseIdExerciseLogsIndexRoute,
+  HorsesHorseIdExerciseIndexRoute: HorsesHorseIdExerciseIndexRoute,
+  HorsesHorseIdFeedingIndexRoute: HorsesHorseIdFeedingIndexRoute,
+  HorsesHorseIdHealthIndexRoute: HorsesHorseIdHealthIndexRoute,
+  HorsesHorseIdTrainingIndexRoute: HorsesHorseIdTrainingIndexRoute,
+  StallsStallIdAssignIndexRoute: StallsStallIdAssignIndexRoute,
+  StallsStallIdCustomizeIndexRoute: StallsStallIdCustomizeIndexRoute,
+  FarmOperationsInventoryItemsItemIdEditRoute:
+    FarmOperationsInventoryItemsItemIdEditRoute,
+  FarmOperationsInventoryItemsItemIdIndexRoute:
+    FarmOperationsInventoryItemsItemIdIndexRoute,
+}
+
+export const routeTree = rootRoute
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
 
 /* prettier-ignore-end */
 
@@ -331,7 +3603,152 @@ export const routeTree = rootRoute.addChildren({
         "/signup",
         "/_auth/dev",
         "/_auth/home",
-        "/layouts/app"
+        "/boarders/create",
+        "/boarders/list",
+        "/bookings/create",
+        "/contracts/create",
+        "/events/create",
+        "/expenses/create",
+        "/facilities/create",
+        "/horses/create",
+        "/horses/list",
+        "/income/create",
+        "/inventory/create",
+        "/layouts/app",
+        "/maintenance-requests/create",
+        "/maintenance/create",
+        "/pastures/create",
+        "/staff-schedule/create",
+        "/stalls/create",
+        "/stalls/list",
+        "/visitors/create",
+        "/billing/",
+        "/boarder-management/",
+        "/boarders/",
+        "/budget-planning/",
+        "/categories/",
+        "/communication-portal/",
+        "/communication/",
+        "/contracts/",
+        "/events/",
+        "/expenses/",
+        "/facilities/",
+        "/farm-operations/",
+        "/finance/",
+        "/financial-dashboard/",
+        "/financial-management/",
+        "/financial-reports/",
+        "/horses/",
+        "/income-categories/",
+        "/income/",
+        "/inventory/",
+        "/maintenance-requests/",
+        "/maintenance/",
+        "/pasture-rotation/",
+        "/pastures/",
+        "/reports/",
+        "/staff-schedule/",
+        "/stalls/",
+        "/transactions/",
+        "/visitors/",
+        "/billing/invoices/$invoiceId",
+        "/billing/invoices/create",
+        "/boarders/$boarderId/edit",
+        "/bookings/$bookingId/edit",
+        "/communication-portal/messages/$messageId",
+        "/contracts/$contractId/edit",
+        "/events/$eventId/edit",
+        "/events/bookings/create",
+        "/events/farm-events/create",
+        "/expenses/$expenseId/edit",
+        "/farm-operations/schedules/create",
+        "/farm-operations/staff/create",
+        "/finance/budgets/create",
+        "/finance/reports/create",
+        "/financial-management/budget/create",
+        "/financial-management/expenses/create",
+        "/financial-management/income/create",
+        "/horses/$horseId/edit",
+        "/income/$incomeId/edit",
+        "/inventory/$itemId/edit",
+        "/pastures/$pastureId/edit",
+        "/staff-schedule/$shiftId/edit",
+        "/stalls/$stallId/edit",
+        "/billing/payments/",
+        "/billing/reports/",
+        "/billing/settings/",
+        "/boarders/$boarderId/",
+        "/bookings/$bookingId/",
+        "/communication-portal/announcements/",
+        "/contracts/$contractId/",
+        "/contracts/reports/",
+        "/contracts/templates/",
+        "/events/$eventId/",
+        "/events/calendar/",
+        "/events/reports/",
+        "/expenses/$expenseId/",
+        "/facilities/$facilityId/",
+        "/facilities/booking/",
+        "/farm-operations/inventory/",
+        "/farm-operations/my-schedule/",
+        "/farm-operations/staff-scheduling/",
+        "/farm-operations/staff/",
+        "/finance/budgets/",
+        "/finance/expenses/",
+        "/finance/income/",
+        "/finance/reports/",
+        "/financial-management/budget/",
+        "/financial-management/categories/",
+        "/financial-management/expenses/",
+        "/financial-management/income/",
+        "/financial-management/reports/",
+        "/horses/$horseId/",
+        "/horses/exercise-calendar/",
+        "/horses/exercise-reports/",
+        "/income/$incomeId/",
+        "/inventory/$itemId/",
+        "/maintenance-requests/$requestId/",
+        "/maintenance/$taskId/",
+        "/maintenance/calendar/",
+        "/maintenance/reports/",
+        "/pasture-rotation/plan/",
+        "/pastures/$pastureId/",
+        "/reports/events/",
+        "/stalls/$stallId/",
+        "/stalls/maintenance/",
+        "/stalls/map/",
+        "/stalls/occupancy/",
+        "/visitors/$visitorId/",
+        "/visitors/register/",
+        "/farm-operations/inventory/items/create",
+        "/farm-operations/schedules/$scheduleId/edit",
+        "/farm-operations/staff/$staffId/edit",
+        "/financial-management/budget/$budgetId/edit",
+        "/horses/$horseId/exercise-logs/create",
+        "/horses/$horseId/feeding/create",
+        "/horses/$horseId/health/create",
+        "/boarders/$boarderId/billing/",
+        "/boarders/$boarderId/contract/",
+        "/boarders/$boarderId/invoices/",
+        "/events/bookings/$bookingId/",
+        "/events/farm-events/$eventId/",
+        "/farm-operations/inventory/categories/",
+        "/farm-operations/inventory/items/",
+        "/farm-operations/inventory/reports/",
+        "/farm-operations/inventory/suppliers/",
+        "/farm-operations/staff/$staffId/",
+        "/finance/budgets/$budgetId/",
+        "/finance/reports/$reportId/",
+        "/financial-management/budget/$budgetId/",
+        "/horses/$horseId/exercise-logs/",
+        "/horses/$horseId/exercise/",
+        "/horses/$horseId/feeding/",
+        "/horses/$horseId/health/",
+        "/horses/$horseId/training/",
+        "/stalls/$stallId/assign/",
+        "/stalls/$stallId/customize/",
+        "/farm-operations/inventory/items/$itemId/edit",
+        "/farm-operations/inventory/items/$itemId/"
       ]
     },
     "/": {
@@ -351,11 +3768,152 @@ export const routeTree = rootRoute.addChildren({
     "/_auth/home": {
       "filePath": "_auth/home.tsx"
     },
+    "/boarders/create": {
+      "filePath": "boarders.create.tsx"
+    },
+    "/boarders/list": {
+      "filePath": "boarders.list.tsx"
+    },
+    "/bookings/create": {
+      "filePath": "bookings.create.tsx"
+    },
+    "/contracts/create": {
+      "filePath": "contracts.create.tsx"
+    },
+    "/events/create": {
+      "filePath": "events.create.tsx"
+    },
+    "/expenses/create": {
+      "filePath": "expenses.create.tsx"
+    },
+    "/facilities/create": {
+      "filePath": "facilities.create.tsx"
+    },
+    "/horses/create": {
+      "filePath": "horses.create.tsx"
+    },
+    "/horses/list": {
+      "filePath": "horses.list.tsx"
+    },
+    "/income/create": {
+      "filePath": "income.create.tsx"
+    },
+    "/inventory/create": {
+      "filePath": "inventory.create.tsx"
+    },
     "/layouts/app": {
       "filePath": "layouts.app.tsx",
       "children": [
         "/layouts/app/basic"
       ]
+    },
+    "/maintenance-requests/create": {
+      "filePath": "maintenance-requests.create.tsx"
+    },
+    "/maintenance/create": {
+      "filePath": "maintenance.create.tsx"
+    },
+    "/pastures/create": {
+      "filePath": "pastures.create.tsx"
+    },
+    "/staff-schedule/create": {
+      "filePath": "staff-schedule.create.tsx"
+    },
+    "/stalls/create": {
+      "filePath": "stalls.create.tsx"
+    },
+    "/stalls/list": {
+      "filePath": "stalls.list.tsx"
+    },
+    "/visitors/create": {
+      "filePath": "visitors.create.tsx"
+    },
+    "/billing/": {
+      "filePath": "billing.index.tsx"
+    },
+    "/boarder-management/": {
+      "filePath": "boarder-management.index.tsx"
+    },
+    "/boarders/": {
+      "filePath": "boarders.index.tsx"
+    },
+    "/budget-planning/": {
+      "filePath": "budget-planning.index.tsx"
+    },
+    "/categories/": {
+      "filePath": "categories.index.tsx"
+    },
+    "/communication-portal/": {
+      "filePath": "communication-portal.index.tsx"
+    },
+    "/communication/": {
+      "filePath": "communication.index.tsx"
+    },
+    "/contracts/": {
+      "filePath": "contracts.index.tsx"
+    },
+    "/events/": {
+      "filePath": "events.index.tsx"
+    },
+    "/expenses/": {
+      "filePath": "expenses.index.tsx"
+    },
+    "/facilities/": {
+      "filePath": "facilities.index.tsx"
+    },
+    "/farm-operations/": {
+      "filePath": "farm-operations.index.tsx"
+    },
+    "/finance/": {
+      "filePath": "finance.index.tsx"
+    },
+    "/financial-dashboard/": {
+      "filePath": "financial-dashboard.index.tsx"
+    },
+    "/financial-management/": {
+      "filePath": "financial-management.index.tsx"
+    },
+    "/financial-reports/": {
+      "filePath": "financial-reports.index.tsx"
+    },
+    "/horses/": {
+      "filePath": "horses.index.tsx"
+    },
+    "/income-categories/": {
+      "filePath": "income-categories.index.tsx"
+    },
+    "/income/": {
+      "filePath": "income.index.tsx"
+    },
+    "/inventory/": {
+      "filePath": "inventory.index.tsx"
+    },
+    "/maintenance-requests/": {
+      "filePath": "maintenance-requests.index.tsx"
+    },
+    "/maintenance/": {
+      "filePath": "maintenance.index.tsx"
+    },
+    "/pasture-rotation/": {
+      "filePath": "pasture-rotation.index.tsx"
+    },
+    "/pastures/": {
+      "filePath": "pastures.index.tsx"
+    },
+    "/reports/": {
+      "filePath": "reports.index.tsx"
+    },
+    "/staff-schedule/": {
+      "filePath": "staff-schedule.index.tsx"
+    },
+    "/stalls/": {
+      "filePath": "stalls.index.tsx"
+    },
+    "/transactions/": {
+      "filePath": "transactions.index.tsx"
+    },
+    "/visitors/": {
+      "filePath": "visitors.index.tsx"
     },
     "/_auth/dev/examples": {
       "filePath": "_auth/dev/examples.tsx",
@@ -373,6 +3931,66 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_auth/dev/pages.tsx",
       "parent": "/_auth/dev"
     },
+    "/billing/invoices/$invoiceId": {
+      "filePath": "billing.invoices.$invoiceId.tsx"
+    },
+    "/billing/invoices/create": {
+      "filePath": "billing.invoices.create.tsx"
+    },
+    "/boarders/$boarderId/edit": {
+      "filePath": "boarders.$boarderId.edit.tsx"
+    },
+    "/bookings/$bookingId/edit": {
+      "filePath": "bookings.$bookingId.edit.tsx"
+    },
+    "/communication-portal/messages/$messageId": {
+      "filePath": "communication-portal.messages.$messageId.tsx"
+    },
+    "/contracts/$contractId/edit": {
+      "filePath": "contracts.$contractId.edit.tsx"
+    },
+    "/events/$eventId/edit": {
+      "filePath": "events.$eventId.edit.tsx"
+    },
+    "/events/bookings/create": {
+      "filePath": "events.bookings.create.tsx"
+    },
+    "/events/farm-events/create": {
+      "filePath": "events.farm-events.create.tsx"
+    },
+    "/expenses/$expenseId/edit": {
+      "filePath": "expenses.$expenseId.edit.tsx"
+    },
+    "/farm-operations/schedules/create": {
+      "filePath": "farm-operations.schedules.create.tsx"
+    },
+    "/farm-operations/staff/create": {
+      "filePath": "farm-operations.staff.create.tsx"
+    },
+    "/finance/budgets/create": {
+      "filePath": "finance.budgets.create.tsx"
+    },
+    "/finance/reports/create": {
+      "filePath": "finance.reports.create.tsx"
+    },
+    "/financial-management/budget/create": {
+      "filePath": "financial-management.budget.create.tsx"
+    },
+    "/financial-management/expenses/create": {
+      "filePath": "financial-management.expenses.create.tsx"
+    },
+    "/financial-management/income/create": {
+      "filePath": "financial-management.income.create.tsx"
+    },
+    "/horses/$horseId/edit": {
+      "filePath": "horses.$horseId.edit.tsx"
+    },
+    "/income/$incomeId/edit": {
+      "filePath": "income.$incomeId.edit.tsx"
+    },
+    "/inventory/$itemId/edit": {
+      "filePath": "inventory.$itemId.edit.tsx"
+    },
     "/layouts/app/basic": {
       "filePath": "layouts.app.basic.tsx",
       "parent": "/layouts/app",
@@ -380,9 +3998,156 @@ export const routeTree = rootRoute.addChildren({
         "/layouts/app/basic/tabs"
       ]
     },
+    "/pastures/$pastureId/edit": {
+      "filePath": "pastures.$pastureId.edit.tsx"
+    },
+    "/staff-schedule/$shiftId/edit": {
+      "filePath": "staff-schedule.$shiftId.edit.tsx"
+    },
+    "/stalls/$stallId/edit": {
+      "filePath": "stalls.$stallId.edit.tsx"
+    },
     "/_auth/dev/": {
       "filePath": "_auth/dev/index.tsx",
       "parent": "/_auth/dev"
+    },
+    "/billing/payments/": {
+      "filePath": "billing.payments.index.tsx"
+    },
+    "/billing/reports/": {
+      "filePath": "billing.reports.index.tsx"
+    },
+    "/billing/settings/": {
+      "filePath": "billing.settings.index.tsx"
+    },
+    "/boarders/$boarderId/": {
+      "filePath": "boarders.$boarderId.index.tsx"
+    },
+    "/bookings/$bookingId/": {
+      "filePath": "bookings.$bookingId.index.tsx"
+    },
+    "/communication-portal/announcements/": {
+      "filePath": "communication-portal.announcements.index.tsx"
+    },
+    "/contracts/$contractId/": {
+      "filePath": "contracts.$contractId.index.tsx"
+    },
+    "/contracts/reports/": {
+      "filePath": "contracts.reports.index.tsx"
+    },
+    "/contracts/templates/": {
+      "filePath": "contracts.templates.index.tsx"
+    },
+    "/events/$eventId/": {
+      "filePath": "events.$eventId.index.tsx"
+    },
+    "/events/calendar/": {
+      "filePath": "events.calendar.index.tsx"
+    },
+    "/events/reports/": {
+      "filePath": "events.reports.index.tsx"
+    },
+    "/expenses/$expenseId/": {
+      "filePath": "expenses.$expenseId.index.tsx"
+    },
+    "/facilities/$facilityId/": {
+      "filePath": "facilities.$facilityId.index.tsx"
+    },
+    "/facilities/booking/": {
+      "filePath": "facilities.booking.index.tsx"
+    },
+    "/farm-operations/inventory/": {
+      "filePath": "farm-operations.inventory.index.tsx"
+    },
+    "/farm-operations/my-schedule/": {
+      "filePath": "farm-operations.my-schedule.index.tsx"
+    },
+    "/farm-operations/staff-scheduling/": {
+      "filePath": "farm-operations.staff-scheduling.index.tsx"
+    },
+    "/farm-operations/staff/": {
+      "filePath": "farm-operations.staff.index.tsx"
+    },
+    "/finance/budgets/": {
+      "filePath": "finance.budgets.index.tsx"
+    },
+    "/finance/expenses/": {
+      "filePath": "finance.expenses.index.tsx"
+    },
+    "/finance/income/": {
+      "filePath": "finance.income.index.tsx"
+    },
+    "/finance/reports/": {
+      "filePath": "finance.reports.index.tsx"
+    },
+    "/financial-management/budget/": {
+      "filePath": "financial-management.budget.index.tsx"
+    },
+    "/financial-management/categories/": {
+      "filePath": "financial-management.categories.index.tsx"
+    },
+    "/financial-management/expenses/": {
+      "filePath": "financial-management.expenses.index.tsx"
+    },
+    "/financial-management/income/": {
+      "filePath": "financial-management.income.index.tsx"
+    },
+    "/financial-management/reports/": {
+      "filePath": "financial-management.reports.index.tsx"
+    },
+    "/horses/$horseId/": {
+      "filePath": "horses.$horseId.index.tsx"
+    },
+    "/horses/exercise-calendar/": {
+      "filePath": "horses.exercise-calendar.index.tsx"
+    },
+    "/horses/exercise-reports/": {
+      "filePath": "horses.exercise-reports.index.tsx"
+    },
+    "/income/$incomeId/": {
+      "filePath": "income.$incomeId.index.tsx"
+    },
+    "/inventory/$itemId/": {
+      "filePath": "inventory.$itemId.index.tsx"
+    },
+    "/maintenance-requests/$requestId/": {
+      "filePath": "maintenance-requests.$requestId.index.tsx"
+    },
+    "/maintenance/$taskId/": {
+      "filePath": "maintenance.$taskId.index.tsx"
+    },
+    "/maintenance/calendar/": {
+      "filePath": "maintenance.calendar.index.tsx"
+    },
+    "/maintenance/reports/": {
+      "filePath": "maintenance.reports.index.tsx"
+    },
+    "/pasture-rotation/plan/": {
+      "filePath": "pasture-rotation.plan.index.tsx"
+    },
+    "/pastures/$pastureId/": {
+      "filePath": "pastures.$pastureId.index.tsx"
+    },
+    "/reports/events/": {
+      "filePath": "reports.events.index.tsx"
+    },
+    "/stalls/$stallId/": {
+      "filePath": "stalls.$stallId.index.tsx"
+    },
+    "/stalls/maintenance/": {
+      "filePath": "stalls.maintenance.index.tsx"
+    },
+    "/stalls/map/": {
+      "filePath": "stalls.map.index.tsx"
+    },
+    "/stalls/occupancy/": {
+      "filePath": "stalls.occupancy.index.tsx"
+    },
+    "/visitors/$visitorId/": {
+      "filePath": "visitors.$visitorId.index.tsx"
+    },
+    "/visitors/register/": {
+      "filePath": "visitors.register.index.tsx"
     },
     "/_auth/dev/examples/basic-dialog-form": {
       "filePath": "_auth/dev/examples.basic-dialog-form.tsx",
@@ -412,13 +4177,90 @@ export const routeTree = rootRoute.addChildren({
         "/_auth/dev/examples/settings/password"
       ]
     },
+    "/farm-operations/inventory/items/create": {
+      "filePath": "farm-operations.inventory.items.create.tsx"
+    },
+    "/farm-operations/schedules/$scheduleId/edit": {
+      "filePath": "farm-operations.schedules.$scheduleId.edit.tsx"
+    },
+    "/farm-operations/staff/$staffId/edit": {
+      "filePath": "farm-operations.staff.$staffId.edit.tsx"
+    },
+    "/financial-management/budget/$budgetId/edit": {
+      "filePath": "financial-management.budget.$budgetId.edit.tsx"
+    },
+    "/horses/$horseId/exercise-logs/create": {
+      "filePath": "horses.$horseId.exercise-logs.create.tsx"
+    },
+    "/horses/$horseId/feeding/create": {
+      "filePath": "horses.$horseId.feeding.create.tsx"
+    },
+    "/horses/$horseId/health/create": {
+      "filePath": "horses.$horseId.health.create.tsx"
+    },
     "/layouts/app/basic/tabs": {
       "filePath": "layouts.app.basic.tabs.tsx",
-      "parent": "/layouts/app/basic",
-      "children": [
-        "/layouts/app/basic/tabs/account",
-        "/layouts/app/basic/tabs/password"
-      ]
+      "parent": "/layouts/app/basic"
+    },
+    "/boarders/$boarderId/billing/": {
+      "filePath": "boarders.$boarderId.billing.index.tsx"
+    },
+    "/boarders/$boarderId/contract/": {
+      "filePath": "boarders.$boarderId.contract.index.tsx"
+    },
+    "/boarders/$boarderId/invoices/": {
+      "filePath": "boarders.$boarderId.invoices.index.tsx"
+    },
+    "/events/bookings/$bookingId/": {
+      "filePath": "events.bookings.$bookingId.index.tsx"
+    },
+    "/events/farm-events/$eventId/": {
+      "filePath": "events.farm-events.$eventId.index.tsx"
+    },
+    "/farm-operations/inventory/categories/": {
+      "filePath": "farm-operations.inventory.categories.index.tsx"
+    },
+    "/farm-operations/inventory/items/": {
+      "filePath": "farm-operations.inventory.items.index.tsx"
+    },
+    "/farm-operations/inventory/reports/": {
+      "filePath": "farm-operations.inventory.reports.index.tsx"
+    },
+    "/farm-operations/inventory/suppliers/": {
+      "filePath": "farm-operations.inventory.suppliers.index.tsx"
+    },
+    "/farm-operations/staff/$staffId/": {
+      "filePath": "farm-operations.staff.$staffId.index.tsx"
+    },
+    "/finance/budgets/$budgetId/": {
+      "filePath": "finance.budgets.$budgetId.index.tsx"
+    },
+    "/finance/reports/$reportId/": {
+      "filePath": "finance.reports.$reportId.index.tsx"
+    },
+    "/financial-management/budget/$budgetId/": {
+      "filePath": "financial-management.budget.$budgetId.index.tsx"
+    },
+    "/horses/$horseId/exercise-logs/": {
+      "filePath": "horses.$horseId.exercise-logs.index.tsx"
+    },
+    "/horses/$horseId/exercise/": {
+      "filePath": "horses.$horseId.exercise.index.tsx"
+    },
+    "/horses/$horseId/feeding/": {
+      "filePath": "horses.$horseId.feeding.index.tsx"
+    },
+    "/horses/$horseId/health/": {
+      "filePath": "horses.$horseId.health.index.tsx"
+    },
+    "/horses/$horseId/training/": {
+      "filePath": "horses.$horseId.training.index.tsx"
+    },
+    "/stalls/$stallId/assign/": {
+      "filePath": "stalls.$stallId.assign.index.tsx"
+    },
+    "/stalls/$stallId/customize/": {
+      "filePath": "stalls.$stallId.customize.index.tsx"
     },
     "/_auth/dev/examples/settings/account": {
       "filePath": "_auth/dev/examples.settings.account.tsx",
@@ -428,13 +4270,11 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_auth/dev/examples.settings.password.tsx",
       "parent": "/_auth/dev/examples/settings"
     },
-    "/layouts/app/basic/tabs/account": {
-      "filePath": "layouts.app.basic.tabs.account.tsx",
-      "parent": "/layouts/app/basic/tabs"
+    "/farm-operations/inventory/items/$itemId/edit": {
+      "filePath": "farm-operations.inventory.items.$itemId.edit.tsx"
     },
-    "/layouts/app/basic/tabs/password": {
-      "filePath": "layouts.app.basic.tabs.password.tsx",
-      "parent": "/layouts/app/basic/tabs"
+    "/farm-operations/inventory/items/$itemId/": {
+      "filePath": "farm-operations.inventory.items.$itemId.index.tsx"
     }
   }
 }

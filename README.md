@@ -1,32 +1,68 @@
-# Project Template with React, Tailwind, Vite, TanStack, Typescript, ShadCn Components
+# Sedrino AI Example Generated Application 
 
-Use `degit` to clone this template:
+This application was generated entirely by AI. In less than 30 minutes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Libraries
 
-Currently, two official plugins are available:
+# Key things to look at.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `app/server/db/schema.ts` - Drizzle ORM DB schema.
+- `app/server/db/queries` - Drizzle DB queries.
+- `app/query/mutations` - @tanstack/react-query mutation hooks.
+- `app/query/options` - @tanstack/react-query query options.
+- `app/server/functions` - @tanstack/start server functions.
+- `app/routes` - Tanstack Router routes.
 
-## Expanding the ESLint configuration
+Our goal is not to create a production ready application, but generate a mostly complete application that starts as a good starting point.
+The generation does create errors. We are working on reducing the number of generated errors.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Application Specification
 
-- Configure the top-level `parserOptions` property like this:
+All it took to make the application was the below application specification.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+## Horse Farm Management
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+A web-based application for managing a horse boarding facility, allowing efficient oversight of stalls, boarders, horses, and farm operations.
+
+### Feature Areas
+
+#### Stall Management
+
+- Stall Allocation: Assign and track stalls for each horse, including availability status.
+- Maintenance Scheduling: Schedule and track routine stall maintenance and cleaning tasks.
+- Occupancy Overview: View a visual representation of stall occupancy and availability.
+- Stall Customization: Record and manage specific requirements for each stall (e.g., rubber mats, automatic waterers).
+
+#### Boarder Management
+
+Boarder Profiles: Maintain detailed profiles for each boarder, including contact information and preferences.
+- Contract Management: Create, store, and manage boarding contracts and agreements.
+- Billing and Invoicing: Generate and send monthly invoices for boarding fees and additional services.
+- Communication Portal: Facilitate direct communication between farm management and boarders.
+
+#### Horse Management
+
+- Horse Profiles: Keep comprehensive records for each horse, including breed, age, and special needs.
+- Health Tracking: Log and monitor horse health information, including vaccinations and medical history.
+- Feeding Schedule: Create and manage individualized feeding schedules for each horse.
+Exercise and Training Logs: Track exercise routines, training sessions, and progress for each horse.
+#### Farm Operations
+
+- Inventory Management: Track and manage feed, bedding, and equipment inventory levels.
+- Staff Scheduling: Create and manage work schedules for farm staff and handlers.
+- Maintenance Requests: Allow boarders to submit and track facility maintenance requests.
+- Pasture Rotation: Plan and track pasture usage and rotation schedules.
+
+#### Financial Management
+
+- Income Tracking: Record and categorize all income sources, including boarding fees and additional services.
+- Expense Tracking: Log and categorize farm expenses, such as feed, utilities, and maintenance costs.
+Financial Reporting: Generate financial reports, including profit and loss statements and cash flow analysis.
+- Budget Planning: Create and manage annual budgets for farm operations.
+
+#### Event Management
+
+- Facility Booking: Allow boarders to reserve shared facilities like arenas or round pens.
+- Event Calendar: Maintain a calendar of farm events, clinics, and important dates.
+- Visitor Management: Track and manage visitor access to the farm, including trainers and veterinarians.
+- Event Reporting: Generate reports on facility usage and event participation.

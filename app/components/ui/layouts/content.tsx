@@ -1,5 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
+
 import { cn } from "@/lib/utils";
+
 const contentVariants = cva("flex flex-col justify-center", {
   variants: {
     position: {

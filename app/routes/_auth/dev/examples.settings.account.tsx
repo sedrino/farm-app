@@ -1,12 +1,14 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { z } from "zod";
+
+import { FormSubmitButton } from "@/components/form/submit";
+import { Button } from "@/components/ui/button";
 import { InputContainer, TwoColumn } from "@/components/ui/grid";
 import { Input } from "@/components/ui/input";
 import { Panel } from "@/components/ui/panel";
-import { createFileRoute } from "@tanstack/react-router";
-import { useForm } from "@/lib/form";
-import { z } from "zod";
-import { Button } from "@/components/ui/button";
-import { FormSubmitButton } from "@/components/form/submit";
 import { orgNameQueryOptions } from "@/examples/query-options";
+import { useForm } from "@/lib/form";
+
 export const Route = createFileRoute("/_auth/dev/examples/settings/account")({
   component: PageComponent,
   loader: async (opts) => {
@@ -38,7 +40,7 @@ export function PageComponent() {
         >
           <TwoColumn className="px-8 py-8">
             <TwoColumn.Left>
-              <label className="text-foreground col-span-12 text-sm lg:col-span-5 ">
+              <label className="col-span-12 text-sm text-foreground lg:col-span-5">
                 Account settings
               </label>
             </TwoColumn.Left>

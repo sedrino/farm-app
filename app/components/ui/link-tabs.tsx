@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Link, LinkProps, Outlet } from "@tanstack/react-router";
+
 import { cn } from "@/lib/utils";
+
 // forward ref of a div
 const LinkTabsRoot = React.forwardRef<
   React.ElementRef<"div">,
@@ -16,7 +18,7 @@ const LinkTabsList = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "bg-muted text-muted-foreground inline-flex h-10 items-center justify-center rounded-md p-1",
+        "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
         className
       )}
       {...props}
@@ -33,7 +35,7 @@ function LinkTabsTrigger({
     <Link
       {...props}
       className={cn(
-        "ring-offset-background focus-visible:ring-ring data-[status=active]:bg-background data-[status=active]:text-foreground inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[status=active]:shadow-sm",
+        "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[status=active]:bg-background data-[status=active]:text-foreground data-[status=active]:shadow-sm",
         className
       )}
     />

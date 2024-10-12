@@ -1,6 +1,8 @@
-import { queryOptions } from "@tanstack/react-query";
 import { faker } from "@faker-js/faker";
+import { queryOptions } from "@tanstack/react-query";
+
 import { client } from "@/query/client";
+
 const defaultData: Person[] = Array.from({ length: 10 }, () => ({
   id: faker.string.alphanumeric(),
   firstName: faker.person.firstName(),

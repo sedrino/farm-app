@@ -1,7 +1,8 @@
-import { Hono } from "hono";
-import { zValidator } from "@hono/zod-validator";
 import { faker } from "@faker-js/faker";
+import { zValidator } from "@hono/zod-validator";
+import { Hono } from "hono";
 import { z } from "zod";
+
 // fake temperature sensors information lat, long, temp in F, timestamp
 const temperatureSensors = Array.from({ length: 985 })
   .map((_, i) => {
@@ -22,17 +23,17 @@ export const examplesRoute = hono.get(
     z.object({
       page: z.coerce.number().min(1).max(1000).default(1),
       pageSize: z.coerce.number().min(1).max(1000).default(1),
-    }),
+    })
   ),
   async (c) => {
     const { page, pageSize } = c.req.valid("query");
     const data = temperatureSensors.slice(
       (page - 1) * pageSize,
-      page * pageSize,
+      page * pageSize
     );
     return c.json({
       has_more: data.length > pageSize,
       data,
     });
-  },
+  }
 );

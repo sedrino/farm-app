@@ -1,5 +1,5 @@
 import { FieldApi } from "@tanstack/react-form";
-import { FieldInfo } from "./basic-form-field";
+
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
@@ -8,6 +8,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+import { FieldInfo } from "./basic-form-field";
+
 export function BasicInput(props: {
   field: FieldApi<any, any, any, any>;
   label: string;

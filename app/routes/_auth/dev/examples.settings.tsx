@@ -1,12 +1,14 @@
+import { createFileRoute } from "@tanstack/react-router";
+
 import { Content } from "@/components/ui/layouts/content";
 import { PageHeader } from "@/components/ui/layouts/page-header";
-import { pageBreadcrumb, pageTitle } from "@/components/ui/typography";
-import { createFileRoute } from "@tanstack/react-router";
 import { LinkTabs } from "@/components/ui/link-tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { pageBreadcrumb, pageTitle } from "@/components/ui/typography";
+
 export const Route = createFileRoute("/_auth/dev/examples/settings")({
   component: () => (
-    <main className="h-full flex flex-col flex-1 w-full overflow-x-hidden">
+    <main className="flex h-full w-full flex-1 flex-col overflow-x-hidden">
       <PageHeader>
         <h1 className={pageBreadcrumb()}>Tabs Example</h1>
       </PageHeader>

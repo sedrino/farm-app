@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, LinkProps } from "@tanstack/react-router";
 import { CircleUser } from "lucide-react";
-import { cn } from "@/lib/utils";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,17 +10,19 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
+
 export function DashboardLayout1(props: {
   children: React.ReactNode;
   sideNav: React.ReactNode;
 }) {
   return (
-    <div className="min-h-full flex flex-col">
+    <div className="flex min-h-full flex-col">
       <div className="flex-none"></div>
-      <div className="h-screen min-h-[0px] basis-0 flex-1">
+      <div className="h-screen min-h-[0px] flex-1 basis-0">
         <div className="flex h-full">
           {props.sideNav}
-          <div className="w-full lg:ml-[13rem] ml-14">{props.children}</div>
+          <div className="ml-14 w-full lg:ml-[13rem]">{props.children}</div>
         </div>
       </div>
     </div>
@@ -29,17 +31,17 @@ export function DashboardLayout1(props: {
 export function LeftCollapsableSideNav(props: { topNav: React.ReactNode }) {
   const [navOpen, setNavOpen] = React.useState(false);
   return (
-    <div className="w-14 h-full flex flex-col lg:w-[13rem] fixed">
+    <div className="fixed flex h-full w-14 flex-col lg:w-[13rem]">
       <nav
-        className="group py-2 z-10 h-full w-14 data-[state=expanded]:w-[13rem] border-r bg-background border-default data-[state=expanded]:shadow-xl transition-width duration-200 hide-scrollbar flex flex-col justify-between overflow-y-auto lg:w-[13rem] overflow-x-hidden"
+        className="border-default transition-width hide-scrollbar group z-10 flex h-full w-14 flex-col justify-between overflow-y-auto overflow-x-hidden border-r bg-background py-2 duration-200 data-[state=expanded]:w-[13rem] data-[state=expanded]:shadow-xl lg:w-[13rem]"
         data-state={navOpen ? "expanded" : "collapsed"}
         onMouseEnter={() => setNavOpen(true)}
         onMouseLeave={() => setNavOpen(false)}
       >
-        <ul className="flex flex-col gap-y-1 justify-start px-2">
+        <ul className="flex flex-col justify-start gap-y-1 px-2">
           {props.topNav}
         </ul>
-        <ul className="flex flex-col px-2 gap-y-1">
+        <ul className="flex flex-col gap-y-1 px-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <NavButton icon={<CircleUser />}>
@@ -78,11 +80,11 @@ const NavLink = ({
     <Link className={navItemClasses} {...linkProps}>
       <span
         id="icon-link"
-        className="absolute left-0 top-0 flex rounded h-10 w-10 items-center justify-center"
+        className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded"
       >
         {icon}
       </span>
-      <span className="min-w-[128px] text-sm text-foreground-light group-hover/item:text-foreground group-aria-current/item:text-foreground absolute left-7 group-data-[state=expanded]:left-12 opacity-0 group-data-[state=expanded]:opacity-100 transition-all lg:left-12 lg:opacity-100 lg:transition-none">
+      <span className="text-foreground-light group-aria-current/item:text-foreground absolute left-7 min-w-[128px] text-sm opacity-0 transition-all group-hover/item:text-foreground group-data-[state=expanded]:left-12 group-data-[state=expanded]:opacity-100 lg:left-12 lg:opacity-100 lg:transition-none">
         {children}
       </span>
     </Link>
@@ -101,10 +103,10 @@ const NavButton = React.forwardRef<
       className={cn(navItemClasses, className, "w-full text-left")}
       {...props}
     >
-      <span className="absolute left-0 top-0 flex rounded h-10 w-10 items-center justify-center">
+      <span className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded">
         {icon}
       </span>
-      <span className="min-w-[128px] text-sm text-foreground-light group-hover/item:text-foreground group-aria-current/item:text-foreground absolute left-7 group-data-[state=expanded]:left-12 opacity-0 group-data-[state=expanded]:opacity-100 transition-all lg:left-12 lg:opacity-100 lg:transition-none overflow-hidden max-w-[128px]">
+      <span className="text-foreground-light group-aria-current/item:text-foreground absolute left-7 min-w-[128px] max-w-[128px] overflow-hidden text-sm opacity-0 transition-all group-hover/item:text-foreground group-data-[state=expanded]:left-12 group-data-[state=expanded]:opacity-100 lg:left-12 lg:opacity-100 lg:transition-none">
         {props.children}
       </span>
     </button>

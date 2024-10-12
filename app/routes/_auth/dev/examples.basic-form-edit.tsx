@@ -1,12 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Panel } from "@/components/ui/panel";
-import { personQuery } from "@/examples/query-options";
-import BasicForm from "@/components/form/basic-form";
-import { z } from "zod";
-import { useCreatePersonMutation } from "@/examples/mutations";
-import { toast } from "sonner";
 import { useCallback } from "react";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import { createFileRoute } from "@tanstack/react-router";
+import { toast } from "sonner";
+import { z } from "zod";
+
+import BasicForm from "@/components/form/basic-form";
+import { Panel } from "@/components/ui/panel";
+import { useCreatePersonMutation } from "@/examples/mutations";
+import { personQuery } from "@/examples/query-options";
+
 export const Route = createFileRoute("/_auth/dev/examples/basic-form-edit")({
   component: BasicFormComponent,
   loader: (opts) => {

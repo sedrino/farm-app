@@ -1,4 +1,21 @@
 import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getPaginationRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+import {
   Table,
   TableBody,
   TableCaption,
@@ -7,22 +24,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  flexRender,
-  useReactTable,
-  getCoreRowModel,
-  ColumnDef,
-  getPaginationRowModel,
-} from "@tanstack/react-table";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationPrevious,
-  PaginationLink,
-  PaginationEllipsis,
-  PaginationNext,
-} from "@/components/ui/pagination";
+
 export function BasicTable<TData>(props: {
   data: TData[];
   columns: ColumnDef<TData, any>[];

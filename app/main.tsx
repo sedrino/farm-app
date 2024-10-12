@@ -1,10 +1,14 @@
 import "@/styles/globals.css";
-import ReactDOM from "react-dom/client";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen";
-import { ThemeProvider } from "@/components/theme-provider";
+
 import { QueryClientProvider } from "@tanstack/react-query";
+import { createRouter, RouterProvider } from "@tanstack/react-router";
+import ReactDOM from "react-dom/client";
+
+import { ThemeProvider } from "@/components/theme-provider";
+
 import { queryClient } from "./query/client";
+import { routeTree } from "./routeTree.gen";
+
 // import { Devtools } from "sedrino-devtools";
 // Set up a Router instance
 const router = createRouter({

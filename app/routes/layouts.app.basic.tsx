@@ -1,10 +1,12 @@
+import { createFileRoute, Outlet } from "@tanstack/react-router";
+
 import {
   SimpleLeftMenuLayout,
   SimpleNavLink,
   SimpleVerticalNavSection,
 } from "@/components/layouts/simple-left-menu-layout";
 import { Separator } from "@/components/ui/separator";
-import { Outlet, createFileRoute } from "@tanstack/react-router";
+
 export const Route = createFileRoute("/layouts/app/basic")({
   component: () => (
     <SimpleLeftMenuLayout

@@ -1,18 +1,19 @@
+import * as React from "react";
+import type { QueryClient } from "@tanstack/react-query";
 import {
+  createRootRouteWithContext,
   Link,
   Outlet,
   ScrollRestoration,
-  createRootRouteWithContext,
 } from "@tanstack/react-router";
 import { Body, Head, Html, Meta, Scripts } from "@tanstack/start";
-import * as React from "react";
-import type { QueryClient } from "@tanstack/react-query";
+
 import { DefaultCatchBoundary } from "@/components/default-catch-boundary";
 import { NotFound } from "@/components/not-found";
+import { ThemeProvider } from "@/components/theme-provider";
+import appCss from "@/styles/globals.css?url";
 // @ts-expect-error
 import { seo } from "@/utils/seo";
-import appCss from "@/styles/globals.css?url";
-import { ThemeProvider } from "@/components/theme-provider";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
