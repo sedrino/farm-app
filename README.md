@@ -3,6 +3,11 @@
 This application was generated entirely by AI. In less than 30 minutes.
 
 # Libraries
+- All things Tanstack.
+- Drizzle ORM for DB.
+- Tailwindcss
+- Shadcn UI components
+- RadixUI
 
 # Key things to look at.
 
