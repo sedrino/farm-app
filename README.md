@@ -12,6 +12,7 @@ This application was generated entirely by AI. In less than 30 minutes.
 # Key things to look at.
 
 - `app/server/db/schema.ts` - Drizzle ORM DB schema.
+- `app/server/db/seed.ts` - Mock seed data.
 - `app/server/db/queries` - Drizzle DB queries.
 - `app/query/mutations` - @tanstack/react-query mutation hooks.
 - `app/query/options` - @tanstack/react-query query options.
